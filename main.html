@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <style>
 
-.select-none{
-  -webkit-touch-callout: none;
-    -webkit-user-select: none;
-     -khtml-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-}
-
 body{
 	-webkit-font-smoothing:antialiased;
   
@@ -78,7 +69,16 @@ body{
   
   font-size:20px;
   line-height:34px;
+  
+  border-radius:4px;
 }
+@media screen and (min-width: 1700px){
+  .content{
+    margin:50px auto;
+    max-width:1500px;
+  }
+}
+
 .content p{
   padding-top:200px;
   margin:0px 300px 200px 300px;
@@ -99,7 +99,7 @@ body{
 
   background:rgb(231,26,139);
 
-  -webkit-clip-path: polygon(0 100%, 20% 85%, 40% 78%, 60% 65%, 80% 42%, 100% 0%, 100% 100%);
+  -webkit-clip-path: polygon(0 100%, 20% 85%, 40% 78%, 60% 65%, 80% 42%, 101% 0%, 101% 100%);
 }
 
 .employer{
@@ -377,22 +377,28 @@ body{
 }
 .blurbs .blurb .icon{
   height:60px;
+  animation: bounce-out-animation 1000ms linear;
+}
+.blurbs .blurb:hover .icon{
+  animation: bounce-in-animation 1000ms linear;
+  transform: matrix3d(1.1, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
 }
 
 </style>
 <html>
 <head>
 
-<title></title>
+<title>Hunter Larco</title>
 
-<meta charset="utf-8" />
+<meta charset='utf-8'/>
 
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="mobile-web-app-capable" content="yes">
+<meta name='apple-mobile-web-app-capable' content='yes'>
+<meta name='mobile-web-app-capable' content='yes'>
 
-<meta content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no" name="viewport"/>
+<meta content='minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no' name='viewport'/>
 
-<link rel="stylesheet" href="/resources/css/resets.css"/>
+<link rel='stylesheet' href='/resources/css/resets.css'/>
+<link rel='stylesheet' href='/resources/css/animations.css'/>
 
 <link href='https://fonts.googleapis.com/css?family=Anton|Droid+Sans:400,700' rel='stylesheet' type='text/css'>
 
@@ -415,7 +421,7 @@ body{
   <a href='//larcolabs.com' target='blank'>
     <div class='employer'>
       <div class='table'>
-        <img src='/images/clients/logos/generic.png'/>
+        <img src='/images/clients/generic.png'/>
         <div class='text'>
           <h1>larcolabs</h1>
           <h2>Founder; Chief Engineer</h2>
@@ -429,7 +435,7 @@ body{
   <a href='//topsidelacrosse.com' target='blank'>
     <div class='employer'>
       <div class='table'>
-        <img src='/images/clients/logos/tsl.png' class='rounded'/>
+        <img src='/images/clients/tsl.png' class='rounded'/>
         <div class='text'>
           <h1>Top Side Lacrosse</h1>
           <h2>Consultant; Backend Developer</h2>
@@ -443,7 +449,7 @@ body{
   <a href='//discovertechnology.org' target='blank'>
     <div class='employer'>
       <div class='table'>
-        <img src='/images/clients/logos/generic.png'/>
+        <img src='/images/clients/generic.png'/>
         <div class='text'>
           <h1>Discover Technology</h1>
           <h2>Curriculum Engineer</h2>
@@ -457,7 +463,7 @@ body{
   <a href='//jlarco.com' target='blank'>
     <div class='employer'>
       <div class='table'>
-        <img src='/images/clients/logos/generic.png'/>
+        <img src='/images/clients/generic.png'/>
         <div class='text'>
           <h1>J. L. Larco &amp; Associates, INC.</h1>
           <h2>Consultant; Frontend Developer</h2>
@@ -471,7 +477,7 @@ body{
   <a href='//trysealed.com' target='blank'>
     <div class='employer'>
       <div class='table'>
-        <img src='/images/clients/logos/sealed.png' class='rounded'/>
+        <img src='/images/clients/sealed.png' class='rounded'/>
         <div class='text'>
           <h1>Sealed</h1>
           <h2>Lead Developer</h2>
@@ -485,7 +491,7 @@ body{
   <a href='//chp-sf.org/annualreport' target='blank'>
     <div class='employer'>
       <div class='table'>
-        <img src='/images/clients/logos/generic.png'/>
+        <img src='/images/clients/generic.png'/>
         <div class='text'>
           <h1>Community Housing Partnership, San Francisco</h1>
           <h2>Consultant; Frontend Developer</h2>
@@ -587,9 +593,9 @@ body{
       <img src='/images/languages/python.png'/>
       <div class='text'>
         <h1>Python</h1>
-        <h2>MongoDB ORM</h2>
+        <h2>TableMongo. A MongoDB ORM</h2>
         <h3>October 2015 (recent)</h3>
-        <h4>Something about this ORM</h4>
+        <h4>TableMongo syntax emulates Google's Python BigTable ORM, making it easier to transition from Google Cloud Platform to a MongoDB based systems.</h4>
       </div>
     </div>
   </div>
@@ -616,7 +622,7 @@ body{
           <h1>HTML5 &amp; CSS3</h1>
           <h2>hunterlarco.com</h2>
           <h3>October 2015 (recent)</h3>
-          <h4>My personal website was written from scratch. No frameworks involved. Please pay attention to my HTML5 organization as well as the simplicity of my CSS.</h4>
+          <h4>My personal website, which you have the pleasure of browsing right now, is at your fingertips! Hint: Try typing 'admin' right now.</h4>
         </div>
       </div>
     </div>
@@ -628,31 +634,74 @@ body{
 
 <div class='blurbs'>
   
-  <div class='blurb'>
-    <img class='icon' src='/images/icons/github.png'/>
-    <a href='//github.com/hunterlarco' target='blank'><p>github.com/hunterlarco</p></a>
-  </div>
+  <a href='//github.com/hunterlarco' target='blank'>
+    <div class='blurb'>
+      <img class='icon' src='/images/icons/github.png'/>
+      <p>github.com/hunterlarco</p>
+    </div>
+  </a>
   
-  <div class='blurb'>
-    <img class='icon' src='/images/icons/linkedin.png'/>
-    <a href='//linkedin.com/in/hunterlarco' target='blank'><p>github.com/hunterlarco</p></a>
-  </div>
+  <a href='//linkedin.com/in/hunterlarco' target='blank'>
+    <div class='blurb'>
+      <img class='icon' src='/images/icons/linkedin.png'/>
+      <p>linkedin.com/in/hunterlarco</p>
+    </div>
+  </a>
   
-  <div class='blurb'>
-    <img class='icon' src='/images/icons/email.png'/>
-    <a href='mailto:Hunter Larco <hunter@larcolabs.com>' target='blank'><p>hunter@larcolabs.com</p></a>
-  </div>
+  <a href='mailto:Hunter Larco <hunter@larcolabs.com>' target='blank'>
+    <div class='blurb'>
+      <img class='icon' src='/images/icons/email.png'/>
+      <p>hunter@larcolabs.com</p>
+    </div>
+  </a>
   
-  <div class='blurb'>
-    <img class='icon' src='/images/icons/phone.png'/>
-    <a href='tel:1-978-877-2495'><p>+1 (978) 877-2495</p></a>
-  </div>
+  <a href='tel:1-978-877-2495'>
+    <div class='blurb'>
+      <img class='icon' src='/images/icons/phone.png'/>
+      <p>+1 (978) 877-2495</p>
+    </div>
+  </a>
   
 </div>
 
 <script type='text/javascript'>
 (function(){
+  
+  const combo = [65, 68, 77, 73, 78];
+  
 	
+  window.addEventListener('load', Init);
+  
+  function Init(){
+    BindKeys();
+  }
+  
+  function BindKeys(){
+    window.addEventListener('keyup', KeyUp);
+  }
+  
+  var past = [];
+  function KeyUp(event){
+    past.push(event.keyCode);
+    if(past.length > combo.length) past.shift();
+    
+    CheckCombo();
+  }
+  
+  function CheckCombo(){
+    if(past.length != combo.length) return;
+    
+    for(var i=0; i<past.length; i++)
+      if(past[i] != combo[i])
+        return;
+    
+    EasterEgg();
+  }
+  
+  function EasterEgg(){
+    window.location = '/console';
+  }
+  
 })();
 </script>
 </body>

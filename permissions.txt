@@ -1,0 +1,5 @@
+User-agent: hunterlarco-superuser
+Allow: @all
+
+User-agent: *
+Disallow: @superuser

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<style>
+
+*{
+  outline:none;
+  cursor:inherit;
+  font-family:inherit;
+  font-size:inherit;
+	font-weight:inherit;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  padding:0px;
+  margin:0px;
+}
+
+body{
+	-webkit-font-smoothing:antialiased;
+  
+  background:rgb(17,17,17);
+  color:rgb(255,255,255);
+  
+  font-size:15px;
+  line-height:18px;
+  font-weight:400;
+  font-family:monospace;
+  
+  padding:4px;
+}
+
+.line{
+  margin:4px;
+  position:relative;
+  
+  white-space: normal;
+  word-wrap: break-word;
+}
+.line .mount{
+  color:rgb(208,0,93);
+}
+.line .func{
+  color:rgb(255,204,0);
+}
+.line .colored{
+  color:rgb(66,93,130);
+}
+
+cursor{
+  position:absolute;
+  left:0px;
+  top:0px;
+  
+  display:block;
+  vertical-align:top;
+  
+  height:18px;
+  width:9px;
+  
+  background:rgb(200,200,200);
+}
+
+</style>
+<html>
+<head>
+
+<title>Hunter Larco | Console</title>
+
+<meta charset='utf-8'/>
+
+<meta name='apple-mobile-web-app-capable' content='yes'>
+<meta name='mobile-web-app-capable' content='yes'>
+
+<meta content='minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no' name='viewport'/>
+
+<script src='/resources/scripts/line.js'></script>
+<script src='/resources/scripts/textline.js'></script>
+<script src='/resources/scripts/cursor.js'></script>
+<script src='/resources/scripts/terminalfeed.js'></script>
+<script src='/resources/scripts/admin.js'></script>
+<script src='/resources/scripts/synccatch.js'></script>
+
+<script src='/resources/scripts/network/request.js'></script>
+
+</head>
+<body>
+
+
+
+
+<script type='text/javascript'>
+(function(){
+  
+  window.addEventListener('load', Init);
+  
+  function Init(){
+    window.terminal = new TerminalFeed({
+      help: Help,
+      login: Login,
+      clear: Clear,
+      cookies: Cookies,
+      exit: Exit
+    }, MountGuest);
+  }
+  
+  function MountGuest(terminal){
+    terminal.print('Lets play a little game. You try to break in... And I stop you. How deep does the rabbit hole go?');
+    terminal.print('`Mounting` guest');
+  }
+  
+  function Help(func){
+    if(!func){
+      return 'You can use the following shell commands:\n\t`login`   - used to log in to a user account [username] [password]\n\t`help`    - man pages for each command [func]\n\t`clear`   - clears console\n\t`cookies` - Delivers cookies to your house. Try it!\n\t`exit`    - Exit the web console';
+    }else if(func == 'login'){
+      return '`login` [username] [password]\n\tLogs into the account associated with the given username and password.\n\tDifferent accounts contain different permissions.';
+    }else if(func == 'help'){
+      return '`help` [*optional help]\n\tPrints the man pages for each command'
+    }else if(func == 'cookies'){
+      return '`cookies` \n\tDelivers cookies to your house. Try it!'
+    }else if(func == 'exit'){
+      return '`exit` \n\tExit the web console.'
+    }else{
+      return 'No help for command: '+func;
+    }
+  }
+  
+  function Login(username, password){
+    if(!username) return 'Username required';
+    if(!password) return 'Password required';
+    var hash = HashCredentials(username, password);
+    if(hash == 'admin:39\\6l\\6r\\75\\6r\\67\\63\\6j\\6k\\6b\\6e'){
+      terminal.update(ADMIN_PERMISSIONS, ADMIN_MOUNT, 'admin');
+      return;
+    }
+    return 'Invalid credentials.'
+  }
+  
+  function HashCredentials(username, password){
+    return username + ':' + HashPassword(password);
+  }
+  function HashPassword(password){
+    return password.split('').map(function(value, index, array){
+      if(index == 0) return value.charCodeAt(0).toString(32);
+      return '\\'+(value.charCodeAt(0) + array[index-1].charCodeAt(0)).toString(32)
+    }).join('');
+  }
+  
+  function Clear(){
+    terminal.clear();
+  }
+  
+  function Cookies(){
+    return 'Do you live in San Francisco? Do you love cookies? Order some with a $5 credit from the following link!\n~https://www.doughbies.com/#/r/d0hwb922~';
+  }
+  
+  function Exit(){
+    window.location = '/';
+  }
+  
+})();
+</script>
+</body>
+</html>

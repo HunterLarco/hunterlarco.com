@@ -1,0 +1,27 @@
+LOGIN PASSWORD
+
+
+
+  function Reversehash(hash){
+    var hash = hash.split(':');
+    var admin = hash[0];
+    var password = hash[1];
+    
+    password = password.split('\\').map(function(value, index, array){
+      return parseInt(value, 32);
+    });
+    
+    var original = [];
+    
+    for(var i=0; i<password.length; i++){
+      if(i == 0) original.push(password[i]);
+      else original.push(password[i] - original[i-1]);
+    }
+    
+    return original.map(function(value){return String.fromCharCode(value);}).join('');
+  }
+  
+  console.log(Reversehash('admin:32\\6k\\6n\\66\\6c\\6v\\6s\\6h\\6s\\6r\\69\\6k\\6r'));
+  
+  
+  
