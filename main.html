@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <style>
 
-.select-none{
-  -webkit-touch-callout: none;
-    -webkit-user-select: none;
-     -khtml-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-}
-
 body{
 	-webkit-font-smoothing:antialiased;
   
@@ -17,7 +8,7 @@ body{
   
   font-size:0px;
   font-weight:400;
-  font-family:'Arial';
+  font-family:helvetica, 'Arial';
 }
 
 .header{
@@ -71,6 +62,19 @@ body{
   color:rgb(231,26,139);
 }
 
+.header .scroll{
+  position:absolute;
+  
+  width:70px;
+  height:70px;
+  margin-left:-35px;
+  
+  left:50%;
+  bottom:25px;
+  
+  opacity:0.25;
+}
+
 .content{
   background:rgb(255,255,255);
   
@@ -78,10 +82,15 @@ body{
   
   font-size:20px;
   line-height:34px;
+  
+  border-radius:4px;
 }
+.content .padding{
+  padding:200px 270px 0px 270px;
+}
+
 .content p{
-  padding-top:200px;
-  margin:0px 300px 200px 300px;
+  margin:0px 30px 200px 30px;
   
   font-family:'Droid Sans';
 }
@@ -99,11 +108,11 @@ body{
 
   background:rgb(231,26,139);
 
-  -webkit-clip-path: polygon(0 100%, 20% 85%, 40% 78%, 60% 65%, 80% 42%, 100% 0%, 100% 100%);
+  -webkit-clip-path: polygon(0 100%, 20% 85%, 40% 78%, 60% 65%, 80% 42%, 101% 0%, 101% 100%);
 }
 
 .employer{
-  margin:20px 270px;
+  margin:20px 0px;
   padding:10px;
 }
 .employer:hover{
@@ -133,6 +142,9 @@ body{
 .employer .text{
   display:table-cell;
   vertical-align: top;
+}
+.employer .mobile-body{
+  display:none;
 }
 
 .employer h1{
@@ -269,7 +281,6 @@ body{
   vertical-align:top;
   
   width:450px;
-  height:400px;
   
   margin-left:50px;
   
@@ -279,7 +290,7 @@ body{
   
   color:rgb(255,255,255);
 }
-.whatido .explanation.left{
+.whatido.left .explanation{
   margin:0px 50px 0px 0px;
 }
 .whatido .explanation h1{
@@ -377,22 +388,498 @@ body{
 }
 .blurbs .blurb .icon{
   height:60px;
+  animation: bounce-out-animation 1000ms linear;
+}
+.blurbs .blurb:hover .icon{
+  animation: bounce-in-animation 1000ms linear;
+  transform: matrix3d(1.1, 0, 0, 0, 0, 1.1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+}
+
+@media screen and (min-width: 1700px){
+  .content{
+    margin:50px auto;
+    max-width:1500px;
+  }
+}
+
+@media screen and (max-width: 1400px){
+  .content .padding{
+    padding:170px 240px 0px 240px;
+  }
+  .content p{
+    margin-bottom:170px;
+  }
+}
+
+@media screen and (max-width: 1340px){
+  .content .padding{
+    padding:130px 200px 0px 200px;
+  }
+  .content p{
+    margin-bottom:130px;
+  }
+  .content .graph{
+    height:350px;
+  }
+}
+
+@media screen and (max-width: 1280px){
+  .content .padding{
+    padding:110px 160px 0px 160px;
+  }
+  .content p{
+    margin-bottom:110px;
+  }
+  .content .graph{
+    height:320px;
+  }
+}
+
+@media screen and (max-width: 1220px){
+  .content .padding{
+    padding:110px 120px 60px 120px;
+  }
+  .content p{
+    margin-bottom:110px;
+  }
+  .content .graph{
+    display:none;
+  }
+  
+  .whatido .explanation{
+    font-size:19px;
+    line-height:32px;
+  }
+}
+
+@media screen and (max-width: 1150px){
+  .content{
+    margin:50px 70px;
+  }
+  
+  .whatido{
+    width:842px;
+    margin:95px auto;
+  }
+  .whatido .explanation{
+    margin-left:42px;
+  }
+  .whatido.left .explanation {
+    margin:0px 42px 0px 0px;
+  }
+  
+  .whatido .window{
+    width:350px;
+  }
+  .window .screen{
+    height:580px;
+  }
+  .window .screen .bar{
+    height:35px;
+  }
+  .window .screen .profile{
+    margin:10px 0px;
+  }
+  .window .screen .profile .image{
+    height:100px;
+    width:100px;
+  }
+  .window .screen .profile .image::after{
+    height:100px;
+    width:100px;
+  }
+  .window .screen .tile{
+    height:95px;
+  }
+  
+  .whatido .servers{
+    width:350px;
+  }
+  .server .body{
+    padding:18px;
+  }
+  .server .body .button{
+    width:22px;
+    height:22px;
+  }
+}
+
+@media screen and (max-width: 1070px){
+  .header h1{
+    font-size:95px;
+    letter-spacing:6px;
+    
+    margin:0px 0px 10px 0px;
+  }
+  .header h2{
+    font-size:26px;
+  }
+  .header h2 span{
+    padding:5px 24px;
+    margin:0px 9px;
+  }
+  
+  .header .scroll{
+    width:60px;
+    height:60px;
+    margin-left:-30px;
+  }
+  
+  .content{
+    font-size:18px;
+    line-height:31px;
+  }
+  .content .padding{
+    padding:110px 100px 60px 100px;
+  }
+  
+  .employer .table{
+    font-size:14px;
+    line-height:21px;
+  }
+  
+  .employer h1{
+    font-size:12px;
+  }
+  .employer h2{
+    font-size:16px;
+    margin:4px 0px;
+  }
+  .employer h3{
+    font-size:14px;
+  }
+  .employer h4{
+    font-size:14px;
+    line-height:19px;
+  }
+  
+  .employer img{
+    width:70px;
+    height:70px;
+  }
+  .employer img.rounded{
+    border-radius:22px;
+  }
+  
+  .whatido{
+    width:792px;
+  }
+  .whatido .explanation{
+    font-size:17px;
+    line-height:29px;
+    
+    width:400px;
+  }
+  
+  .blurbs{
+    max-width:900px;
+  }
+  .blurbs .blurb{
+    font-size:14px;
+    line-height:27px;
+  }
+  .blurbs .blurb .icon{
+    height:50px;
+  }
+}
+
+@media screen and (max-width: 1030px){
+  .content{
+    margin:45px 60px;
+  }
+  .content .padding{
+    padding:100px 90px 50px 90px;
+  }
+  .content p{
+    margin-bottom:100px;
+  }
+}
+
+@media screen and (max-width: 985px){
+  .content{
+    margin:30px 20px;
+  }
+  .content .padding{
+    padding:100px 100px 50px 100px;
+  }
+}
+
+@media screen and (max-width: 885px){
+  .content .padding{
+    padding:100px 80px 50px 80px;
+  }
+  
+  .header .scroll{
+    bottom:15px;
+  }
+  
+  .whatido{
+    width:662px;
+    margin:80px auto;
+  }
+  .whatido .explanation{
+    width:320px;
+    
+    font-size:16px;
+    line-height:26px
+  }
+  .whatido .explanation h1{
+    font-size:34px;
+    padding:12px 18px;
+    margin:16px 0px;
+  }
+  .whatido .explanation h2{
+    font-size:24px;
+  }
+  
+  .whatido .window{
+    width:300px;
+  }
+  .window .screen{
+    height:480px;
+  }
+  
+  .whatido .servers{
+    width:300px;
+  }
+  .servers .server .body{
+    padding:15px;
+  }
+  .servers .server .body .button{
+    width:20px;
+    height:20px;
+  }
+}
+
+@media screen and (max-width: 840px){
+  .content{
+    font-size:17px;
+  }
+  .content .padding{
+    padding:100px 60px 50px 60px;
+  }
+  
+  .header .scroll{
+    width:40px;
+    height:40px;
+    margin-left:-20px;
+    
+    opacity:0.35;
+  }
+}
+
+@media screen and (max-width: 780px){
+  .header h1{
+    font-size:88px;
+    
+    margin:0px 0px 10px 0px;
+  }
+  .header h2{
+    font-size:24px;
+  }
+  .header h2 span{
+    padding:4px 22px;
+    margin:0px 8px;
+  }
+  
+  .content .padding{
+    padding:80px 40px 30px 40px;
+  }
+  .content p{
+    margin-bottom:80px;
+  }
+}
+
+@media screen and (max-width: 735px){
+  .header{
+    height:auto;
+    
+    padding:70px 0px;
+    background:rgba(0,0,0,0.2);
+  }
+  .header .center{
+    display:block;
+  }
+  .header h1{
+    font-size:40px;
+    letter-spacing:4px;
+    margin-bottom:2px;
+  }
+  .header h2{
+    display:block;
+    font-size:18px;
+  }
+  .header h2 span{
+    display:none;
+  }
+  
+  .header .scroll{
+    display:none;
+  }
+  
+  .content{
+    margin:0px;
+    border-radius:0px;
+
+    background:none;
+  }
+  .content .padding{
+    padding:0px;
+  }
+  .content p{
+    font-size:16px;
+    
+    margin:70px 110px;
+    
+    text-align:center;
+    color:rgba(255,255,255,0.65);
+  }
+  .content p pink{
+    color:rgb(255,255,255);
+    font-weight:700;
+  }
+  
+  .employer{
+    margin:6px auto;
+    max-width:600px;
+    padding:0px;
+    
+    background:rgb(255,255,255);
+    border-radius:4px;
+    overflow:hidden;
+  }
+  .employer:hover{
+    background:rgb(255,255,255);
+  }
+  
+  .employer img{
+    width:50px;
+    height:50px;
+    
+    margin-right:6px;
+    
+    padding:4px;
+  }
+  .employer img.rounded{
+    border-radius:13px;
+  }
+  
+  .employer .table{
+    line-height:18px;
+    padding:12px 6px;
+  }
+  .employer h2{
+    margin:0px;
+  }
+  .employer h3{
+    display:block;
+    padding:0px;
+    margin:0px 0px 4px 0px;
+  }
+  .employer h4{
+    display:none;
+  }
+  .employer .mobile-body{
+    display:block;
+  
+    padding:20px;
+    background:rgb(238,238,238);
+  
+    font-size:14px;
+    line-height:20px;
+    
+    border-top: 1px solid rgb(228, 228, 228);
+  }
+  
+  .not-mobile{
+    display:none;
+  }
+  
+  .whatido{
+    background:rgba(0,0,0,0.2);
+    
+    width:auto;
+    margin:50px 0px 5px 0px;
+    padding:30px;
+  }
+  .whatido .servers,
+  .whatido .window{
+    display:none;
+  }
+  .whatido .explanation{
+    margin:0px !important;
+    width:auto;
+    
+    font-size:14px;
+  }
+  .whatido .explanation h1{
+    font-size:28px;
+    padding:10px 16px;
+    margin:10px 0px;
+    letter-spacing:5px;
+  }
+  .whatido .explanation h2{
+    font-size:18px;
+  }
+  .whatido.left{
+    margin-top:5px;
+  }
+
+  .blurbs{
+    margin:0px auto;
+    max-width:500px;
+    
+    padding:50px 0px;
+  }
+  .blurbs .blurb .icon{
+    height:35px;
+  }
+  .blurbs .blurb p{
+    display:none;
+  }
+}
+
+@media screen and (max-width: 635px){
+  .employer{
+    max-width:500px;
+  }
+  
+  .blurbs{
+    max-width:400px;
+  }
+}
+
+@media screen and (max-width: 540px){
+  .content p{
+    margin:70px 20px;
+  }
+  
+  .employer{
+    max-width:none;
+    margin:6px;
+  }
+
+  .blurbs{
+    max-width:none;
+    margin:0px 40px;
+  }
 }
 
 </style>
 <html>
 <head>
 
-<title></title>
+<title>Hunter Larco</title>
 
-<meta charset="utf-8" />
+<meta charset='utf-8'/>
 
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="mobile-web-app-capable" content="yes">
+<meta name='apple-mobile-web-app-capable' content='yes'>
+<meta name='mobile-web-app-capable' content='yes'>
 
-<meta content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no" name="viewport"/>
+<meta content='minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no' name='viewport'/>
 
-<link rel="stylesheet" href="/resources/css/resets.css"/>
+<link rel='stylesheet' href='/resources/css/resets.css'/>
+<link rel='stylesheet' href='/resources/css/animations.css'/>
 
 <link href='https://fonts.googleapis.com/css?family=Anton|Droid+Sans:400,700' rel='stylesheet' type='text/css'>
 
@@ -407,95 +894,103 @@ body{
       <h2>Full Stack Web Developer. <span>I LIKE PINK</span></h2>
     </div>
   </div>
+  <img src='/images/scroll.png' class='scroll'/>
 </div>
 
 <div class='content'>
-  <p>I make web content. But you don't have to take my word for it! Take a look at my <pink>6 clients</pink>, <pink>14 projects</pink> and <pink>24 personal projects</pink>. In fact I've been working with code for over <pink>6 years</pink> and <pink>1&frac12; years professionally</pink>.</p>
+  <div class='padding'>
+    <p>I make web content. But you don't have to take my word for it! Take a look at my <pink>6 clients</pink>, <pink>14 projects</pink> and <pink>24 personal projects</pink>. In fact I've been working with code for over <pink>6 years</pink> and <pink>1&frac12; years professionally</pink>.</p>
   
-  <a href='//larcolabs.com' target='blank'>
-    <div class='employer'>
-      <div class='table'>
-        <img src='/images/clients/logos/generic.png'/>
-        <div class='text'>
-          <h1>larcolabs</h1>
-          <h2>Founder; Chief Engineer</h2>
-          <h3>Sept. 2014 - Present (About 1 year)</h3>
-          <h4>I founded, manage, and develop for larcolabs. A freelancing agency dedicated to assisting non-technical founders and corporate expansions into technical fields.</h4>
+    <a href='//larcolabs.com' target='blank'>
+      <div class='employer'>
+        <div class='table'>
+          <img src='/images/clients/generic.png'/>
+          <div class='text'>
+            <h1>larcolabs</h1>
+            <h2>Founder; Chief Engineer</h2>
+            <h3>Sept. 2014 - Present<label class='not-mobile'> (About 1 year)</h3>
+            <h4>I founded, manage, and develop for larcolabs. A freelancing agency dedicated to assisting non-technical founders and corporate expansions into technical fields.</h4>
+          </div>
         </div>
+        <div class='mobile-body'>I founded, manage, and develop for larcolabs. A freelancing agency dedicated to assisting non-technical founders and corporate expansions into technical fields.</div>
       </div>
-    </div>
-  </a>
+    </a>
   
-  <a href='//topsidelacrosse.com' target='blank'>
-    <div class='employer'>
-      <div class='table'>
-        <img src='/images/clients/logos/tsl.png' class='rounded'/>
-        <div class='text'>
-          <h1>Top Side Lacrosse</h1>
-          <h2>Consultant; Backend Developer</h2>
-          <h3>2015 - Present (5 months)</h3>
-          <h4>Under NDA.</h4>
+    <a href='//topsidelacrosse.com' target='blank'>
+      <div class='employer'>
+        <div class='table'>
+          <img src='/images/clients/tsl.png' class='rounded'/>
+          <div class='text'>
+            <h1>Top Side Lacrosse</h1>
+            <h2><label class='not-mobile'>Consultant; </label>Backend Developer</h2>
+            <h3>2015 - Present<label class='not-mobile'> (5 months)</label></h3>
+            <h4>Under NDA.</h4>
+          </div>
         </div>
+        <div class='mobile-body'>Under NDA.</div>
       </div>
-    </div>
-  </a>
+    </a>
   
-  <a href='//discovertechnology.org' target='blank'>
-    <div class='employer'>
-      <div class='table'>
-        <img src='/images/clients/logos/generic.png'/>
-        <div class='text'>
-          <h1>Discover Technology</h1>
-          <h2>Curriculum Engineer</h2>
-          <h3>2015 - Present (4 months)</h3>
-          <h4>Responsible for teaching from 4th to 12th graders Java while also writing curriculum for Discover Technology's national summer camp program.</h4>
+    <a href='//discovertechnology.org' target='blank'>
+      <div class='employer'>
+        <div class='table'>
+          <img src='/images/clients/generic.png'/>
+          <div class='text'>
+            <h1>Discover Technology</h1>
+            <h2>Curriculum Engineer</h2>
+            <h3>2015 - Present<label class='not-mobile'> (4 months)</label></h3>
+            <h4>Responsible for teaching from 4th to 12th graders Java while also writing curriculum for Discover Technology's national summer camp program.</h4>
+          </div>
         </div>
+        <div class='mobile-body'>Responsible for teaching from 4th to 12th graders Java while also writing curriculum for Discover Technology's national summer camp program.</div>
       </div>
-    </div>
-  </a>
+    </a>
   
-  <a href='//jlarco.com' target='blank'>
-    <div class='employer'>
-      <div class='table'>
-        <img src='/images/clients/logos/generic.png'/>
-        <div class='text'>
-          <h1>J. L. Larco &amp; Associates, INC.</h1>
-          <h2>Consultant; Frontend Developer</h2>
-          <h3>2015 (about 1 month)</h3>
-          <h4>Completely redesigned and built jlarco.com for their upcoming partnership and expansion program.</h4>
+    <a href='//jlarco.com' target='blank'>
+      <div class='employer'>
+        <div class='table'>
+          <img src='/images/clients/generic.png'/>
+          <div class='text'>
+            <h1>J. L. Larco &amp; Associates, INC.</h1>
+            <h2><label class='not-mobile'>Consultant; </label>Frontend Developer</h2>
+            <h3>2015<label class='not-mobile'> (about 1 month)</label></h3>
+            <h4>Completely redesigned and built jlarco.com for their upcoming partnership and expansion program.</h4>
+          </div>
         </div>
+        <div class='mobile-body'>Completely redesigned and built jlarco.com for their upcoming partnership and expansion program.</div>
       </div>
-    </div>
-  </a>
+    </a>
   
-  <a href='//trysealed.com' target='blank'>
-    <div class='employer'>
-      <div class='table'>
-        <img src='/images/clients/logos/sealed.png' class='rounded'/>
-        <div class='text'>
-          <h1>Sealed</h1>
-          <h2>Lead Developer</h2>
-          <h3>2014 (3 months)</h3>
-          <h4>Time-delayed photo and video messaging · Joined with founder to develop core backend API and mobile responsive web app as a proof-of-concept prototype for investors. trysealed.com</h4>
+    <a href='//trysealed.com' target='blank'>
+      <div class='employer'>
+        <div class='table'>
+          <img src='/images/clients/sealed.png' class='rounded'/>
+          <div class='text'>
+            <h1>Sealed</h1>
+            <h2>Lead Developer</h2>
+            <h3>2014<label class='not-mobile'> (3 months)</label></h3>
+            <h4>Time-delayed photo and video messaging · Joined with founder to develop core backend API and mobile responsive web app as a proof-of-concept prototype for investors. trysealed.com</h4>
+          </div>
         </div>
+        <div class='mobile-body'>Time-delayed photo and video messaging · Joined with founder to develop core backend API and mobile responsive web app as a proof-of-concept prototype for investors. trysealed.com</div>
       </div>
-    </div>
-  </a>
+    </a>
   
-  <a href='//chp-sf.org/annualreport' target='blank'>
-    <div class='employer'>
-      <div class='table'>
-        <img src='/images/clients/logos/generic.png'/>
-        <div class='text'>
-          <h1>Community Housing Partnership, San Francisco</h1>
-          <h2>Consultant; Frontend Developer</h2>
-          <h3>2014 (about 2 months)</h3>
-          <h4>I worked closely with Community Housing Partnership in order to create a digital, annual report for their volunteers and donors. chp-sf.org/annualreport/</h4>
+    <a href='//chp-sf.org/annualreport' target='blank'>
+      <div class='employer'>
+        <div class='table'>
+          <img src='/images/clients/generic.png'/>
+          <div class='text'>
+            <h1>Community Housing Partnership<label class='not-mobile'>, San Francisco</label></h1>
+            <h2><label class='not-mobile'>Consultant; </label>Frontend Developer</h2>
+            <h3>2014<label class='not-mobile'> (about 2 months)</label></h3>
+            <h4>I worked closely with Community Housing Partnership in order to create a digital, annual report for their volunteers and donors. chp-sf.org/annualreport/</h4>
+          </div>
         </div>
+        <div class='mobile-body'>I worked closely with Community Housing Partnership in order to create a digital, annual report for their volunteers and donors. chp-sf.org/annualreport/</div>
       </div>
-    </div>
-  </a>
-  
+    </a>
+  </div>
   <div class='graph'></div>
 </div>
 
@@ -530,8 +1025,8 @@ body{
   </div>
 </div>
 
-<div class='whatido'>
-  <div class='explanation left'>
+<div class='whatido left'>
+  <div class='explanation'>
     <h2>I Build. I Ship.</h2>
     <h1>Scalable</h1>
     <p>I work to make my products as fast and efficient as possible. Utilizing platforms and practices to make my services scalabe and robust. In 2014 I outfitted Acton-Boxborough Regional High School with an in-house mobile student voting platform. During student elections it seemlessly handled <b>1000+ concurrent users</b>.</p>
@@ -579,80 +1074,91 @@ body{
 </div>
 
 <div class='content'>
-  <!-- <div class='graph'></div> -->
-  <p>I can tell you a lot, but my code tells you more! You can <pink>see examples of my code</pink> via the links below.</p>
+  <div class='padding'>
+    <p>I can tell you a lot, but my code tells you more! You can <pink>see examples of my code</pink> via the links below.</p>
 
-  <div class='employer'>
-    <div class='table'>
-      <img src='/images/languages/python.png'/>
-      <div class='text'>
-        <h1>Python</h1>
-        <h2>MongoDB ORM</h2>
-        <h3>October 2015 (recent)</h3>
-        <h4>Something about this ORM</h4>
-      </div>
-    </div>
-  </div>
-  
-  <a href='//github.com/HunterLarco/Device.js' target='blank'>
     <div class='employer'>
       <div class='table'>
-        <img src='/images/languages/js.png'/>
+        <img src='/images/languages/python.png'/>
         <div class='text'>
-          <h1>Javascript</h1>
-          <h2>Device.js</h2>
-          <h3>February 2015 (8 months ago)</h3>
-          <h4>Device.js makes Google's Channel API easier to use by wrapping its sockets in a protocol providing easy event listeners and no boilerplate.</h4>
+          <h1>Python</h1>
+          <h2>TableMongo. A MongoDB ORM</h2>
+          <h3>October 2015<label class='not-mobile'> (recent)</label></h3>
+          <h4>TableMongo syntax emulates Google's Python BigTable ORM, making it easier to transition from Google Cloud Platform to a MongoDB based systems.</h4>
         </div>
       </div>
+      <div class='mobile-body'>TableMongo syntax emulates Google's Python BigTable ORM, making it easier to transition from Google Cloud Platform to a MongoDB based systems.</div>
     </div>
-  </a>
   
-  <a href='//github.com/HunterLarco/hunterlarco.com' target='blank'>
-    <div class='employer'>
-      <div class='table'>
-        <img src='/images/languages/css3.png'/>
-        <div class='text'>
-          <h1>HTML5 &amp; CSS3</h1>
-          <h2>hunterlarco.com</h2>
-          <h3>October 2015 (recent)</h3>
-          <h4>My personal website was written from scratch. No frameworks involved. Please pay attention to my HTML5 organization as well as the simplicity of my CSS.</h4>
+    <a href='//github.com/HunterLarco/Device.js' target='blank'>
+      <div class='employer'>
+        <div class='table'>
+          <img src='/images/languages/js.png'/>
+          <div class='text'>
+            <h1>Javascript</h1>
+            <h2>Device.js</h2>
+            <h3>February 2015<label class='not-mobile'> (8 months ago)</label></h3>
+            <h4>Device.js makes Google's Channel API easier to use by wrapping its sockets in a protocol providing easy event listeners and no boilerplate.</h4>
+          </div>
         </div>
+        <div class='mobile-body'>Device.js makes Google's Channel API easier to use by wrapping its sockets in a protocol providing easy event listeners and no boilerplate.</div>
       </div>
-    </div>
-  </a>
+    </a>
   
+    <a href='//github.com/HunterLarco/hunterlarco.com' target='blank'>
+      <div class='employer'>
+        <div class='table'>
+          <img src='/images/languages/css3.png'/>
+          <div class='text'>
+            <h1>HTML5 &amp; CSS3</h1>
+            <h2>hunterlarco.com</h2>
+            <h3>October 2015<label class='not-mobile'> (recent)</label></h3>
+            <h4>My personal website, which you have the pleasure of browsing right now, is at your fingertips!</h4>
+          </div>
+        </div>
+        <div class='mobile-body'>My personal website, which you have the pleasure of browsing right now, is at your fingertips!</div>
+      </div>
+    </a>
+  </div>  
   <div class='graph'></div>
 </div>
 
 
 <div class='blurbs'>
   
-  <div class='blurb'>
-    <img class='icon' src='/images/icons/github.png'/>
-    <a href='//github.com/hunterlarco' target='blank'><p>github.com/hunterlarco</p></a>
-  </div>
+  <a href='//github.com/hunterlarco' target='blank'>
+    <div class='blurb'>
+      <img class='icon' src='/images/icons/github.png'/>
+      <p>github.com/hunterlarco</p>
+    </div>
+  </a>
   
-  <div class='blurb'>
-    <img class='icon' src='/images/icons/linkedin.png'/>
-    <a href='//linkedin.com/in/hunterlarco' target='blank'><p>github.com/hunterlarco</p></a>
-  </div>
+  <a href='//linkedin.com/in/hunterlarco' target='blank'>
+    <div class='blurb'>
+      <img class='icon' src='/images/icons/linkedin.png'/>
+      <p>linkedin.com/in/hunterlarco</p>
+    </div>
+  </a>
   
-  <div class='blurb'>
-    <img class='icon' src='/images/icons/email.png'/>
-    <a href='mailto:Hunter Larco <hunter@larcolabs.com>' target='blank'><p>hunter@larcolabs.com</p></a>
-  </div>
+  <a href='mailto:Hunter Larco <hunter@larcolabs.com>' target='blank'>
+    <div class='blurb'>
+      <img class='icon' src='/images/icons/email.png'/>
+      <p>hunter@larcolabs.com</p>
+    </div>
+  </a>
   
-  <div class='blurb'>
-    <img class='icon' src='/images/icons/phone.png'/>
-    <a href='tel:1-978-877-2495'><p>+1 (978) 877-2495</p></a>
-  </div>
+  <a href='tel:1-978-877-2495'>
+    <div class='blurb'>
+      <img class='icon' src='/images/icons/phone.png'/>
+      <p>+1 (978) 877-2495</p>
+    </div>
+  </a>
   
 </div>
 
 <script type='text/javascript'>
 (function(){
-	
+  
 })();
 </script>
 </body>
