@@ -9,6 +9,10 @@ handlers:
   static_files: images/favicon.ico
   upload: images/favicon\.ico
 
+- url: /resume\.pdf
+  static_files: static/Hunter Larco Resume.pdf
+  upload: static/Hunter Larco Resume\.pdf
+
 - url: /images
   static_dir: images
 - url: /resources
