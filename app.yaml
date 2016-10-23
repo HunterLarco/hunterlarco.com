@@ -5,30 +5,21 @@ api_version: 1
 threadsafe: yes
 
 handlers:
+# APP STATS
+- url: /frontend/_/stats(/.*)?
+  script: google.appengine.ext.appstats.ui.app
+  login: admin
+
 # FAVICON
 - url: /favicon\.ico
-  static_files: images/favicon.ico
-  upload: images/favicon\.ico
+  static_files: static/images/favicon.ico
+  upload: static/images/favicon\.ico
 
-# RESUME
-- url: /resume\.pdf
-  static_files: static/Hunter Larco Resume.pdf
-  upload: static/Hunter Larco Resume\.pdf
+# STATIC HANDLER
+- url: /static
+  static_dir: static
 
-# STATIC DIRECTORIES
-- url: /images
-  static_dir: images
-- url: /resources
-  static_dir: resources
-- url: /projects
-  static_dir: projects
-
-# PROJECT SHORTCUTS
-- url: /nybble/?
-  static_files: projects/nybble/main.html
-  upload: projects/nybble/main\.html
-
-# MAIN SCRIPT
+# API SCRIPT
 - url: .*
   script: app.app
 
@@ -36,3 +27,7 @@ handlers:
 libraries:
 - name: webapp2
   version: "2.5.1"
+
+builtins:
+- appstats: on
+- remote_api: on
