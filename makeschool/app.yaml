@@ -1,0 +1,35 @@
+application: hunterlarcopersonal
+version: 0-0-0
+runtime: python27
+api_version: 1
+threadsafe: yes
+module: makeschool
+
+handlers:
+# FAVICON
+- url: /favicon\.ico
+  static_files: images/favicon.ico
+  upload: images/favicon\.ico
+
+# STATIC DIRECTORIES
+- url: /images
+  static_dir: images
+- url: /resources
+  static_dir: resources
+
+# MAIN SCRIPT
+- url: .*
+  script: app.app
+
+# LIBRARIES
+libraries:
+- name: webapp2
+  version: "2.5.1"
+- name: pycrypto
+  version: "2.6"
+- name: PIL
+  version: "1.1.7"
+
+builtins:
+- appstats: on
+- remote_api: on

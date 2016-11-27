@@ -1,0 +1,8 @@
+{
+  "name": "hunterlarcopersonal",
+  "scripts": {
+    "start": "dev_appserver.py dispatch.yaml default/app.yaml makeschool/app.yaml",
+    "console": "open http://localhost:8000/console",
+    "datastore": "open http://localhost:8000/datastore"
+  }
+}

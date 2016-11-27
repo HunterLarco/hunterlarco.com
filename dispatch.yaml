@@ -1,0 +1,5 @@
+dispatch:
+  - url: "makeschool.hunterlarco.com/*"
+    module: makeschool
+  - url: "*/*"
+    module: default
