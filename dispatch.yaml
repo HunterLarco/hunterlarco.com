@@ -3,5 +3,8 @@ application: hunterlarcopersonal
 dispatch:
   - url: "makeschool.hunterlarco.com/*"
     module: makeschool
+  - url: "ms.hunterlarco.com/*"
+    module: makeschool
+
   - url: "*/*"
     module: default
