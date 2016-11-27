@@ -3,6 +3,9 @@
   "scripts": {
     "start": "dev_appserver.py dispatch.yaml default/app.yaml makeschool/app.yaml",
     "console": "open http://localhost:8000/console",
-    "datastore": "open http://localhost:8000/datastore"
+    "datastore": "open http://localhost:8000/datastore",
+    "deploy:dispatch": "appcfg.py update_dispatch .",
+    "deploy:modules:default": "appcfg.py update default",
+    "deploy:modules:makeschool": "appcfg.py update makeschool"
   }
 }

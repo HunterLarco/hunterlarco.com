@@ -1,3 +1,5 @@
+application: hunterlarcopersonal
+
 dispatch:
   - url: "makeschool.hunterlarco.com/*"
     module: makeschool
