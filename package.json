@@ -4,7 +4,7 @@
     "start": "dev_appserver.py .",
     "console": "open http://localhost:8000/console",
     "datastore": "open http://localhost:8000/datastore",
-    "vendor-install": "pip install -t vendor -r requirements.txt",
+    "vendor-install": "pip install -t third_party -r third_party/requirements.txt",
     "deploy": "appcfg.py update ."
   }
 }

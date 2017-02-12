@@ -1,4 +1,4 @@
 from google.appengine.ext import vendor
 
-# Add any libraries installed in the "vendor" folder.
-vendor.add('vendor')
+# Add third party libraries to root.
+vendor.add('third_party')
