@@ -1,0 +1,8 @@
+# Ignore MacOS DS_Store files.
+.DS_Store
+
+# Ignore Node Modules
+/node_modules/
+
+# Ignore compiled code
+/dist/
