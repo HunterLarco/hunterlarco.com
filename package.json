@@ -4,15 +4,10 @@
   "description": "",
   "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Error: no test specified\" && exit 0",
     "build": "webpack --mode production",
     "serve": "webpack-dev-server --hot --mode development",
     "auto-pretty": "onchange '**/*.{js,json,vue,html}' -- prettier --write {{changed}}"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pretty-quick --staged"
-    }
   },
   "keywords": [],
   "author": "",
