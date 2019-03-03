@@ -1,10 +1,10 @@
-const path = require('path')
-const CleanWebpackPlugin = require('clean-webpack-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { VueLoaderPlugin } = require('vue-loader')
+const path = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { VueLoaderPlugin } = require('vue-loader');
 
 function resolve(dir) {
-  return path.join(__dirname, '..', dir)
+  return path.join(__dirname, '..', dir);
 }
 
 module.exports = {
@@ -14,18 +14,11 @@ module.exports = {
     extensions: ['.js', '.vue', '.json', '.css', '.scss'],
     alias: {
       '/': resolve('src/'),
-    }
+    },
   },
 
   module: {
     rules: [
-      {
-        enforce: 'pre',
-        test: /\.(js|vue)$/,
-        loader: 'eslint-loader',
-        exclude: /node_modules/,
-      },
-
       {
         test: /\.vue$/,
         use: 'vue-loader',
@@ -39,8 +32,10 @@ module.exports = {
             loader: 'css-loader',
             options: {
               modules: true,
-              localIdentName: process.env.NODE_ENV == 'production'
-                  ? '[hash:base64]' : '[local]_[hash:base64:8]',
+              localIdentName:
+                process.env.NODE_ENV === 'production'
+                  ? '[hash:base64]'
+                  : '[local]_[hash:base64:8]',
             },
           },
           'postcss-loader',
@@ -66,8 +61,8 @@ module.exports = {
             presets: ['@babel/preset-env'],
             plugins: ['@babel/plugin-transform-runtime'],
             cacheDirectory: true,
-          }
-        }
+          },
+        },
       },
 
       {
@@ -75,7 +70,10 @@ module.exports = {
         use: {
           loader: 'file-loader',
           options: {
-            name: '[name].[ext]',
+            name:
+              process.env.NODE_ENV === 'production'
+                ? '[hash:base64].[ext]'
+                : '[name].[ext]',
             outputPath: 'images',
           },
         },
@@ -95,9 +93,7 @@ module.exports = {
       hash: true,
       lang: 'en-US',
       appMountId: 'app',
-      links: [
-        'https://fonts.googleapis.com/css?family=Fira+Mono',
-      ],
+      links: ['https://fonts.googleapis.com/css?family=Fira+Mono'],
     }),
     new VueLoaderPlugin(),
   ],
@@ -106,4 +102,4 @@ module.exports = {
     filename: 'main.js',
     path: resolve('dist/'),
   },
-}
+};
