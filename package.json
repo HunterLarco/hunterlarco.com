@@ -27,7 +27,6 @@
     "node-sass": "^4.11.0",
     "onchange": "^5.2.0",
     "postcss-loader": "^3.0.0",
-    "postcss-sorting": "^4.0.1",
     "prettier": "1.16.4",
     "pretty-quick": "^1.10.0",
     "sass-loader": "^7.1.0",
