@@ -1,19 +1,15 @@
-const path = require('path')
-const merge = require('webpack-merge')
+const merge = require('webpack-merge');
 
-const webpackBase = require('./webpack.base.js')
-
-function resolve(dir) {
-  return path.join(__dirname, '..', dir)
-}
+const utils = require('./utils.js');
+const webpackBase = require('./webpack.base.js');
 
 module.exports = merge(webpackBase, {
   mode: 'development',
   devtool: 'source-map',
 
   devServer: {
-    contentBase: resolve('dist/'),
+    contentBase: utils.resolve('dist/'),
     compress: true,
     port: 8080,
   },
-})
+});

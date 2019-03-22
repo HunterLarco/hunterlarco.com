@@ -1,19 +1,20 @@
-const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 
-function resolve(dir) {
-  return path.join(__dirname, '..', dir);
-}
+const utils = require('./utils.js');
 
 module.exports = {
   entry: './src/main.js',
+  output: {
+    filename: 'main.js',
+    path: utils.resolve('dist/'),
+  },
 
   resolve: {
     extensions: ['.js', '.vue', '.json', '.css', '.scss'],
     alias: {
-      '/': resolve('src/'),
+      '/': utils.resolve('src/'),
     },
   },
 
@@ -23,7 +24,6 @@ module.exports = {
         test: /\.vue$/,
         use: 'vue-loader',
       },
-
       {
         test: /\.(css|sass)$/,
         use: [
@@ -32,10 +32,10 @@ module.exports = {
             loader: 'css-loader',
             options: {
               modules: true,
-              localIdentName:
-                process.env.NODE_ENV === 'production'
-                  ? '[hash:base64]'
-                  : '[local]_[hash:base64:8]',
+              localIdentName: utils.envSelector({
+                prod: '[hash:base64]',
+                dev: '[local]_[hash:base64:8]',
+              }),
             },
           },
           'postcss-loader',
@@ -51,38 +51,37 @@ module.exports = {
           },
         ],
       },
-
       {
-        test: /\.m?js$/,
-        exclude: /(node_modules|bower_components)/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env'],
-            plugins: ['@babel/plugin-transform-runtime'],
-            cacheDirectory: true,
-          },
+        test: /\.js$/,
+        include: [utils.resolve('src')],
+        loader: 'babel-loader',
+        options: {
+          cacheDirectory: true,
+          plugins: ['@babel/plugin-transform-runtime'],
+          presets: ['@babel/preset-env'],
         },
       },
-
       {
-        test: /\.(jpg|jpeg|png|gif|svg)$/,
-        use: {
-          loader: 'file-loader',
-          options: {
-            name:
-              process.env.NODE_ENV === 'production'
-                ? '[hash:base64].[ext]'
-                : '[name].[ext]',
-            outputPath: 'images',
-          },
+        test: /\.(png|jpe?g|gif|svg)$/,
+        loader: 'file-loader',
+        options: {
+          name: utils.assetPath(
+            utils.envSelector({
+              prod: 'images/[hash:base64].[ext]',
+              dev: 'images/[name].[ext]',
+            })
+          ),
         },
       },
     ],
   },
 
+  optimization: {
+    minimize: true,
+  },
+
   plugins: [
-    new CleanWebpackPlugin(['dist'], { root: resolve('') }),
+    new CleanWebpackPlugin(['dist'], { root: utils.resolve('') }),
     new HtmlWebpackPlugin({
       template: require('html-webpack-template'),
       inject: false,
@@ -97,9 +96,4 @@ module.exports = {
     }),
     new VueLoaderPlugin(),
   ],
-
-  output: {
-    filename: 'main.js',
-    path: resolve('dist/'),
-  },
 };
