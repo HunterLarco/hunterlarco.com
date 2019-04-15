@@ -1,1 +1,14 @@
-$colors-red: rgb(255, 0, 0);
+$colors-background: rgb(255, 255, 255);
+
+$colors-text: rgb(31, 31, 31);
+$colors-lite-text: rgb(130, 130, 130);
+$colors-primary-text: rgb(255, 255, 255);
+
+$colors-primary: rgb(170, 34, 255);
+$colors-accent: rgb(231, 234, 19);
+
+$colors-structure: rgb(220, 220, 220);
+
+@function colors-darken($color) {
+  @return darken($color, 20%);
+}
