@@ -18,7 +18,9 @@
   overflow: hidden;
 }
 
-@mixin layout-center{
+@mixin layout-center {
+  align-items: center;
+  display: flex;
   justify-content: center;
   text-align: center;
 }

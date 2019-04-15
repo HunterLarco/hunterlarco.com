@@ -1,7 +1,58 @@
-@import '//scss/colors';
+@import '@/scss/colors';
+
+@mixin _fonts-base {
+  -webkit-font-smoothing: antialiased;
+  color: $colors-text;
+  font-family: 'Open Sans', sans-serif;
+}
+
+@mixin fonts-title {
+  @include _fonts-base;
+
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 40px;
+}
+
+@mixin fonts-subtitle {
+  @include _fonts-base;
+
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 32px;
+}
+
+@mixin fonts-strong-body {
+  @include _fonts-base;
+
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 24px;
+}
 
 @mixin fonts-body {
-  font-family: helvetica, Arial;
-  font-size: 20px;
-  line-height: 26px;
+  @include _fonts-base;
+
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+@mixin fonts-caption {
+  @include _fonts-base;
+
+  color: $colors-lite-text;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
+  text-transform: uppercase;
+}
+
+@mixin fonts-interface {
+  @include _fonts-base;
+
+  color: $colors-text;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18px;
 }
