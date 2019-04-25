@@ -14,7 +14,7 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.vue', '.json', '.css', '.scss'],
     alias: {
-      '/': utils.resolve('src/'),
+      '@': utils.resolve('src/'),
     },
   },
 
@@ -39,16 +39,7 @@ module.exports = {
             },
           },
           'postcss-loader',
-          {
-            loader: 'sass-loader',
-            options: {
-              data: [
-                '@import "//scss/fonts";',
-                '@import "//scss/layout";',
-                '@import "//scss/colors";',
-              ].join(''),
-            },
-          },
+          'sass-loader',
         ],
       },
       {
@@ -73,6 +64,10 @@ module.exports = {
           ),
         },
       },
+      {
+        test: /\.glsl%/,
+        use: 'raw-loader',
+      },
     ],
   },
 
@@ -92,7 +87,7 @@ module.exports = {
       hash: true,
       lang: 'en-US',
       appMountId: 'app',
-      links: ['https://fonts.googleapis.com/css?family=Fira+Mono'],
+      links: ['https://fonts.googleapis.com/css?family=Open+Sans'],
     }),
     new VueLoaderPlugin(),
   ],

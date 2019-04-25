@@ -1,5 +1,10 @@
 @import '@/scss/colors';
 
+@mixin fonts-clear {
+  font-size: 0;
+  line-height: 0;
+}
+
 @mixin _fonts-base {
   -webkit-font-smoothing: antialiased;
   color: $colors-text;
@@ -51,7 +56,6 @@
 @mixin fonts-interface {
   @include _fonts-base;
 
-  color: $colors-text;
   font-size: 12px;
   font-weight: 400;
   line-height: 18px;
