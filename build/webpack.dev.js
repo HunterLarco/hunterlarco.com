@@ -11,5 +11,6 @@ module.exports = merge(webpackBase, {
     contentBase: utils.resolve('dist/'),
     compress: true,
     port: 8080,
+    historyApiFallback: true,
   },
 });

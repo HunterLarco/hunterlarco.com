@@ -74,26 +74,28 @@
           scenes exclusively using CSS&mdash;intended to demonstrate the
           capabilities of 3D CSS.
 
-          <a slot="chip" href="https://news.ycombinator.com/item?id=10977819"
-            >#1 trending on Hacker News</a
-          >
-          <a slot="chip" href="https://github.com/HunterLarco/voxel.css"
-            >#1 weekly trending repo on Github</a
-          >
-          <a
+          <router-link
             slot="chip"
-            href="https://www.reddit.com/r/web_design/comments/42u38e/voxelcss_an_opensource_inbrowser_3d_rendering/"
-            >Top of r/web_design</a
+            to="https://news.ycombinator.com/item?id=10977819"
+            >#1 trending on Hacker News</router-link
           >
-          <a
-            slot="chip"
-            href="https://www.reddit.com/r/webdev/comments/42wdlo/voxelcss_an_opensource_inbrowser_3d_engine/"
-            >Top of r/webdev</a
+          <router-link slot="chip" to="https://github.com/HunterLarco/voxel.css"
+            >#1 weekly trending repo on Github</router-link
           >
-          <a
+          <router-link
             slot="chip"
-            href="https://www.reddit.com/r/javascript/comments/42wf1b/an_opensource_inbrowser_3d_engine_rendered_in_css/"
-            >Top of r/javascript</a
+            to="https://www.reddit.com/r/web_design/comments/42u38e/voxelcss_an_opensource_inbrowser_3d_rendering/"
+            >Top of r/web_design</router-link
+          >
+          <router-link
+            slot="chip"
+            to="https://www.reddit.com/r/webdev/comments/42wdlo/voxelcss_an_opensource_inbrowser_3d_engine/"
+            >Top of r/webdev</router-link
+          >
+          <router-link
+            slot="chip"
+            to="https://www.reddit.com/r/javascript/comments/42wf1b/an_opensource_inbrowser_3d_engine_rendered_in_css/"
+            >Top of r/javascript</router-link
           >
         </ExperimentTile>
 
@@ -111,8 +113,9 @@
       <div :class="$style.Paragraph">
         I'm not actively looking for a job, however, I'm always open to new
         opportunities. If you are interested in hiring me, please take a look at
-        my <a href="#/resume">interactive resume</a>. Otherwise, I hope you
-        enjoy looking around the <a href="#/experiments">experiments</a> on this
+        my <router-link to="/resume">interactive resume</router-link>.
+        Otherwise, I hope you enjoy looking around the
+        <router-link to="/experiments">experiments</router-link> on this
         website.
       </div>
 

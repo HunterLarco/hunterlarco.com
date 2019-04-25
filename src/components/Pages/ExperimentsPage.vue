@@ -2,7 +2,7 @@
   <div :class="$style.Host">
     <div :class="$style.Toolbar">
       <div :class="$style.ToolbarTitle">
-        <a href="#/" :class="$style.Title">hunterlarco</a>
+        <router-link to="/" :class="$style.Title">hunterlarco</router-link>
         <span :class="$style.Subtitle">experiments</span>
       </div>
       <div :class="$style.ToolbarButtons">

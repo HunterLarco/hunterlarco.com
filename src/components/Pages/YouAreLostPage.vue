@@ -2,7 +2,7 @@
   <div :class="$style.Host">
     <div>
       Not all who wander are lost... but you are. This page doesn't exist. Lets
-      take you <a href="#/">home</a>.
+      take you <router-link to="/">home</router-link>.
     </div>
   </div>
 </template>
