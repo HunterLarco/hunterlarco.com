@@ -9,6 +9,16 @@
   -webkit-font-smoothing: antialiased;
 }
 
+@mixin fonts-hero {
+  @include _fonts-base;
+
+  font-family: 'Proxima Nova Bold', sans-serif;
+  font-size: 160px;
+  font-weight: 600;
+  line-height: 200px;
+  text-transform: uppercase;
+}
+
 @mixin fonts-navbar {
   @include _fonts-base;
 
