@@ -1,18 +1,10 @@
 <template>
-  <div :class="$style.Host"></div>
+  <router-view></router-view>
 </template>
 
 <script>
 export default {};
 </script>
-
-<style module lang="sass">
-@import '@/src/scss/layout';
-
-.Host {
-  @include layout-fill;
-}
-</style>
 
 <style lang="sass">
 @import '@/src/scss/fonts';
