@@ -120,7 +120,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: false,
       template: require('html-webpack-template'),
-      title: 'Boilerplate Frontend',
+      title: 'Hunter Larco - Founder / Engineer',
       mobile: true,
       hash: true,
       lang: 'en-US',
@@ -128,7 +128,7 @@ module.exports = {
       meta: [
         {
           name: 'description',
-          content: 'Boilerplate Terrace frontend example',
+          content: 'I am a Founder and Software Engineer living in San Francisco.',
         },
       ],
     }),
@@ -138,7 +138,7 @@ module.exports = {
       prefix: 'static/favicon/',
       mode: 'webapp',
       favicons: {
-        appName: 'Boilerplate Frontend',
+        appName: 'Hunter Larco',
         icons: {
           appleStartup: false,
           coast: false,
