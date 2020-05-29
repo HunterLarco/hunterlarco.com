@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.Host">
     <div :class="$style.Fold">
-      <div :class="$style.Role">Founder &amp; Engineer</div>
+      <TitleCycle :class="$style.TitleCycle" />
       <HunterLarco :class="$style.Hero" />
       <NavBar :class="$style.NavBar">
         <HackerText :class="$style.NavBar_Item" text="About" />
@@ -16,9 +16,10 @@
 import HackerText from '@/src/components/HackerText';
 import HunterLarco from '@/src/components/HunterLarco';
 import NavBar from '@/src/components/NavBar';
+import TitleCycle from '@/src/components/TitleCycle';
 
 export default {
-  components: { HackerText, HunterLarco, NavBar },
+  components: { HackerText, HunterLarco, NavBar, TitleCycle },
 };
 </script>
 
@@ -35,7 +36,7 @@ export default {
   height: 100vh;
 }
 
-.Role {
+.TitleCycle {
   @include fonts-navbar;
 
   flex-shrink: 0;
