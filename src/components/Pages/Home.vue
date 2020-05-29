@@ -2,7 +2,7 @@
   <div :class="$style.Host">
     <div :class="$style.Fold">
       <div :class="$style.Role">Founder &amp; Engineer</div>
-      <div :class="$style.Hero" />
+      <HunterLarco :class="$style.Hero" />
       <NavBar :class="$style.NavBar">
         <div :class="$style.NavBar_Item">About</div>
         <div :class="$style.NavBar_Item">Work</div>
@@ -13,10 +13,11 @@
 </template>
 
 <script>
+import HunterLarco from '@/src/components/HunterLarco';
 import NavBar from '@/src/components/NavBar';
 
 export default {
-  components: { NavBar },
+  components: { HunterLarco, NavBar },
 };
 </script>
 
