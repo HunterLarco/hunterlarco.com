@@ -1,0 +1,36 @@
+name: ci
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [8.x, 10.x, 12.x]
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        lfs: true
+
+    - name: Mount npm cache
+      uses: actions/cache@v1
+      with:
+        path: ~/.npm
+        key: npm|${{ runner.os }}|node:${{ matrix.node-version }}|package:${{ hashFiles('package.json') }}
+        restore-keys: |
+          npm|${{ runner.os }}|node:${{ matrix.node-version }}|package:
+          npm|${{ runner.os }}|node:
+          npm|${{ runner.os }}|
+
+    - name: Setup Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Install dependencies
+      run: npm install
+    - name: Build (production)
+      run: npm run build

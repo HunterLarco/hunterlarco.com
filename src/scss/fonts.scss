@@ -1,0 +1,87 @@
+@import '@/src/scss/sizing_shelves';
+
+@mixin fonts-clear {
+  font-size: 0;
+  line-height: 0;
+}
+
+@mixin _fonts-base {
+  -webkit-font-smoothing: antialiased;
+}
+
+@mixin fonts-title {
+  @include _fonts-base;
+
+  font-family: 'Helvetica';
+  font-size: 36px;
+  line-height: 61px;
+
+  @include sizing-shelf-highdpi {
+    font-size: 34px;
+    line-height: 52px;
+  }
+}
+
+@mixin fonts-subtitle {
+  @include _fonts-base;
+
+  font-family: 'Helvetica';
+  font-size: 21px;
+  line-height: 34px;
+
+  @include sizing-shelf-highdpi {
+    font-size: 19px;
+    line-height: 30px;
+  }
+}
+
+@mixin fonts-body-title {
+  @include _fonts-base;
+
+  font-family: 'Helvetica';
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+@mixin fonts-body {
+  @include _fonts-base;
+
+  font-family: 'Helvetica';
+  font-size: 15px;
+  line-height: 30px;
+
+  @include sizing-shelf-highdpi {
+    font-size: 14px;
+    line-height: 28px;
+  }
+}
+
+@mixin fonts-collapsed-body {
+  @include _fonts-base;
+
+  font-family: 'Helvetica';
+  font-size: 15px;
+  line-height: 20px;
+
+  @include sizing-shelf-highdpi {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+@mixin fonts-notes {
+  @include _fonts-base;
+
+  font-family: 'Helvetica';
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@mixin fonts-interface {
+  @include _fonts-base;
+
+  font-family: 'Helvetica';
+  font-size: 12px;
+  line-height: 16px;
+}

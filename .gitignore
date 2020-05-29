@@ -1,0 +1,24 @@
+# Mac OS
+.DS_Store
+
+# Private files
+private.*.*
+
+# Private folders
+private.*/
+
+# Ignore Node Modules
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Ignore compiled code
+dist/
+
+# Ignore backup files.
+*~
+
+# Ignore Vim swap files.
+.*.swp

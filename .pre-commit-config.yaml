@@ -1,0 +1,46 @@
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+
+exclude: 'node_modules/'
+
+repos:
+-   repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v2.0.0
+    hooks:
+    -   id: check-added-large-files
+    -   id: check-case-conflict
+    -   id: check-executables-have-shebangs
+    -   id: check-json
+    -   id: check-symlinks
+    -   id: check-yaml
+    -   id: detect-private-key
+    -   id: end-of-file-fixer
+    -   id: mixed-line-ending
+    -   id: trailing-whitespace
+-   repo: local
+    hooks:
+    -   id: prettier
+        name: Fix JavaScript files
+        entry: prettier --config ./prettier.config.js --write
+        language: system
+        types: [javascript]
+    -   id: prettier
+        name: Fix HTML files
+        entry: prettier --config ./prettier.config.js --write
+        language: system
+        types: [html]
+    -   id: prettier
+        name: Fix Vue files
+        entry: prettier --config ./prettier.config.js --write
+        language: system
+        types: [vue]
+    -   id: prettier
+        name: Fix JSON files
+        entry: prettier --config ./prettier.config.js --write
+        language: system
+        types: [json]
+    -   id: prettier
+        name: Fix SCSS files
+        entry: prettier --config ./prettier.config.js --write
+        language: system
+        types: [scss]
