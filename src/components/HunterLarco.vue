@@ -6,20 +6,44 @@
 
 <script>
 export default {
+  data() {
+    return {
+      stop_: false,
+      ctx_: null,
+    };
+  },
+
   methods: {
     _resize() {
-      this.$refs.canvas.width = window.devicePixelRatio * this.$el.offsetWidth;
-      this.$refs.canvas.height = window.devicePixelRatio * this.$el.offsetHeight;
+      this.$refs.canvas.width = devicePixelRatio * this.$el.offsetWidth;
+      this.$refs.canvas.height = devicePixelRatio * this.$el.offsetHeight;
+    },
+
+    _loop() {
+      if (this.stop_) {
+        this.stop_ = false;
+      } else {
+        requestAnimationFrame(this._loop);
+      }
+
+      const { width, height } = this.$refs.canvas;
+      this.ctx_.clearRect(0, 0, width, height);
     },
   },
 
   mounted() {
+    this.ctx_ = this.$refs.canvas.getContext('2d');
+
     window.addEventListener('resize', this._resize);
     this._resize();
+
+    this._loop();
   },
 
   beforeDestroy() {
     window.removeEventListener('resize', this._resize);
+
+    this.stop_ = true;
   },
 };
 </script>
