@@ -120,15 +120,31 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: false,
       template: require('html-webpack-template'),
-      title: 'Hunter Larco - Founder / Engineer',
+      title: 'Hunter Larco — Founder & Engineer',
       mobile: true,
       hash: true,
       lang: 'en-US',
       appMountId: 'app',
       meta: [
         {
-          name: 'description',
+          name: 'og:title',
+          content: 'Hunter Larco — Founder & Engineer',
+        },
+        {
+          name: 'og:description',
           content: 'I am a Founder and Software Engineer living in San Francisco.',
+        },
+        {
+          name: 'og:url',
+          content: 'https://hunterlarco.com',
+        },
+        {
+          name: 'og:type',
+          content: 'website',
+        },
+        {
+          name: 'twitter:card',
+          content: 'summary_large_image',
         },
       ],
     }),
@@ -137,15 +153,6 @@ module.exports = {
       logo: utils.resolve('assets/images/favicon.png'),
       prefix: 'static/favicon/',
       mode: 'webapp',
-      favicons: {
-        appName: 'Hunter Larco',
-        icons: {
-          appleStartup: false,
-          coast: false,
-          windows: false,
-          yandex: false,
-        },
-      },
     }),
     new VueLoaderPlugin(),
   ],
