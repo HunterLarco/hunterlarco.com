@@ -4,20 +4,21 @@
       <div :class="$style.Role">Founder &amp; Engineer</div>
       <HunterLarco :class="$style.Hero" />
       <NavBar :class="$style.NavBar">
-        <div :class="$style.NavBar_Item">About</div>
-        <div :class="$style.NavBar_Item">Work</div>
-        <div :class="$style.NavBar_Item">Contact</div>
+        <HackerText :class="$style.NavBar_Item" text="About" />
+        <HackerText :class="$style.NavBar_Item" text="Work" />
+        <HackerText :class="$style.NavBar_Item" text="Contact" />
       </NavBar>
     </div>
   </div>
 </template>
 
 <script>
+import HackerText from '@/src/components/HackerText';
 import HunterLarco from '@/src/components/HunterLarco';
 import NavBar from '@/src/components/NavBar';
 
 export default {
-  components: { HunterLarco, NavBar },
+  components: { HackerText, HunterLarco, NavBar },
 };
 </script>
 
@@ -51,5 +52,6 @@ export default {
 }
 
 .NavBar_Item {
+  cursor: pointer;
 }
 </style>
