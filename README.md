@@ -5,6 +5,9 @@
 
 ## Build Setup
 
+To ensure that you're correctly configured to develop in this repository,
+please run execute the following installs + configuration.
+
 ```sh
 # Install Git LFS (large file storage).
 git lfs install
@@ -21,14 +24,3 @@ sudo -H pip install pre-commit
 # Add pre-commit to .github hooks
 pre-commit install
 ```
-
-## Contributing
-
-To ensure that you're correctly configured to develop in this repository,
-please run [setup.sh](./setup.sh) before committing.
-
-### Pull Requests
-
-Please submit all contributions via pull requests where your branch matches the
-pattern `<username>/<branch-name>`. Mandatory reviewers will be auto-assigned,
-however, feel free to add more as needed.
