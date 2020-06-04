@@ -1,7 +1,9 @@
 <template>
   <div :class="$style.Host">
     <div :class="$style.Fold">
-      <TitleCycle :class="$style.TitleCycle" />
+      <div :class="$style.TitleCycle">
+        <TitleCycle />
+      </div>
       <HunterLarco :class="$style.Hero" />
       <NavBar :class="$style.NavBar">
         <HackerText :class="$style.NavBar_Item" text="About" />
@@ -37,8 +39,6 @@ export default {
 }
 
 .TitleCycle {
-  @include fonts-navbar;
-
   flex-shrink: 0;
   padding: 35px 100px;
 }
