@@ -4,12 +4,16 @@
       ref="colors"
       width="800"
       height="800"
-      @mousedown="onMouseDown_"
       @mouseup="onMouseUp_"
       @mousemove="onMouseMove_"
+      @mousedown="onMouseDown_"
     />
     <canvas ref="cos_distance" width="800" height="800" />
     <canvas ref="euc_distance" width="800" height="800" />
+
+    <dat-gui>
+      <dat-color v-model="color_.hex" label="Color" />
+    </dat-gui>
   </div>
 </template>
 
@@ -35,9 +39,9 @@ function colorEucDistance(c1, c2) {
 function colorForWheelAngle(radians) {
   const p = radians / (2 * Math.PI);
   const norm_p = p - Math.floor(p);
-  const r = 255 * Math.max(0, 1 - Math.abs(3 * norm_p - 1));
-  const g = 255 * Math.max(0, 1 - Math.abs(3 * norm_p - 2));
-  const b = 255 * Math.max(0, Math.abs(3 * norm_p - 1.5) - 0.5);
+  const r = Math.round(255 * Math.max(0, 1 - Math.abs(3 * norm_p - 1)));
+  const g = Math.round(255 * Math.max(0, 1 - Math.abs(3 * norm_p - 2)));
+  const b = Math.round(255 * Math.max(0, Math.abs(3 * norm_p - 1.5) - 0.5));
   return [r, g, b];
 }
 
@@ -81,28 +85,60 @@ function renderDistances(canvas, distance_fn) {
   }
 }
 
+function decomposeHexColor(color) {
+  if (color[0] == '#') color = color.substring(1);
+
+  if (color.length == 6) {
+    return [
+      parseInt(color.substring(0, 2), 16),
+      parseInt(color.substring(2, 4), 16),
+      parseInt(color.substring(4, 6), 16),
+    ];
+  } else if (color.length == 3) {
+    return [
+      (parseInt(color[0], 16) << 4) + parseInt(color[0], 16),
+      (parseInt(color[1], 16) << 4) + parseInt(color[1], 16),
+      (parseInt(color[2], 16) << 4) + parseInt(color[2], 16),
+    ];
+  }
+
+  throw `Unexpected color ${color}`;
+}
+
 export default {
   data() {
     return {
       mouse_: { down: false },
-      color_: [255, 255, 255],
+      color_: { hex: '#FFFFFF' },
     };
   },
 
   mounted() {
     renderColorWheel(this.$refs.colors);
-    renderDistances(this.$refs.cos_distance, (color) => colorDistance(this.color_, color));
-    renderDistances(this.$refs.euc_distance, (color) => colorEucDistance(this.color_, color));
+    this.renderAllDistances_();
   },
 
   methods: {
+    renderAllDistances_() {
+      renderDistances(this.$refs.cos_distance, (color) =>
+        colorDistance(decomposeHexColor(this.color_.hex), color)
+      );
+      renderDistances(this.$refs.euc_distance, (color) =>
+        colorEucDistance(decomposeHexColor(this.color_.hex), color)
+      );
+    },
+
     selectColor_(x, y) {
       const width = this.$refs.colors.offsetWidth;
       const height = this.$refs.colors.offsetHeight;
       const angle = Math.atan2(y - height / 2, x - width / 2);
-      this.color_ = colorForWheelAngle(angle);
-      renderDistances(this.$refs.cos_distance, (color) => colorDistance(this.color_, color));
-      renderDistances(this.$refs.euc_distance, (color) => colorEucDistance(this.color_, color));
+      const color = colorForWheelAngle(angle);
+      this.color_.hex =
+        '#' +
+        color[0].toString(16).padStart(2, 0) +
+        color[1].toString(16).padStart(2, 0) +
+        color[2].toString(16).padStart(2, 0);
+      console.log(this.color_.hex);
     },
 
     onMouseDown_(event) {
@@ -118,6 +154,12 @@ export default {
     onMouseUp_(event) {
       this.mouse_.down = false;
       this.selectColor_(event.layerX, event.layerY);
+    },
+  },
+
+  watch: {
+    'color_.hex'() {
+      this.renderAllDistances_();
     },
   },
 };
