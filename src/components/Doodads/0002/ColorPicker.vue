@@ -3,7 +3,7 @@
     <canvas :class="$style.Balance" ref="balance" @click="onClick_" />
 
     <div :class="$style.Summary">
-      <div :class="$style.Preview" :style="" />
+      <div :class="$style.Preview" :style="`background: ${renderableColor_}`" />
       <div :class="$style.Sliders">
         <canvas :class="$style.Spread" ref="spread" @click="onSpreadClick_" />
       </div>
@@ -12,10 +12,14 @@
 </template>
 
 <script>
+import ColorConvert from 'color-convert';
+
 import { rgbToHex, hexToRgb, getHue } from './colors';
 
 function xyToSL(normX, normY) {
-  if (normY - normX / 2 < 0.5) {
+  if (normX == 0 && normY == 1) {
+    return { s: 0, l: 1 };
+  } else if (normY - normX / 2 < 0.5) {
     return {
       s: normX,
       l: normY / (normX + 1),
@@ -28,26 +32,36 @@ function xyToSL(normX, normY) {
   }
 }
 
-function renderHuePanel(canvas, hue) {
+function resizeCanvas(canvas) {
   const width = devicePixelRatio * canvas.offsetWidth;
   const height = devicePixelRatio * canvas.offsetHeight;
-
   canvas.width = width;
   canvas.height = height;
+}
 
+function renderHuePanel(canvas, hue) {
+  const width = canvas.width;
+  const height = canvas.height;
   const ctx = canvas.getContext('2d');
 
-  ctx.clearRect(0, 0, width, height);
+  const imageData = ctx.createImageData(width, height);
 
   for (let y = 0; y < height; ++y) {
     for (let x = 0; x < width; ++x) {
       const normX = x / width;
       const normY = 1 - y / height;
       const { s, l } = xyToSL(normX, normY);
-      ctx.fillStyle = `hsl(${360 * hue}, ${100 * s}%, ${100 * l}%)`;
-      ctx.fillRect(x, y, 1, 1);
+      const [r, g, b] = ColorConvert.hsl.rgb(360 * hue, 100 * s, 100 * l);
+
+      const i = 4 * (x + y * width);
+      imageData.data[i + 0] = r;
+      imageData.data[i + 1] = g;
+      imageData.data[i + 2] = b;
+      imageData.data[i + 3] = 255;
     }
   }
+
+  ctx.putImageData(imageData, 0, 0);
 }
 
 function renderSpread(canvas) {
@@ -80,8 +94,18 @@ export default {
   },
 
   mounted() {
+    resizeCanvas(this.$refs.balance);
+    resizeCanvas(this.$refs.spread);
+
     renderHuePanel(this.$refs.balance, this.color_.hue);
     renderSpread(this.$refs.spread);
+  },
+
+  computed: {
+    renderableColor_() {
+      const { hue, saturation, lightness } = this.color_;
+      return `hsl(${360 * hue}, ${100 * saturation}%, ${100 * lightness}%)`;
+    },
   },
 
   watch: {
@@ -103,8 +127,7 @@ export default {
 
   methods: {
     emitColor_() {
-      const { hue, saturation, lightness } = this.color_;
-      this.$emit('change', `hsl(${360 * hue}, ${100 * saturation}%, ${100 * lightness}%)`);
+      this.$emit('change', this.renderableColor_);
     },
 
     onClick_(event) {
