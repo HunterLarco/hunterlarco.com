@@ -1,6 +1,6 @@
 <template>
-  <div :class="$style.Host" :style="`background: ${hexColor_}`">
-    <ColorPicker @color="hexColor_ = $event.hex" />
+  <div :class="$style.Host" :style="`background: ${color_}`">
+    <ColorPicker @change="color_ = $event" />
   </div>
 </template>
 
@@ -12,7 +12,7 @@ export default {
 
   data() {
     return {
-      hexColor_: null,
+      color_: null,
     };
   },
 };
