@@ -21,12 +21,17 @@
         <td>Cosine CMYK</td>
         <td><canvas ref="cosineCMYK" /></td>
       </tr>
+      <tr>
+        <td>CIE76</td>
+        <td><canvas ref="CIE76" /></td>
+      </tr>
     </table>
   </div>
 </template>
 
 <script>
 import ColorConvert from 'color-convert';
+import ColorDifference from 'color-difference';
 
 function resizeCanvas(canvas) {
   canvas.width = devicePixelRatio * canvas.offsetWidth;
@@ -79,6 +84,7 @@ export default {
     resizeCanvas(this.$refs.euclideanRGB);
     resizeCanvas(this.$refs.cosineLAB);
     resizeCanvas(this.$refs.cosineCMYK);
+    resizeCanvas(this.$refs.CIE76);
 
     renderHueStrip(this.$refs.hue);
 
@@ -142,6 +148,15 @@ export default {
           return 1 - cos_alpha;
         },
         (color) => ColorConvert.hsl.cmyk(color)
+      );
+
+      renderDistanceFunction(
+        this.$refs.CIE76,
+        [this.baseHue_, 100, 50],
+        (c1, c2) => {
+          return ColorDifference.compare(c1, c2) / 100;
+        },
+        (color) => ColorConvert.hsl.hex(color)
       );
     },
   },
