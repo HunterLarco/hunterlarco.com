@@ -29,6 +29,10 @@ export default new Router({
       component: () => import('@/src/components/Doodads/0004/Page'),
     },
     {
+      path: '/doodads/0x0005',
+      component: () => import('@/src/components/Doodads/0005/Page'),
+    },
+    {
       path: '/doodads/*',
       component: () => import('@/src/components/Doodads/0004/Page'),
     },
