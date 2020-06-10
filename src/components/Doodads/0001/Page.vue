@@ -18,6 +18,8 @@
 </template>
 
 <script>
+import ColorConvert from 'color-convert';
+
 function colorDistance(c1, c2) {
   const c1_norm = Math.sqrt(Math.pow(c1[0], 2) + Math.pow(c1[1], 2) + Math.pow(c1[2], 2));
   const c2_norm = Math.sqrt(Math.pow(c2[0], 2) + Math.pow(c2[1], 2) + Math.pow(c2[2], 2));
@@ -37,12 +39,7 @@ function colorEucDistance(c1, c2) {
 }
 
 function colorForWheelAngle(radians) {
-  const p = radians / (2 * Math.PI);
-  const norm_p = p - Math.floor(p);
-  const r = Math.round(255 * Math.max(0, 1 - Math.abs(3 * norm_p - 1)));
-  const g = Math.round(255 * Math.max(0, 1 - Math.abs(3 * norm_p - 2)));
-  const b = Math.round(255 * Math.max(0, Math.abs(3 * norm_p - 1.5) - 0.5));
-  return [r, g, b];
+  return ColorConvert.hsl.rgb(360 * (1 - radians / (2 * Math.PI)), 100, 50);
 }
 
 function renderColorWheel(canvas) {
