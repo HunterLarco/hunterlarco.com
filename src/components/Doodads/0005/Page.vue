@@ -25,13 +25,21 @@
         <td>CIE76</td>
         <td><canvas ref="CIE76" /></td>
       </tr>
+      <tr>
+        <td>CIE94</td>
+        <td><canvas ref="CIE94" /></td>
+      </tr>
+      <tr>
+        <td>CIE00</td>
+        <td><canvas ref="CIE00" /></td>
+      </tr>
     </table>
   </div>
 </template>
 
 <script>
 import ColorConvert from 'color-convert';
-import ColorDifference from 'color-difference';
+import DeltaE from 'delta-e';
 
 function resizeCanvas(canvas) {
   canvas.width = devicePixelRatio * canvas.offsetWidth;
@@ -50,6 +58,33 @@ function renderHueStrip(canvas) {
     ctx.fillStyle = `hsl(${360 * normX}, 100%, 50%)`;
     ctx.fillRect(x, 0, x + 1, height);
   }
+}
+
+function cie76(lab1, lab2) {
+  return (
+    DeltaE.getDeltaE76(
+      { L: lab1[0], A: lab1[1], B: lab1[2] },
+      { L: lab2[0], A: lab2[1], B: lab2[2] }
+    ) / 100
+  );
+}
+
+function cie94(lab1, lab2) {
+  return (
+    DeltaE.getDeltaE94(
+      { L: lab1[0], A: lab1[1], B: lab1[2] },
+      { L: lab2[0], A: lab2[1], B: lab2[2] }
+    ) / 100
+  );
+}
+
+function cie00(lab1, lab2) {
+  return (
+    DeltaE.getDeltaE00(
+      { L: lab1[0], A: lab1[1], B: lab1[2] },
+      { L: lab2[0], A: lab2[1], B: lab2[2] }
+    ) / 100
+  );
 }
 
 // baseColor should be in HSL
@@ -85,6 +120,8 @@ export default {
     resizeCanvas(this.$refs.cosineLAB);
     resizeCanvas(this.$refs.cosineCMYK);
     resizeCanvas(this.$refs.CIE76);
+    resizeCanvas(this.$refs.CIE94);
+    resizeCanvas(this.$refs.CIE00);
 
     renderHueStrip(this.$refs.hue);
 
@@ -153,10 +190,22 @@ export default {
       renderDistanceFunction(
         this.$refs.CIE76,
         [this.baseHue_, 100, 50],
-        (c1, c2) => {
-          return ColorDifference.compare(c1, c2) / 100;
-        },
-        (color) => ColorConvert.hsl.hex(color)
+        (c1, c2) => cie76(c1, c2),
+        (color) => ColorConvert.hsl.lab(color)
+      );
+
+      renderDistanceFunction(
+        this.$refs.CIE94,
+        [this.baseHue_, 100, 50],
+        (c1, c2) => cie94(c1, c2),
+        (color) => ColorConvert.hsl.lab(color)
+      );
+
+      renderDistanceFunction(
+        this.$refs.CIE00,
+        [this.baseHue_, 100, 50],
+        (c1, c2) => cie00(c1, c2),
+        (color) => ColorConvert.hsl.lab(color)
       );
     },
   },
