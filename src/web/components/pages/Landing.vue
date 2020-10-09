@@ -6,17 +6,19 @@
         &mdash; Currently building a better home for art on the web
         <a href="https://terrace.co" target="blank">@terrace.co</a>
       </p>
-      <br />
-      <img src="~@/src/web/assets/logos/MozillaBuilders.png" />
-      <img src="~@/src/web/assets/logos/Notion.png" />
-      <img src="~@/src/web/assets/logos/OnDeck.png" />
-      <br />
-      <img src="~@/src/web/assets/logos/GoogleResearch.png" />
-      <img src="~@/src/web/assets/logos/GoogleAds.png" />
-      <br />
-      <img src="~@/src/web/assets/logos/Triplebyte.png" />
-      <img src="~@/src/web/assets/logos/ChromeExperiments.jpg" />
-      <br />
+
+      <p :class="$style.Logos">
+        <img src="~@/src/web/assets/logos/MozillaBuilders.png" />
+        <img src="~@/src/web/assets/logos/Notion.png" />
+        <img src="~@/src/web/assets/logos/OnDeck.png" />
+        <br />
+        <img src="~@/src/web/assets/logos/GoogleResearch.png" />
+        <img src="~@/src/web/assets/logos/GoogleAds.png" />
+        <br />
+        <img src="~@/src/web/assets/logos/Triplebyte.png" />
+        <img src="~@/src/web/assets/logos/ChromeExperiments.jpg" />
+      </p>
+
       <p>
         <a href="https://www.linkedin.com/in/hunterlarco" target="blank"
           >linkedin.com/in/hunterlarco</a
@@ -58,5 +60,9 @@ export default {};
     height: 70px;
     margin: 10px;
   }
+}
+
+.Logos {
+  padding: 20px 0;
 }
 </style>
