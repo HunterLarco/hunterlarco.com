@@ -7,6 +7,16 @@
         <a href="https://terrace.co" target="blank">@terrace.co</a>
       </p>
       <br />
+      <img src="~@/src/web/assets/logos/MozillaBuilders.jpg" />
+      <img src="~@/src/web/assets/logos/Notion.png" />
+      <img src="~@/src/web/assets/logos/OnDeck.png" />
+      <br />
+      <img src="~@/src/web/assets/logos/GoogleResearch.png" />
+      <img src="~@/src/web/assets/logos/GoogleAds.png" />
+      <br />
+      <img src="~@/src/web/assets/logos/Triplebyte.png" />
+      <img src="~@/src/web/assets/logos/ChromeExperiments.jpg" />
+      <br />
       <p>
         <a href="https://www.linkedin.com/in/hunterlarco" target="blank"
           >linkedin.com/in/hunterlarco</a
@@ -42,6 +52,10 @@ export default {};
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  & img {
+    width: 300px;
   }
 }
 </style>
