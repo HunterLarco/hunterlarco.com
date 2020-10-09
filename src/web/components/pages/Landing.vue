@@ -7,7 +7,7 @@
         <a href="https://terrace.co" target="blank">@terrace.co</a>
       </p>
       <br />
-      <img src="~@/src/web/assets/logos/MozillaBuilders.jpg" />
+      <img src="~@/src/web/assets/logos/MozillaBuilders.png" />
       <img src="~@/src/web/assets/logos/Notion.png" />
       <img src="~@/src/web/assets/logos/OnDeck.png" />
       <br />
@@ -55,7 +55,8 @@ export default {};
   }
 
   & img {
-    width: 300px;
+    height: 70px;
+    margin: 10px;
   }
 }
 </style>
