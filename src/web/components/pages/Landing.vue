@@ -215,8 +215,7 @@ export default {
 @import '@/src/web/sass/sizing';
 
 .Host {
-  @include layout-fill;
-
+  background: #FFF;
   overflow-x: hidden;
   overflow-y: scroll;
 }
