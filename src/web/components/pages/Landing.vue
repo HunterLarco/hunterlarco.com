@@ -15,76 +15,145 @@
         <div :class="$style.NavItem">
           <img src="~@/src/web/assets/favicons/Drip.png" />
           <label>Drip</label>
+          <div :class="$style.Line" style="width: 350px;" />
+          <label>Advisor</label>
+          <div :class="$style.Line" style="width: 100px;" />
+          <label>2020</label>
         </div>
 
         <div :class="$style.NavItem">
           <img src="~@/src/web/assets/favicons/Mozilla.png" />
           <label>Mozilla Builders: Superduper</label>
+          <div :class="$style.Line" style="width: 174px;" />
+          <label>Fellow</label>
+          <div :class="$style.Line" style="width: 108px;" />
+          <label>2020</label>
         </div>
 
         <div :class="$style.NavItem">
           <img src="~@/src/web/assets/favicons/Mozilla.png" />
           <label>Mozilla Builders: Fido</label>
+          <div :class="$style.Line" style="width: 227px;" />
+          <label>Fellow</label>
+          <div :class="$style.Line" style="width: 108px;" />
+          <label>2020</label>
         </div>
 
         <div :class="$style.NavItem">
           <img src="~@/src/web/assets/favicons/Sutra.svg" />
           <label>Sutra</label>
+          <div :class="$style.Line" style="width: 341px;" />
+          <label>Advisor</label>
+          <div :class="$style.Line" style="width: 100px;" />
+          <label>2020</label>
         </div>
 
         <div :class="$style.NavItem">
           <img src="~@/src/web/assets/favicons/Notion.png" />
           <label>Notion</label>
+          <div :class="$style.Line" style="width: 333px;" />
+          <label>Full-time</label>
+          <div :class="$style.Line" style="width: 92px;" />
+          <label>2020</label>
         </div>
 
         <div :class="$style.NavItem">
           <img src="~@/src/web/assets/favicons/FireChat.png" />
           <label>FireChat</label>
+          <div :class="$style.Line" style="width: 318px;" />
+          <label>Advisor</label>
+          <div :class="$style.Line" style="width: 100px;" />
+          <label>2020</label>
         </div>
 
         <div :class="$style.NavItem">
           <img src="~@/src/web/assets/favicons/Sadboi.png" />
           <label>Terrace: sadboi.tv</label>
+          <div :class="$style.Line" style="width: 253px;" />
+          <label>Founder</label>
+          <div :class="$style.Line" style="width: 94px;" />
+          <label>2019</label>
         </div>
 
         <div :class="$style.NavItem">
           <img src="~@/src/web/assets/favicons/OnDeck.png" />
-          <label>On Deck: 1st Cohort</label>
+          <label>On Deck: 2nd Cohort NYC</label>
+          <div :class="$style.Line" style="width: 190px;" />
+          <label>Fellow</label>
+          <div :class="$style.Line" style="width: 108px;" />
+          <label>2019</label>
         </div>
 
         <div :class="$style.NavItem">
-          <img src="~@/src/web/assets/favicons/Triplebyte.jpg" />
-          <label>Triplebyte: Remote Interviewer</label>
-        </div>
-
-        <div :class="$style.NavItem">
-          <img src="~@/src/web/assets/favicons/Google.svg" />
-          <label>Google Research: Waybak</label>
-        </div>
-
-        <div :class="$style.NavItem">
-          <img src="~@/src/web/assets/favicons/Google.svg" />
-          <label>Google Ads: Express</label>
+          <img src="~@/src/web/assets/favicons/OnDeck.png" />
+          <label>On Deck: 1st Cohort SF</label>
+          <div :class="$style.Line" style="width: 209px;" />
+          <label>Fellow</label>
+          <div :class="$style.Line" style="width: 108px;" />
+          <label>2019</label>
         </div>
 
         <div :class="$style.NavItem">
           <img src="~@/src/web/assets/favicons/Triplebyte.jpg" />
           <label>Triplebyte: Generalist</label>
+          <div :class="$style.Line" style="width: 228px;" />
+          <label>Certificate</label>
+          <div :class="$style.Line" style="width: 80px;" />
+          <label>2019</label>
         </div>
 
         <div :class="$style.NavItem">
-          <img src="~@/src/web/assets/favicons/MakeSchool.png" />
-          <label>Make School: Inaugural Class</label>
+          <img src="~@/src/web/assets/favicons/Google.svg" />
+          <label>Google Research: Waybak</label>
+          <div :class="$style.Line" style="width: 189px;" />
+          <label>Full-time</label>
+          <div :class="$style.Line" style="width: 92px;" />
+          <label>2017</label>
+        </div>
+
+        <div :class="$style.NavItem">
+          <img src="~@/src/web/assets/favicons/Google.svg" />
+          <label>Google Ads: Express</label>
+          <div :class="$style.Line" style="width: 230px;" />
+          <label>Full-time</label>
+          <div :class="$style.Line" style="width: 92px;" />
+          <label>2016</label>
+        </div>
+
+        <div :class="$style.NavItem">
+          <img src="~@/src/web/assets/favicons/Triplebyte.jpg" />
+          <label>Triplebyte: Generalist</label>
+          <div :class="$style.Line" style="width: 228px;" />
+          <label>Certificate</label>
+          <div :class="$style.Line" style="width: 80px;" />
+          <label>2016</label>
         </div>
 
         <div :class="$style.NavItem">
           <img src="~@/src/web/assets/favicons/ChromeExperiments.png" />
           <label>Chrome Experiments: voxel.css</label>
+          <div :class="$style.Line" style="width: 154px;" />
+          <label>Award</label>
+          <div :class="$style.Line" style="width: 108px;" />
+          <label>2016</label>
+        </div>
+
+        <div :class="$style.NavItem">
+          <img src="~@/src/web/assets/favicons/MakeSchool.png" />
+          <label>Make School: Inaugural Class</label>
+          <div :class="$style.Line" style="width: 166px;" />
+          <label>Education</label>
+          <div :class="$style.Line" style="width: 82px;" />
+          <label>2015</label>
         </div>
 
         <div :class="$style.NavItem">
           <img src="~@/src/web/assets/favicons/ChromeExperiments.png" />
           <label>Chrome Experiments: Wireframe Ripple</label>
+          <div :class="$style.Line" style="width: 96px;" />
+          <label>Award</label>
+          <div :class="$style.Line" style="width: 108px;" />
+          <label>2012</label>
         </div>
       </div>
     </div>
@@ -110,11 +179,11 @@ export default {};
   @include layout-vertical;
 
   height: 100%;
-  max-width: 620px;
 }
 
 .Bio {
   flex-grow: 1;
+  max-width: 500px;
   padding: 60px;
 
   & a {
@@ -127,14 +196,24 @@ export default {};
   }
 }
 
+.Name {
+  @include fonts-name;
+}
+
+.Tagline {
+  @include fonts-tagline;
+
+  margin-top: 20px;
+}
+
 .Nav {
   flex-shrink: 0;
-  padding: 60px;
+  padding: 0 60px 60px 60px;
 }
 
 .NavItem {
   cursor: pointer;
-  margin: 16px 0;
+  padding: 8px 0;
 
   & > img {
     height: 20px;
@@ -149,18 +228,19 @@ export default {};
     vertical-align: middle;
   }
 
+  &:hover > .Line {
+    background: #929292;
+  }
+
   &:hover > label {
     text-decoration: underline;
   }
 }
 
-.Name {
-  @include fonts-name;
-}
-
-.Tagline {
-  @include fonts-tagline;
-
-  margin-top: 20px;
+.Line {
+  background: #D9D9D9;
+  display: inline-block;
+  height: 1px;
+  margin: 0 10px;
 }
 </style>
