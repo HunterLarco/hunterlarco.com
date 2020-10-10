@@ -3,11 +3,17 @@
     <div :class="$style.Text">
       <p>
         <b>Hunter Larco</b>
-        &mdash; Currently building a better home for art on the web
-        <a href="https://terrace.co" target="blank">@terrace.co</a>
+        &mdash; Currently making the internet a better place
+        <a href="https://www.mozilla.org/en-US/firefox/unfck/" target="blank"
+          >#unfck</a
+        >
       </p>
 
       <p :class="$style.Logos">
+        <img src="~@/src/web/assets/logos/Mozilla.png" />
+        <img src="~@/src/web/assets/logos/Notion.png" />
+        <img src="~@/src/web/assets/logos/Google.png" />
+        <br />
         <img src="~@/src/web/assets/logos/MozillaBuilders.png" />
         <img src="~@/src/web/assets/logos/Notion.png" />
         <img src="~@/src/web/assets/logos/OnDeck.png" />
@@ -17,6 +23,15 @@
         <br />
         <img src="~@/src/web/assets/logos/Triplebyte.png" />
         <img src="~@/src/web/assets/logos/ChromeExperiments.jpg" />
+      </p>
+
+      <p :class="$style.Logos">
+        <b>Advisory Work</b>
+        <br />
+        <img src="~@/src/web/assets/logos/FireChat.png" />
+        <img src="~@/src/web/assets/logos/Drip.png" />
+        <img src="~@/src/web/assets/logos/Sutra.png" />
+        <img src="~@/src/web/assets/logos/TheNegev.svg" />
       </p>
 
       <p>
