@@ -1,26 +1,91 @@
 <template>
   <div :class="$style.Host">
-    <div :class="$style.Bio">
-      <div :class="$style.Name">Hunter Larco</div>
-      <div :class="$style.Tagline">
-        Currently making the internet a better place
-        <a href="https://www.mozilla.org/en-US/firefox/unfck/" target="blank"
-          >#unfck</a
-        >
-      </div>
-    </div>
-
-    <div :class="$style.Tiles">
-      <div :class="$style.Tile">
-        <img src="~@/src/web/assets/logos/Mozilla.png" />
+    <div :class="$style.Sidebar">
+      <div :class="$style.Bio">
+        <div :class="$style.Name">Hunter Larco</div>
+        <div :class="$style.Tagline">
+          Currently making the internet a better place
+          <a href="https://www.mozilla.org/en-US/firefox/unfck/" target="blank"
+            >#unfck</a
+          >
+        </div>
       </div>
 
-      <div :class="$style.Tile" style="margin-top: 75px;">
-        <img src="~@/src/web/assets/logos/Notion.png" />
-      </div>
+      <div :class="$style.Nav">
+        <div :class="$style.NavItem">
+          <img src="~@/src/web/assets/favicons/Drip.png" />
+          <label>Drip</label>
+        </div>
 
-      <div :class="$style.Tile" style="margin-top: 150px;">
-        <img src="~@/src/web/assets/logos/Google.png" />
+        <div :class="$style.NavItem">
+          <img src="~@/src/web/assets/favicons/Mozilla.png" />
+          <label>Mozilla Builders: Superduper</label>
+        </div>
+
+        <div :class="$style.NavItem">
+          <img src="~@/src/web/assets/favicons/Mozilla.png" />
+          <label>Mozilla Builders: Fido</label>
+        </div>
+
+        <div :class="$style.NavItem">
+          <img src="~@/src/web/assets/favicons/Sutra.svg" />
+          <label>Sutra</label>
+        </div>
+
+        <div :class="$style.NavItem">
+          <img src="~@/src/web/assets/favicons/Notion.png" />
+          <label>Notion</label>
+        </div>
+
+        <div :class="$style.NavItem">
+          <img src="~@/src/web/assets/favicons/FireChat.png" />
+          <label>FireChat</label>
+        </div>
+
+        <div :class="$style.NavItem">
+          <img src="~@/src/web/assets/favicons/Sadboi.png" />
+          <label>Terrace: sadboi.tv</label>
+        </div>
+
+        <div :class="$style.NavItem">
+          <img src="~@/src/web/assets/favicons/OnDeck.png" />
+          <label>On Deck: 1st Cohort</label>
+        </div>
+
+        <div :class="$style.NavItem">
+          <img src="~@/src/web/assets/favicons/Triplebyte.jpg" />
+          <label>Triplebyte: Remote Interviewer</label>
+        </div>
+
+        <div :class="$style.NavItem">
+          <img src="~@/src/web/assets/favicons/Google.svg" />
+          <label>Google Research: Waybak</label>
+        </div>
+
+        <div :class="$style.NavItem">
+          <img src="~@/src/web/assets/favicons/Google.svg" />
+          <label>Google Ads: Express</label>
+        </div>
+
+        <div :class="$style.NavItem">
+          <img src="~@/src/web/assets/favicons/Triplebyte.jpg" />
+          <label>Triplebyte: Generalist</label>
+        </div>
+
+        <div :class="$style.NavItem">
+          <img src="~@/src/web/assets/favicons/MakeSchool.png" />
+          <label>Make School: Inaugural Class</label>
+        </div>
+
+        <div :class="$style.NavItem">
+          <img src="~@/src/web/assets/favicons/ChromeExperiments.png" />
+          <label>Chrome Experiments: voxel.css</label>
+        </div>
+
+        <div :class="$style.NavItem">
+          <img src="~@/src/web/assets/favicons/ChromeExperiments.png" />
+          <label>Chrome Experiments: Wireframe Ripple</label>
+        </div>
       </div>
     </div>
   </div>
@@ -37,13 +102,19 @@ export default {};
 .Host {
   @include layout-fill;
 
-  background: #000;
   overflow-x: hidden;
   overflow-y: scroll;
 }
 
+.Sidebar {
+  @include layout-vertical;
+
+  height: 100%;
+  max-width: 620px;
+}
+
 .Bio {
-  max-width: 500px;
+  flex-grow: 1;
   padding: 60px;
 
   & a {
@@ -56,35 +127,40 @@ export default {};
   }
 }
 
+.Nav {
+  flex-shrink: 0;
+  padding: 60px;
+}
+
+.NavItem {
+  cursor: pointer;
+  margin: 16px 0;
+
+  & > img {
+    height: 20px;
+    margin-right: 12px;
+    vertical-align: middle;
+  }
+
+  & > label {
+    @include fonts-body;
+
+    cursor: inherit;
+    vertical-align: middle;
+  }
+
+  &:hover > label {
+    text-decoration: underline;
+  }
+}
+
 .Name {
   @include fonts-name;
-
-  color: rgba(#FFF, 0.5);
 }
 
 .Tagline {
   @include fonts-tagline;
 
-  color: #FFF;
-
   margin-top: 20px;
-}
-
-.Tiles {
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(400px, calc(33% - 12px)));
-  padding: 60px;
-}
-
-.Tile {
-  background: #FFF;
-  border-radius: 12px;
-  height: 800px;
-
-  & > img {
-    height: 60px;
-    margin: 40px;
-  }
 }
 </style>

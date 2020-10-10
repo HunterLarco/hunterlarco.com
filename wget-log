@@ -1,0 +1,6 @@
+--2020-10-10 01:35:06--  https://media-exp1.licdn.com/dms/image/C560BAQFL5EsaT_03yA/company-logo_200_200/0?e=2159024400
+Resolving media-exp1.licdn.com (media-exp1.licdn.com)... 2606:2800:21f:fedd:8b7a:88ab:fc7e:fa3b, 152.199.24.163
+Connecting to media-exp1.licdn.com (media-exp1.licdn.com)|2606:2800:21f:fedd:8b7a:88ab:fc7e:fa3b|:443... connected.
+HTTP request sent, awaiting response... 403 Forbidden
+2020-10-10 01:35:06 ERROR 403: Forbidden.
+
