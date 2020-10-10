@@ -138,14 +138,14 @@
           <label>2016</label>
         </div>
 
-        <div :class="$style.NavItem">
+        <router-link :class="$style.NavItem" to="/triplebyte-certificate-2016">
           <img src="~@/src/web/assets/favicons/Triplebyte.jpg" />
           <label>Triplebyte: Generalist</label>
           <div :class="$style.Line" style="width: 228px;" />
           <label>Certificate</label>
           <div :class="$style.Line" style="width: 80px;" />
           <label>2016</label>
-        </div>
+        </router-link>
 
         <div :class="$style.NavItem" v-show="expanded_">
           <img src="~@/src/web/assets/favicons/ChromeExperiments.png" />
@@ -275,8 +275,11 @@ export default {
 }
 
 .NavItem {
+  color: inherit;
   cursor: pointer;
+  display: block;
   padding: 8px 0;
+  text-decoration: none;
 
   & > img {
     height: 20px;
