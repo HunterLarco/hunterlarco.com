@@ -1,47 +1,27 @@
 <template>
   <div :class="$style.Host">
-    <div :class="$style.Text">
-      <p>
-        <b>Hunter Larco</b>
-        &mdash; Currently making the internet a better place
+    <div :class="$style.Bio">
+      <div :class="$style.Name">Hunter Larco</div>
+      <div :class="$style.Tagline">
+        Currently making the internet a better place
         <a href="https://www.mozilla.org/en-US/firefox/unfck/" target="blank"
           >#unfck</a
         >
-      </p>
+      </div>
+    </div>
 
-      <p :class="$style.Logos">
+    <div :class="$style.Tiles">
+      <div :class="$style.Tile">
         <img src="~@/src/web/assets/logos/Mozilla.png" />
+      </div>
+
+      <div :class="$style.Tile" style="margin-top: 75px;">
         <img src="~@/src/web/assets/logos/Notion.png" />
+      </div>
+
+      <div :class="$style.Tile" style="margin-top: 150px;">
         <img src="~@/src/web/assets/logos/Google.png" />
-        <br />
-        <img src="~@/src/web/assets/logos/MozillaBuilders.png" />
-        <img src="~@/src/web/assets/logos/Notion.png" />
-        <img src="~@/src/web/assets/logos/OnDeck.png" />
-        <br />
-        <img src="~@/src/web/assets/logos/GoogleResearch.png" />
-        <img src="~@/src/web/assets/logos/GoogleAds.png" />
-        <br />
-        <img src="~@/src/web/assets/logos/Triplebyte.png" />
-        <img src="~@/src/web/assets/logos/ChromeExperiments.jpg" />
-      </p>
-
-      <p :class="$style.Logos">
-        <b>Advisory Work</b>
-        <br />
-        <img src="~@/src/web/assets/logos/FireChat.png" />
-        <img src="~@/src/web/assets/logos/Drip.png" />
-        <img src="~@/src/web/assets/logos/Sutra.png" />
-        <img src="~@/src/web/assets/logos/TheNegev.svg" />
-      </p>
-
-      <p>
-        <a href="https://www.linkedin.com/in/hunterlarco" target="blank"
-          >linkedin.com/in/hunterlarco</a
-        ><br />
-        <a href="http://github.com/hunterlarco" target="blank"
-          >github.com/hunterlarco</a
-        >
-      </p>
+      </div>
     </div>
   </div>
 </template>
@@ -55,12 +35,16 @@ export default {};
 @import '@/src/web/sass/layout';
 
 .Host {
-  @include layout-center;
   @include layout-fill;
+
+  background: #000;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
-.Text {
-  @include fonts-body;
+.Bio {
+  max-width: 500px;
+  padding: 60px;
 
   & a {
     color: #E71A8B;
@@ -70,14 +54,37 @@ export default {};
       text-decoration: underline;
     }
   }
-
-  & img {
-    height: 70px;
-    margin: 10px;
-  }
 }
 
-.Logos {
-  padding: 20px 0;
+.Name {
+  @include fonts-name;
+
+  color: rgba(#FFF, 0.5);
+}
+
+.Tagline {
+  @include fonts-tagline;
+
+  color: #FFF;
+
+  margin-top: 20px;
+}
+
+.Tiles {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, calc(33% - 12px)));
+  padding: 60px;
+}
+
+.Tile {
+  background: #FFF;
+  border-radius: 12px;
+  height: 800px;
+
+  & > img {
+    height: 60px;
+    margin: 40px;
+  }
 }
 </style>
