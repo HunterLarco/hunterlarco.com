@@ -203,6 +203,7 @@ export default {
 <style module lang="sass">
 @import '@/src/web/sass/fonts';
 @import '@/src/web/sass/layout';
+@import '@/src/web/sass/sizing';
 
 .Host {
   @include layout-fill;
@@ -221,6 +222,10 @@ export default {
   flex-grow: 1;
   max-width: 500px;
   padding: 60px;
+
+  @include sizing-mobile {
+    padding: 30px;
+  }
 
   & a {
     color: #E71A8B;
@@ -247,6 +252,11 @@ export default {
   flex-shrink: 0;
   max-width: 1405px;
   padding: 0 60px 60px 60px;
+
+  @include sizing-mobile {
+    column-gap: 30px;
+    padding: 0 30px 30px 30px;
+  }
 }
 
 .Expand {
@@ -279,6 +289,13 @@ export default {
 
   &:hover > label {
     text-decoration: underline;
+  }
+
+
+  @media (max-width: 760px) {
+    & > * ~ * ~ * {
+      display: none !important;
+    }
   }
 }
 
