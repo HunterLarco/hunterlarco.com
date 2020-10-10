@@ -103,6 +103,15 @@
         </div>
 
         <div :class="$style.NavItem">
+          <img src="~@/src/web/assets/favicons/KDD.png" />
+          <label>SIGKDD: Nostalgin</label>
+          <div :class="$style.Line" style="width: 242px;" />
+          <label>Speaker</label>
+          <div :class="$style.Line" style="width: 93px;" />
+          <label>2019</label>
+        </div>
+
+        <div :class="$style.NavItem">
           <img src="~@/src/web/assets/favicons/Google.svg" />
           <label>Google Research: Waybak</label>
           <div :class="$style.Line" style="width: 189px;" />
