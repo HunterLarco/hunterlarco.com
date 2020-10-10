@@ -1,8 +1,10 @@
 <template>
   <div :class="$style.Host">
-    <router-link to="/">
-      test
-    </router-link>
+    <div :class="$style.Header">
+      <router-link to="/">Hunter Larco</router-link>
+    </div>
+
+    <router-link :class="$style.CloseButton" to="/" />
   </div>
 </template>
 
@@ -14,15 +16,42 @@ export default {};
 @import '@/src/web/sass/fonts';
 
 .Host {
-  @include fonts-body;
+  background: #2691C9;
+}
 
-  background: cyan;
+.Header {
+  @include fonts-name;
 
-  & > * {
-    display: block;
-    width: 100px;
-    height: 100px;
-    background: red;
+  color: #FFF;
+  padding: 20px;
+  text-align: center;
+
+  & > a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.CloseButton {
+  background-image: url('~@/src/web/assets/icons/FFF.png');
+  background-repeat: no-repeat;
+  background-size: 102px 748px;
+  cursor: pointer;
+  display: block;
+  height: 51px;
+  margin: 0 30px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 51px;
+
+  &:hover {
+    background-position: -51px 0;
   }
 }
 </style>
