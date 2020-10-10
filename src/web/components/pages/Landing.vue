@@ -12,7 +12,9 @@
       </div>
 
       <div :class="$style.Nav">
-        <div :class="$style.NavItem">
+        <div :class="$style.Expand" @click="expanded_ = !expanded_">Expand</div>
+
+        <div :class="$style.NavItem" v-show="expanded_">
           <img src="~@/src/web/assets/favicons/Drip.png" />
           <label>Drip</label>
           <div :class="$style.Line" style="width: 350px;" />
@@ -39,7 +41,7 @@
           <label>2020</label>
         </div>
 
-        <div :class="$style.NavItem">
+        <div :class="$style.NavItem" v-show="expanded_">
           <img src="~@/src/web/assets/favicons/Sutra.svg" />
           <label>Sutra</label>
           <div :class="$style.Line" style="width: 341px;" />
@@ -75,7 +77,7 @@
           <label>2019</label>
         </div>
 
-        <div :class="$style.NavItem">
+        <div :class="$style.NavItem" v-show="expanded_">
           <img src="~@/src/web/assets/favicons/OnDeck.png" />
           <label>On Deck: 2nd Cohort NYC</label>
           <div :class="$style.Line" style="width: 190px;" />
@@ -93,7 +95,7 @@
           <label>2019</label>
         </div>
 
-        <div :class="$style.NavItem">
+        <div :class="$style.NavItem" v-show="expanded_">
           <img src="~@/src/web/assets/favicons/Triplebyte.jpg" />
           <label>Triplebyte: Generalist</label>
           <div :class="$style.Line" style="width: 228px;" />
@@ -102,7 +104,7 @@
           <label>2019</label>
         </div>
 
-        <div :class="$style.NavItem">
+        <div :class="$style.NavItem" v-show="expanded_">
           <img src="~@/src/web/assets/favicons/KDD.png" />
           <label>SIGKDD: Nostalgin</label>
           <div :class="$style.Line" style="width: 242px;" />
@@ -138,7 +140,7 @@
           <label>2016</label>
         </div>
 
-        <div :class="$style.NavItem">
+        <div :class="$style.NavItem" v-show="expanded_">
           <img src="~@/src/web/assets/favicons/ChromeExperiments.png" />
           <label>Chrome Experiments: voxel.css</label>
           <div :class="$style.Line" style="width: 154px;" />
@@ -147,7 +149,7 @@
           <label>2016</label>
         </div>
 
-        <div :class="$style.NavItem">
+        <div :class="$style.NavItem" v-show="expanded_">
           <img src="~@/src/web/assets/favicons/MakeSchool.png" />
           <label>Make School: Inaugural Class</label>
           <div :class="$style.Line" style="width: 166px;" />
@@ -156,7 +158,7 @@
           <label>2015</label>
         </div>
 
-        <div :class="$style.NavItem">
+        <div :class="$style.NavItem" v-show="expanded_">
           <img src="~@/src/web/assets/favicons/ChromeExperiments.png" />
           <label>Chrome Experiments: Wireframe Ripple</label>
           <div :class="$style.Line" style="width: 96px;" />
@@ -170,7 +172,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      expanded_: false,
+    };
+  },
+};
 </script>
 
 <style module lang="sass">
@@ -218,6 +226,13 @@ export default {};
 .Nav {
   flex-shrink: 0;
   padding: 0 60px 60px 60px;
+}
+
+.Expand {
+  @include fonts-body;
+
+  cursor: pointer;
+  padding: 8px 0;
 }
 
 .NavItem {
