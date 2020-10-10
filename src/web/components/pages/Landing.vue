@@ -11,7 +11,7 @@
         </div>
       </div>
 
-      <div :class="$style.Nav" :style="expanded_ ? 'column-width: 700px' : ''">
+      <div :class="$style.Nav" :style="expanded_ ? 'column-width: 640px' : ''">
         <div
           :class="[$style.NavItem, $style.NavItemButton]"
           @click="expanded_ = true"
@@ -243,7 +243,9 @@ export default {
 }
 
 .Nav {
+  column-gap: 60px;
   flex-shrink: 0;
+  max-width: 1405px;
   padding: 0 60px 60px 60px;
 }
 
