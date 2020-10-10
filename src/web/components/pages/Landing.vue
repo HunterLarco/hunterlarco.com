@@ -15,7 +15,7 @@
         <div
           :class="[$style.NavItem, $style.NavItemButton]"
           @click="expanded_ = true"
-          v-show="!expanded_"
+          v-show="!expanded_ && !$sizing('mobile')"
         >
           <img src="~@/src/web/assets/icons/Chevron.svg" />
           <label>Show more</label>
@@ -172,6 +172,15 @@
           <label>Award</label>
           <div :class="$style.Line" style="width: 108px;" />
           <label>2012</label>
+        </div>
+
+        <div
+          :class="[$style.NavItem, $style.NavItemButton]"
+          @click="expanded_ = true"
+          v-show="!expanded_ && $sizing('mobile')"
+        >
+          <img src="~@/src/web/assets/icons/Chevron.svg" />
+          <label>Show more</label>
         </div>
 
         <div
