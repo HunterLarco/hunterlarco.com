@@ -11,8 +11,15 @@
         </div>
       </div>
 
-      <div :class="$style.Nav">
-        <div :class="$style.Expand" @click="expanded_ = !expanded_">Expand</div>
+      <div :class="$style.Nav" :style="expanded_ ? 'column-width: 700px' : ''">
+        <div
+          :class="[$style.NavItem, $style.NavItemButton]"
+          @click="expanded_ = true"
+          v-show="!expanded_"
+        >
+          <img src="~@/src/web/assets/icons/Chevron.svg" />
+          <label>Show more</label>
+        </div>
 
         <div :class="$style.NavItem" v-show="expanded_">
           <img src="~@/src/web/assets/favicons/Drip.png" />
@@ -166,6 +173,18 @@
           <div :class="$style.Line" style="width: 108px;" />
           <label>2012</label>
         </div>
+
+        <div
+          :class="[$style.NavItem, $style.NavItemButton]"
+          @click="expanded_ = false"
+          v-show="expanded_"
+        >
+          <img
+            src="~@/src/web/assets/icons/Chevron.svg"
+            style="transform: scale(-1, 1);"
+          />
+          <label>Show less</label>
+        </div>
       </div>
     </div>
   </div>
@@ -259,6 +278,10 @@ export default {
   &:hover > label {
     text-decoration: underline;
   }
+}
+
+.NavItemButton {
+  opacity: 0.4;
 }
 
 .Line {
