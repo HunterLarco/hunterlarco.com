@@ -11,226 +11,344 @@
         </div>
       </div>
 
-      <div :class="$style.Nav" :style="expanded_ ? 'column-width: 640px' : ''">
-        <div
-          :class="[$style.NavItem, $style.NavItemButton]"
-          @click="expanded_ = true"
-          v-show="!expanded_ && !$sizing('mobile')"
-        >
-          <img src="~@/src/web/assets/icons/Chevron.svg" />
-          <label>Show more</label>
-        </div>
+      <div :class="$style.Nav">
+        <div :class="$style.Filters">
+          <div
+            :class="
+              filter_ == 'full-time' ? $style.Filter_Selected : $style.Filter
+            "
+            @click="filter_ = filter_ == 'full-time' ? null : 'full-time'"
+          >
+            Full-time
+          </div>
 
-        <div :class="$style.NavItem" v-show="expanded_">
-          <img src="~@/src/web/assets/favicons/Drip.png" />
-          <label>Drip</label>
-          <div :class="$style.Line" style="width: 350px;" />
-          <label>Advisor</label>
-          <div :class="$style.Line" style="width: 100px;" />
-          <label>2020</label>
-        </div>
+          <div
+            :class="
+              filter_ == 'fellow' ? $style.Filter_Selected : $style.Filter
+            "
+            @click="filter_ = filter_ == 'fellow' ? null : 'fellow'"
+          >
+            Fellow
+          </div>
 
-        <div :class="$style.NavItem">
-          <img src="~@/src/web/assets/favicons/Mozilla.png" />
-          <label>Mozilla Builders: Superduper</label>
-          <div :class="$style.Line" style="width: 174px;" />
-          <label>Fellow</label>
-          <div :class="$style.Line" style="width: 108px;" />
-          <label>2020</label>
-        </div>
+          <div
+            :class="
+              filter_ == 'advisor' ? $style.Filter_Selected : $style.Filter
+            "
+            @click="filter_ = filter_ == 'advisor' ? null : 'advisor'"
+          >
+            Advisor
+          </div>
 
-        <div :class="$style.NavItem">
-          <img src="~@/src/web/assets/favicons/Mozilla.png" />
-          <label>Mozilla Builders: Fido</label>
-          <div :class="$style.Line" style="width: 227px;" />
-          <label>Fellow</label>
-          <div :class="$style.Line" style="width: 108px;" />
-          <label>2020</label>
-        </div>
+          <div
+            :class="
+              filter_ == 'founder' ? $style.Filter_Selected : $style.Filter
+            "
+            @click="filter_ = filter_ == 'founder' ? null : 'founder'"
+          >
+            Founder
+          </div>
 
-        <div :class="$style.NavItem" v-show="expanded_">
-          <img src="~@/src/web/assets/favicons/Sutra.svg" />
-          <label>Sutra</label>
-          <div :class="$style.Line" style="width: 341px;" />
-          <label>Advisor</label>
-          <div :class="$style.Line" style="width: 100px;" />
-          <label>2020</label>
-        </div>
+          <div
+            :class="
+              filter_ == 'speaker' ? $style.Filter_Selected : $style.Filter
+            "
+            @click="filter_ = filter_ == 'speaker' ? null : 'speaker'"
+          >
+            Speaker
+          </div>
 
-        <div :class="$style.NavItem">
-          <img src="~@/src/web/assets/favicons/Notion.png" />
-          <label>Notion</label>
-          <div :class="$style.Line" style="width: 333px;" />
-          <label>Full-time</label>
-          <div :class="$style.Line" style="width: 92px;" />
-          <label>2020</label>
-        </div>
+          <div
+            :class="
+              filter_ == 'certificate' ? $style.Filter_Selected : $style.Filter
+            "
+            @click="filter_ = filter_ == 'certificate' ? null : 'certificate'"
+          >
+            Certificate
+          </div>
 
-        <div :class="$style.NavItem">
-          <img src="~@/src/web/assets/favicons/FireChat.png" />
-          <label>FireChat</label>
-          <div :class="$style.Line" style="width: 318px;" />
-          <label>Advisor</label>
-          <div :class="$style.Line" style="width: 100px;" />
-          <label>2020</label>
-        </div>
+          <div
+            :class="filter_ == 'award' ? $style.Filter_Selected : $style.Filter"
+            @click="filter_ = filter_ == 'award' ? null : 'award'"
+          >
+            Award
+          </div>
 
-        <div :class="$style.NavItem">
-          <img src="~@/src/web/assets/favicons/Sadboi.png" />
-          <label>Terrace: sadboi.tv</label>
-          <div :class="$style.Line" style="width: 253px;" />
-          <label>Founder</label>
-          <div :class="$style.Line" style="width: 94px;" />
-          <label>2019</label>
-        </div>
-
-        <a
-          href="https://www.beondeck.com/"
-          target="blank"
-          :class="$style.NavItem"
-          v-show="expanded_"
-        >
-          <img src="~@/src/web/assets/favicons/OnDeck.png" />
-          <label>On Deck: 2nd Cohort NYC</label>
-          <div :class="$style.Line" style="width: 190px;" />
-          <label>Fellow</label>
-          <div :class="$style.Line" style="width: 108px;" />
-          <label>2019</label>
-        </a>
-
-        <a
-          href="https://www.beondeck.com/"
-          target="blank"
-          :class="$style.NavItem"
-        >
-          <img src="~@/src/web/assets/favicons/OnDeck.png" />
-          <label>On Deck: 1st Cohort SF</label>
-          <div :class="$style.Line" style="width: 209px;" />
-          <label>Fellow</label>
-          <div :class="$style.Line" style="width: 108px;" />
-          <label>2019</label>
-        </a>
-
-        <a
-          href="https://triplebyte.com/tb/hunter-j-larco-oca2jcx/certificate/track/generalist"
-          target="blank"
-          :class="$style.NavItem"
-          v-show="expanded_"
-        >
-          <img src="~@/src/web/assets/favicons/Triplebyte.jpg" />
-          <label>Triplebyte: Generalist</label>
-          <div :class="$style.Line" style="width: 228px;" />
-          <label>Certificate</label>
-          <div :class="$style.Line" style="width: 80px;" />
-          <label>2019</label>
-        </a>
-
-        <a
-          href="https://www.kdd.org/kdd2019/accepted-papers/view/nostalgin-extracting-3d-city-models-from-historical-image-data"
-          target="blank"
-          :class="$style.NavItem"
-          v-show="expanded_"
-        >
-          <img src="~@/src/web/assets/favicons/KDD.png" />
-          <label>SIGKDD: Nostalgin</label>
-          <div :class="$style.Line" style="width: 242px;" />
-          <label>Speaker</label>
-          <div :class="$style.Line" style="width: 93px;" />
-          <label>2019</label>
-        </a>
-
-        <div :class="$style.NavItem">
-          <img src="~@/src/web/assets/favicons/Google.svg" />
-          <label>Google Research: Waybak</label>
-          <div :class="$style.Line" style="width: 189px;" />
-          <label>Full-time</label>
-          <div :class="$style.Line" style="width: 92px;" />
-          <label>2017</label>
-        </div>
-
-        <div :class="$style.NavItem">
-          <img src="~@/src/web/assets/favicons/Google.svg" />
-          <label>Google Ads: Express</label>
-          <div :class="$style.Line" style="width: 230px;" />
-          <label>Full-time</label>
-          <div :class="$style.Line" style="width: 92px;" />
-          <label>2016</label>
-        </div>
-
-        <a
-          href="https://triplebyte.com/tb/hunter-j-larco-oca2jcx/certificate/track/generalist"
-          target="blank"
-          :class="$style.NavItem"
-        >
-          <img src="~@/src/web/assets/favicons/Triplebyte.jpg" />
-          <label>Triplebyte: Generalist</label>
-          <div :class="$style.Line" style="width: 228px;" />
-          <label>Certificate</label>
-          <div :class="$style.Line" style="width: 80px;" />
-          <label>2016</label>
-        </a>
-
-        <a
-          href="https://experiments.withgoogle.com/voxel-css"
-          target="blank"
-          :class="$style.NavItem"
-          v-show="expanded_"
-        >
-          <img src="~@/src/web/assets/favicons/ChromeExperiments.png" />
-          <label>Chrome Experiments: voxel.css</label>
-          <div :class="$style.Line" style="width: 154px;" />
-          <label>Award</label>
-          <div :class="$style.Line" style="width: 108px;" />
-          <label>2016</label>
-        </a>
-
-        <a
-          href="https://www.makeschool.com/"
-          target="blank"
-          :class="$style.NavItem"
-          v-show="expanded_"
-        >
-          <img src="~@/src/web/assets/favicons/MakeSchool.png" />
-          <label>Make School: Inaugural Class</label>
-          <div :class="$style.Line" style="width: 166px;" />
-          <label>Education</label>
-          <div :class="$style.Line" style="width: 82px;" />
-          <label>2015</label>
-        </a>
-
-        <a
-          href="https://experiments.withgoogle.com/wireframe-ripple-simulation"
-          target="blank"
-          :class="$style.NavItem"
-          v-show="expanded_"
-        >
-          <img src="~@/src/web/assets/favicons/ChromeExperiments.png" />
-          <label>Chrome Experiments: Wireframe Ripple</label>
-          <div :class="$style.Line" style="width: 96px;" />
-          <label>Award</label>
-          <div :class="$style.Line" style="width: 108px;" />
-          <label>2012</label>
-        </a>
-
-        <div
-          :class="[$style.NavItem, $style.NavItemButton]"
-          @click="expanded_ = true"
-          v-show="!expanded_ && $sizing('mobile')"
-        >
-          <img src="~@/src/web/assets/icons/Chevron.svg" />
-          <label>Show more</label>
+          <div
+            :class="
+              filter_ == 'education' ? $style.Filter_Selected : $style.Filter
+            "
+            @click="filter_ = filter_ == 'education' ? null : 'education'"
+          >
+            Education
+          </div>
         </div>
 
         <div
-          :class="[$style.NavItem, $style.NavItemButton]"
-          @click="expanded_ = false"
-          v-show="expanded_"
+          :class="$style.NavColumns"
+          :style="expanded_ ? 'column-width: 640px' : ''"
         >
-          <img
-            src="~@/src/web/assets/icons/Chevron.svg"
-            style="transform: scale(-1, 1);"
-          />
-          <label>Show less</label>
+          <div
+            :class="[$style.NavItem, $style.NavItemButton]"
+            @click="expanded_ = true"
+            v-show="!expanded_ && !$sizing('mobile')"
+          >
+            <img src="~@/src/web/assets/icons/Chevron.svg" />
+            <label>Show more</label>
+          </div>
+
+          <a
+            href="https://drip.is"
+            target="blank"
+            :class="$style.NavItem"
+            :style="filter_ && filter_ != 'advisor' ? 'opacity: 0.2' : ''"
+            v-show="expanded_"
+          >
+            <img src="~@/src/web/assets/favicons/Drip.png" />
+            <label>Drip</label>
+            <div :class="$style.Line" style="width: 350px;" />
+            <label>Advisor</label>
+            <div :class="$style.Line" style="width: 100px;" />
+            <label>2020</label>
+          </a>
+
+          <div
+            :class="$style.NavItem"
+            :style="filter_ && filter_ != 'fellow' ? 'opacity: 0.2' : ''"
+          >
+            <img src="~@/src/web/assets/favicons/Mozilla.png" />
+            <label>Mozilla Builders: Superduper</label>
+            <div :class="$style.Line" style="width: 174px;" />
+            <label>Fellow</label>
+            <div :class="$style.Line" style="width: 108px;" />
+            <label>2020</label>
+          </div>
+
+          <div
+            :class="$style.NavItem"
+            :style="filter_ && filter_ != 'fellow' ? 'opacity: 0.2' : ''"
+          >
+            <img src="~@/src/web/assets/favicons/Mozilla.png" />
+            <label>Mozilla Builders: Fido</label>
+            <div :class="$style.Line" style="width: 227px;" />
+            <label>Fellow</label>
+            <div :class="$style.Line" style="width: 108px;" />
+            <label>2020</label>
+          </div>
+
+          <a
+            href="https://sutra.fit"
+            target="blank"
+            :class="$style.NavItem"
+            :style="filter_ && filter_ != 'advisor' ? 'opacity: 0.2' : ''"
+            v-show="expanded_"
+          >
+            <img src="~@/src/web/assets/favicons/Sutra.svg" />
+            <label>Sutra</label>
+            <div :class="$style.Line" style="width: 341px;" />
+            <label>Advisor</label>
+            <div :class="$style.Line" style="width: 100px;" />
+            <label>2020</label>
+          </a>
+
+          <div
+            :class="$style.NavItem"
+            :style="filter_ && filter_ != 'full-time' ? 'opacity: 0.2' : ''"
+          >
+            <img src="~@/src/web/assets/favicons/Notion.png" />
+            <label>Notion</label>
+            <div :class="$style.Line" style="width: 333px;" />
+            <label>Full-time</label>
+            <div :class="$style.Line" style="width: 92px;" />
+            <label>2020</label>
+          </div>
+
+          <div
+            :class="$style.NavItem"
+            :style="filter_ && filter_ != 'advisor' ? 'opacity: 0.2' : ''"
+          >
+            <img src="~@/src/web/assets/favicons/FireChat.png" />
+            <label>FireChat</label>
+            <div :class="$style.Line" style="width: 318px;" />
+            <label>Advisor</label>
+            <div :class="$style.Line" style="width: 100px;" />
+            <label>2020</label>
+          </div>
+
+          <div
+            :class="$style.NavItem"
+            :style="filter_ && filter_ != 'founder' ? 'opacity: 0.2' : ''"
+          >
+            <img src="~@/src/web/assets/favicons/Sadboi.png" />
+            <label>Terrace: sadboi.tv</label>
+            <div :class="$style.Line" style="width: 253px;" />
+            <label>Founder</label>
+            <div :class="$style.Line" style="width: 94px;" />
+            <label>2019</label>
+          </div>
+
+          <a
+            href="https://www.beondeck.com/"
+            target="blank"
+            :class="$style.NavItem"
+            :style="filter_ && filter_ != 'fellow' ? 'opacity: 0.2' : ''"
+            v-show="expanded_"
+          >
+            <img src="~@/src/web/assets/favicons/OnDeck.png" />
+            <label>On Deck: 2nd Cohort NYC</label>
+            <div :class="$style.Line" style="width: 190px;" />
+            <label>Fellow</label>
+            <div :class="$style.Line" style="width: 108px;" />
+            <label>2019</label>
+          </a>
+
+          <a
+            href="https://www.beondeck.com/"
+            target="blank"
+            :class="$style.NavItem"
+            :style="filter_ && filter_ != 'fellow' ? 'opacity: 0.2' : ''"
+          >
+            <img src="~@/src/web/assets/favicons/OnDeck.png" />
+            <label>On Deck: 1st Cohort SF</label>
+            <div :class="$style.Line" style="width: 209px;" />
+            <label>Fellow</label>
+            <div :class="$style.Line" style="width: 108px;" />
+            <label>2019</label>
+          </a>
+
+          <a
+            href="https://triplebyte.com/tb/hunter-j-larco-oca2jcx/certificate/track/generalist"
+            target="blank"
+            :class="$style.NavItem"
+            :style="filter_ && filter_ != 'certificate' ? 'opacity: 0.2' : ''"
+            v-show="expanded_"
+          >
+            <img src="~@/src/web/assets/favicons/Triplebyte.jpg" />
+            <label>Triplebyte: Generalist</label>
+            <div :class="$style.Line" style="width: 228px;" />
+            <label>Certificate</label>
+            <div :class="$style.Line" style="width: 80px;" />
+            <label>2019</label>
+          </a>
+
+          <a
+            href="https://www.kdd.org/kdd2019/accepted-papers/view/nostalgin-extracting-3d-city-models-from-historical-image-data"
+            target="blank"
+            :class="$style.NavItem"
+            :style="filter_ && filter_ != 'speaker' ? 'opacity: 0.2' : ''"
+            v-show="expanded_"
+          >
+            <img src="~@/src/web/assets/favicons/KDD.png" />
+            <label>SIGKDD: Nostalgin</label>
+            <div :class="$style.Line" style="width: 242px;" />
+            <label>Speaker</label>
+            <div :class="$style.Line" style="width: 93px;" />
+            <label>2019</label>
+          </a>
+
+          <div
+            :class="$style.NavItem"
+            :style="filter_ && filter_ != 'full-time' ? 'opacity: 0.2' : ''"
+          >
+            <img src="~@/src/web/assets/favicons/Google.svg" />
+            <label>Google Research: Waybak</label>
+            <div :class="$style.Line" style="width: 189px;" />
+            <label>Full-time</label>
+            <div :class="$style.Line" style="width: 92px;" />
+            <label>2017</label>
+          </div>
+
+          <div
+            :class="$style.NavItem"
+            :style="filter_ && filter_ != 'full-time' ? 'opacity: 0.2' : ''"
+          >
+            <img src="~@/src/web/assets/favicons/Google.svg" />
+            <label>Google Ads: Express</label>
+            <div :class="$style.Line" style="width: 230px;" />
+            <label>Full-time</label>
+            <div :class="$style.Line" style="width: 92px;" />
+            <label>2016</label>
+          </div>
+
+          <a
+            href="https://triplebyte.com/tb/hunter-j-larco-oca2jcx/certificate/track/generalist"
+            target="blank"
+            :class="$style.NavItem"
+            :style="filter_ && filter_ != 'certificate' ? 'opacity: 0.2' : ''"
+          >
+            <img src="~@/src/web/assets/favicons/Triplebyte.jpg" />
+            <label>Triplebyte: Generalist</label>
+            <div :class="$style.Line" style="width: 228px;" />
+            <label>Certificate</label>
+            <div :class="$style.Line" style="width: 80px;" />
+            <label>2016</label>
+          </a>
+
+          <a
+            href="https://experiments.withgoogle.com/voxel-css"
+            target="blank"
+            :class="$style.NavItem"
+            :style="filter_ && filter_ != 'award' ? 'opacity: 0.2' : ''"
+            v-show="expanded_"
+          >
+            <img src="~@/src/web/assets/favicons/ChromeExperiments.png" />
+            <label>Chrome Experiments: voxel.css</label>
+            <div :class="$style.Line" style="width: 154px;" />
+            <label>Award</label>
+            <div :class="$style.Line" style="width: 108px;" />
+            <label>2016</label>
+          </a>
+
+          <a
+            href="https://www.makeschool.com/"
+            target="blank"
+            :class="$style.NavItem"
+            :style="filter_ && filter_ != 'education' ? 'opacity: 0.2' : ''"
+            v-show="expanded_"
+          >
+            <img src="~@/src/web/assets/favicons/MakeSchool.png" />
+            <label>Make School: Inaugural Class</label>
+            <div :class="$style.Line" style="width: 166px;" />
+            <label>Education</label>
+            <div :class="$style.Line" style="width: 82px;" />
+            <label>2015</label>
+          </a>
+
+          <a
+            href="https://experiments.withgoogle.com/wireframe-ripple-simulation"
+            target="blank"
+            :class="$style.NavItem"
+            :style="filter_ && filter_ != 'award' ? 'opacity: 0.2' : ''"
+            v-show="expanded_"
+          >
+            <img src="~@/src/web/assets/favicons/ChromeExperiments.png" />
+            <label>Chrome Experiments: Wireframe Ripple</label>
+            <div :class="$style.Line" style="width: 96px;" />
+            <label>Award</label>
+            <div :class="$style.Line" style="width: 108px;" />
+            <label>2012</label>
+          </a>
+
+          <div
+            :class="[$style.NavItem, $style.NavItemButton]"
+            @click="expanded_ = true"
+            v-show="!expanded_ && $sizing('mobile')"
+          >
+            <img src="~@/src/web/assets/icons/Chevron.svg" />
+            <label>Show more</label>
+          </div>
+
+          <div
+            :class="[$style.NavItem, $style.NavItemButton]"
+            @click="expanded_ = false"
+            v-show="expanded_"
+          >
+            <img
+              src="~@/src/web/assets/icons/Chevron.svg"
+              style="transform: scale(-1, 1);"
+            />
+            <label>Show less</label>
+          </div>
         </div>
       </div>
     </div>
@@ -242,6 +360,7 @@ export default {
   data() {
     return {
       expanded_: false,
+      filter_: null,
     };
   },
 };
@@ -294,15 +413,45 @@ export default {
 }
 
 .Nav {
-  column-gap: 60px;
   flex-shrink: 0;
-  max-width: 1405px;
   padding: 0 60px 60px 60px;
+}
+
+.NavColumns {
+  column-gap: 60px;
+  max-width: 1405px;
 
   @include sizing-mobile {
     column-gap: 30px;
     padding: 0 30px 30px 30px;
   }
+}
+
+.Filters {
+  margin-bottom: 20px;
+  text-align: right;
+}
+
+.Filter {
+  @include fonts-body;
+
+  border-radius: 100px;
+  border: 1px solid #000;
+  cursor: pointer;
+  display: inline-block;
+  padding: 5px 14px;
+  user-select: none;
+
+  & ~ .Filter {
+    margin-left: 10px;
+  }
+}
+
+.Filter_Selected {
+  @extend .Filter;
+
+  background: #000;
+  color: #FFF;
 }
 
 .Expand {
