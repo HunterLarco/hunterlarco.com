@@ -11,14 +11,15 @@
         </div>
 
         <div :class="$style.Blurb">
-          Youngest engineering hire at
+          Youngest <span v-if="!$sizing('mobile')">engineering hire</span
+          ><span v-else>engineer</span> at
           <img
             :class="$style.BlurbImage_Google"
             src="~@/src/web/assets/logos/Google.png"
           />
         </div>
         <div :class="$style.Blurb">
-          Co-founded a research team at
+          Co-founded a <span v-show="!$sizing('mobile')">research</span> team at
           <img
             :class="$style.BlurbImage_Google"
             src="~@/src/web/assets/logos/Google.png"
@@ -32,7 +33,7 @@
           />
         </div>
         <div :class="$style.Blurb">
-          Building a better internet at
+          Building <span v-show="!$sizing('mobile')">a better internet</span> at
           <img
             :class="$style.BlurbImage_Mozilla"
             src="~@/src/web/assets/logos/Mozilla.png"
