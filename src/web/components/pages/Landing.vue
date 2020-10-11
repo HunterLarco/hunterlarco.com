@@ -12,7 +12,10 @@
       </div>
 
       <div :class="$style.Nav">
-        <div :class="$style.Filters">
+        <div
+          :class="$style.Filters"
+          :style="expanded_ ? '' : 'max-width: 640px'"
+        >
           <div
             :class="
               filter_ == 'full-time' ? $style.Filter_Selected : $style.Filter
@@ -415,6 +418,10 @@ export default {
 .Nav {
   flex-shrink: 0;
   padding: 0 60px 60px 60px;
+
+  @include sizing-mobile {
+    padding: 0 30px 30px 30px;
+  }
 }
 
 .NavColumns {
@@ -423,13 +430,15 @@ export default {
 
   @include sizing-mobile {
     column-gap: 30px;
-    padding: 0 30px 30px 30px;
   }
 }
 
 .Filters {
-  margin-bottom: 20px;
-  text-align: right;
+  margin-bottom: 40px;
+
+  @include sizing-mobile {
+    display: none;
+  }
 }
 
 .Filter {
@@ -439,11 +448,13 @@ export default {
   border: 1px solid #000;
   cursor: pointer;
   display: inline-block;
+  margin-top: 10px;
+  margin-right: 10px;
   padding: 5px 14px;
   user-select: none;
 
-  & ~ .Filter {
-    margin-left: 10px;
+  &:last-child {
+    margin-right: 0;
   }
 }
 
