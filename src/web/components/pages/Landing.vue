@@ -9,6 +9,35 @@
             >#unfck</a
           >
         </div>
+
+        <div :class="$style.Blurb">
+          Youngest engineering hire at
+          <img
+            :class="$style.BlurbImage_Google"
+            src="~@/src/web/assets/logos/Google.png"
+          />
+        </div>
+        <div :class="$style.Blurb">
+          Co-founded a research team at
+          <img
+            :class="$style.BlurbImage_Google"
+            src="~@/src/web/assets/logos/Google.png"
+          />
+        </div>
+        <div :class="$style.Blurb">
+          Founded
+          <img
+            :class="$style.BlurbImage_Terrace"
+            src="~@/src/web/assets/logos/Terrace.png"
+          />
+        </div>
+        <div :class="$style.Blurb">
+          Building a better internet at
+          <img
+            :class="$style.BlurbImage_Mozilla"
+            src="~@/src/web/assets/logos/Mozilla.png"
+          />
+        </div>
       </div>
 
       <div :class="$style.Nav">
@@ -406,7 +435,35 @@ export default {
 .Tagline {
   @include fonts-tagline;
 
-  margin-top: 20px;
+  margin: 20px 0;
+}
+
+.Blurb {
+  @include fonts-blurb;
+
+  margin-top: 5px;
+}
+
+@mixin _blurb-image {
+  height: 24px;
+  vertical-align: middle;
+}
+
+.BlurbImage_Google {
+  @include _blurb-image;
+}
+
+.BlurbImage_Terrace {
+  @include _blurb-image;
+
+  height: 20px;
+  margin-bottom: 6px;
+}
+
+.BlurbImage_Mozilla {
+  @include _blurb-image;
+
+  margin-bottom: 2px;
 }
 
 .Nav {

@@ -35,3 +35,12 @@
   font-weight: 600;
   line-height: 1.4em;
 }
+
+@mixin fonts-blurb {
+  @include _fonts-base;
+
+  font-family: 'Fira Sans', Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.4em;
+}
