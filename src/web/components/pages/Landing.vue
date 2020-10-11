@@ -84,41 +84,60 @@
           <label>2019</label>
         </div>
 
-        <div :class="$style.NavItem" v-show="expanded_">
+        <a
+          href="https://www.beondeck.com/"
+          target="blank"
+          :class="$style.NavItem"
+          v-show="expanded_"
+        >
           <img src="~@/src/web/assets/favicons/OnDeck.png" />
           <label>On Deck: 2nd Cohort NYC</label>
           <div :class="$style.Line" style="width: 190px;" />
           <label>Fellow</label>
           <div :class="$style.Line" style="width: 108px;" />
           <label>2019</label>
-        </div>
+        </a>
 
-        <div :class="$style.NavItem">
+        <a
+          href="https://www.beondeck.com/"
+          target="blank"
+          :class="$style.NavItem"
+        >
           <img src="~@/src/web/assets/favicons/OnDeck.png" />
           <label>On Deck: 1st Cohort SF</label>
           <div :class="$style.Line" style="width: 209px;" />
           <label>Fellow</label>
           <div :class="$style.Line" style="width: 108px;" />
           <label>2019</label>
-        </div>
+        </a>
 
-        <div :class="$style.NavItem" v-show="expanded_">
+        <a
+          href="https://triplebyte.com/tb/hunter-j-larco-oca2jcx/certificate/track/generalist"
+          target="blank"
+          :class="$style.NavItem"
+          v-show="expanded_"
+        >
           <img src="~@/src/web/assets/favicons/Triplebyte.jpg" />
           <label>Triplebyte: Generalist</label>
           <div :class="$style.Line" style="width: 228px;" />
           <label>Certificate</label>
           <div :class="$style.Line" style="width: 80px;" />
           <label>2019</label>
-        </div>
+        </a>
 
-        <div :class="$style.NavItem" v-show="expanded_">
+        <a
+          href="https://www.kdd.org/kdd2019/accepted-papers/view/nostalgin-extracting-3d-city-models-from-historical-image-data"
+          target="blank"
+          :class="$style.NavItem"
+          v-show="expanded_"
+        >
           <img src="~@/src/web/assets/favicons/KDD.png" />
           <label>SIGKDD: Nostalgin</label>
           <div :class="$style.Line" style="width: 242px;" />
           <label>Speaker</label>
           <div :class="$style.Line" style="width: 93px;" />
           <label>2019</label>
-        </div>
+        </a>
 
         <div :class="$style.NavItem">
           <img src="~@/src/web/assets/favicons/Google.svg" />
@@ -138,41 +157,60 @@
           <label>2016</label>
         </div>
 
-        <router-link :class="$style.NavItem" to="/triplebyte-certificate-2016">
+        <a
+          href="https://triplebyte.com/tb/hunter-j-larco-oca2jcx/certificate/track/generalist"
+          target="blank"
+          :class="$style.NavItem"
+        >
           <img src="~@/src/web/assets/favicons/Triplebyte.jpg" />
           <label>Triplebyte: Generalist</label>
           <div :class="$style.Line" style="width: 228px;" />
           <label>Certificate</label>
           <div :class="$style.Line" style="width: 80px;" />
           <label>2016</label>
-        </router-link>
+        </a>
 
-        <div :class="$style.NavItem" v-show="expanded_">
+        <a
+          href="https://experiments.withgoogle.com/voxel-css"
+          target="blank"
+          :class="$style.NavItem"
+          v-show="expanded_"
+        >
           <img src="~@/src/web/assets/favicons/ChromeExperiments.png" />
           <label>Chrome Experiments: voxel.css</label>
           <div :class="$style.Line" style="width: 154px;" />
           <label>Award</label>
           <div :class="$style.Line" style="width: 108px;" />
           <label>2016</label>
-        </div>
+        </a>
 
-        <div :class="$style.NavItem" v-show="expanded_">
+        <a
+          href="https://www.makeschool.com/"
+          target="blank"
+          :class="$style.NavItem"
+          v-show="expanded_"
+        >
           <img src="~@/src/web/assets/favicons/MakeSchool.png" />
           <label>Make School: Inaugural Class</label>
           <div :class="$style.Line" style="width: 166px;" />
           <label>Education</label>
           <div :class="$style.Line" style="width: 82px;" />
           <label>2015</label>
-        </div>
+        </a>
 
-        <div :class="$style.NavItem" v-show="expanded_">
+        <a
+          href="https://experiments.withgoogle.com/wireframe-ripple-simulation"
+          target="blank"
+          :class="$style.NavItem"
+          v-show="expanded_"
+        >
           <img src="~@/src/web/assets/favicons/ChromeExperiments.png" />
           <label>Chrome Experiments: Wireframe Ripple</label>
           <div :class="$style.Line" style="width: 96px;" />
           <label>Award</label>
           <div :class="$style.Line" style="width: 108px;" />
           <label>2012</label>
-        </div>
+        </a>
 
         <div
           :class="[$style.NavItem, $style.NavItemButton]"
