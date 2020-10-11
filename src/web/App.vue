@@ -28,6 +28,8 @@ export default {
       if (!this.didFirstRender_) {
         this.$refs.carousel.show(page);
         this.didFirstRender_ = true;
+      } else if (to.path == '/') {
+        this.$refs.carousel.animateBackwards(page);
       } else {
         this.$refs.carousel.animateForwards(page);
       }
