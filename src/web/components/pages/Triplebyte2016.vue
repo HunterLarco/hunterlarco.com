@@ -4,6 +4,10 @@
       <router-link to="/">Hunter Larco</router-link>
     </div>
 
+    <div :class="$style.Image">
+      <img src="~@/src/web/assets/Triplebyte.png" />
+    </div>
+
     <router-link :class="$style.CloseButton" to="/" />
   </div>
 </template>
@@ -17,6 +21,8 @@ export default {};
 
 .Host {
   background: #2691C9;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .Header {
@@ -29,11 +35,12 @@ export default {};
   & > a {
     color: inherit;
     text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
   }
+}
+
+.Image {
+  padding: 40px 0;
+  text-align: center;
 }
 
 .CloseButton {

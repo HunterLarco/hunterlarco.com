@@ -1,5 +1,5 @@
 <template>
-  <ComponentCarousel ref="carousel" />
+  <ComponentCarousel :class="$style.Host" ref="carousel" />
 </template>
 
 <script>
@@ -53,5 +53,13 @@ html body {
 
 [hidden] {
   display: none !important;
+}
+</style>
+
+<style module lang="sass">
+@import '@/src/web/sass/layout';
+
+.Host {
+  @include layout-fill;
 }
 </style>

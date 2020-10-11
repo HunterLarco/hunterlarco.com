@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class="$style.Host">
     <component
       :is="pageOne_.component"
       :class="$style.Page_One"
@@ -102,6 +102,13 @@ export default {
 
 <style module lang="sass">
 @import '@/src/web/sass/layout';
+
+.Host {
+  @include layout-max-dimensions;
+
+  overflow: hidden;
+  position: relative;
+}
 
 @mixin _Page {
   @include layout-max-dimensions;
