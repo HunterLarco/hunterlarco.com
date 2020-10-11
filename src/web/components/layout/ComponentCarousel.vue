@@ -63,15 +63,15 @@ export default {
 
       nextPage.component = component;
 
-      Vue.set(currentPage.style, 'z-index', 1);
-      Vue.set(nextPage.style, 'z-index', 0);
+      Vue.set(currentPage.style, 'z-index', 0);
+      Vue.set(nextPage.style, 'z-index', 1);
 
       Vue.delete(nextPage.style, 'transition');
-      Vue.set(nextPage.style, 'transform', 'translate(-50%)');
+      Vue.set(nextPage.style, 'transform', 'translate(-100%)');
 
       setTimeout(() => {
         Vue.set(currentPage.style, 'transition', 'transform 700ms ease-in-out');
-        Vue.set(currentPage.style, 'transform', 'translate(100%)');
+        Vue.set(currentPage.style, 'transform', 'translate(50%)');
         Vue.set(nextPage.style, 'transition', 'transform 700ms ease');
         Vue.set(nextPage.style, 'transform', 'translate(0%)');
 
