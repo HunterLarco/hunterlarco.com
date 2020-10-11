@@ -57,6 +57,7 @@
               filter_ == 'speaker' ? $style.Filter_Selected : $style.Filter
             "
             @click="filter_ = filter_ == 'speaker' ? null : 'speaker'"
+            v-show="expanded_"
           >
             Speaker
           </div>
@@ -73,6 +74,7 @@
           <div
             :class="filter_ == 'award' ? $style.Filter_Selected : $style.Filter"
             @click="filter_ = filter_ == 'award' ? null : 'award'"
+            v-show="expanded_"
           >
             Award
           </div>
@@ -82,6 +84,7 @@
               filter_ == 'education' ? $style.Filter_Selected : $style.Filter
             "
             @click="filter_ = filter_ == 'education' ? null : 'education'"
+            v-show="expanded_"
           >
             Education
           </div>
@@ -91,15 +94,6 @@
           :class="$style.NavColumns"
           :style="expanded_ ? 'column-width: 640px' : ''"
         >
-          <div
-            :class="[$style.NavItem, $style.NavItemButton]"
-            @click="expanded_ = true"
-            v-show="!expanded_ && !$sizing('mobile')"
-          >
-            <img src="~@/src/web/assets/icons/Chevron.svg" />
-            <label>Show more</label>
-          </div>
-
           <a
             href="https://drip.is"
             target="blank"
@@ -335,7 +329,7 @@
           <div
             :class="[$style.NavItem, $style.NavItemButton]"
             @click="expanded_ = true"
-            v-show="!expanded_ && $sizing('mobile')"
+            v-show="!expanded_"
           >
             <img src="~@/src/web/assets/icons/Chevron.svg" />
             <label>Show more</label>
