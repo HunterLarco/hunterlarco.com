@@ -66,20 +66,20 @@
 
           <div
             :class="
-              filter_ == 'advisor' ? $style.Filter_Selected : $style.Filter
-            "
-            @click="filter_ = filter_ == 'advisor' ? null : 'advisor'"
-          >
-            Advisor
-          </div>
-
-          <div
-            :class="
               filter_ == 'founder' ? $style.Filter_Selected : $style.Filter
             "
             @click="filter_ = filter_ == 'founder' ? null : 'founder'"
           >
             Founder
+          </div>
+
+          <div
+            :class="
+              filter_ == 'advisor' ? $style.Filter_Selected : $style.Filter
+            "
+            @click="filter_ = filter_ == 'advisor' ? null : 'advisor'"
+          >
+            Advisor
           </div>
 
           <div
