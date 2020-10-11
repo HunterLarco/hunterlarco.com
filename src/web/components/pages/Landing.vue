@@ -412,7 +412,6 @@ export default {
 
 .Bio {
   flex-grow: 1;
-  max-width: 500px;
   padding: 60px;
 
   @include sizing-mobile {
