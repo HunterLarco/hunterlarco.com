@@ -1,41 +1,11 @@
 <template>
-  <ComponentCarousel :class="$style.Host" ref="carousel" />
+  <div>
+    <router-view />
+  </div>
 </template>
 
 <script>
-import ComponentCarousel from '@/src/web/components/layout/ComponentCarousel';
-import LandingPage from '@/src/web/components/pages/Landing';
-import Triplebyte2016Page from '@/src/web/components/pages/Triplebyte2016';
-
-const pageMap = {
-  '/': LandingPage,
-  '/triplebyte-certificate-2016': Triplebyte2016Page,
-};
-
-export default {
-  components: { ComponentCarousel },
-
-  data() {
-    return {
-      didFirstRender_: false,
-    };
-  },
-
-  watch: {
-    $route(to, from) {
-      const page = pageMap[to.path];
-
-      if (!this.didFirstRender_) {
-        this.$refs.carousel.show(page);
-        this.didFirstRender_ = true;
-      } else if (to.path == '/') {
-        this.$refs.carousel.animateBackwards(page);
-      } else {
-        this.$refs.carousel.animateForwards(page);
-      }
-    },
-  },
-};
+export default {};
 </script>
 
 <style lang="sass">
@@ -53,13 +23,5 @@ html body {
 
 [hidden] {
   display: none !important;
-}
-</style>
-
-<style module lang="sass">
-@import '@/src/web/sass/layout';
-
-.Host {
-  @include layout-fill;
 }
 </style>

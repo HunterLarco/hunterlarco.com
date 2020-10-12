@@ -301,7 +301,8 @@
             <label>2017</label>
           </div>
 
-          <div
+          <router-link
+            to="/history/google-ads"
             :class="$style.NavItem"
             :style="filter_ && filter_ != 'full-time' ? 'opacity: 0.2' : ''"
           >
@@ -311,7 +312,7 @@
             <label>Full-time</label>
             <div :class="$style.Line" style="width: 92px;" />
             <label>2016</label>
-          </div>
+          </router-link>
 
           <a
             href="https://triplebyte.com/tb/hunter-j-larco-oca2jcx/certificate/track/generalist"
@@ -415,7 +416,8 @@ export default {
 @import '@/src/web/sass/sizing';
 
 .Host {
-  background: #FFF;
+  @include layout-fill;
+
   overflow-x: hidden;
   overflow-y: scroll;
 }
