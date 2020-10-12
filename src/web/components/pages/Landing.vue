@@ -27,7 +27,7 @@
         </div>
 
         <div :class="$style.Blurb">
-          Youngest <span v-if="!$sizing('mobile')">engineering hire</span
+          Youngest <span v-if="$sizing.gt(510)">engineering hire</span
           ><span v-else>engineer</span> at
           <img
             :class="$style.BlurbImage_Google"
@@ -35,7 +35,7 @@
           />
         </div>
         <div :class="$style.Blurb">
-          Co-founded a <span v-show="!$sizing('mobile')">research</span> team at
+          Co-founded a <span v-show="$sizing.gt(510)">research</span> team at
           <img
             :class="$style.BlurbImage_Google"
             src="~@/src/web/assets/logos/Google.png"
@@ -49,7 +49,7 @@
           />
         </div>
         <div :class="$style.Blurb">
-          Building <span v-show="!$sizing('mobile')">a better internet</span> at
+          Building <span v-show="$sizing.gt(510)">a better internet</span> at
           <img
             :class="$style.BlurbImage_Mozilla"
             src="~@/src/web/assets/logos/Mozilla.png"

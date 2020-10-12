@@ -10,37 +10,38 @@ Sizes.set('highdpi', 1440);
 
 export default createStore('WindowSizeStore', {
   state: {
-    size: null,
+    width: window.innerWidth,
   },
 
-  actions: {
-    updateSize({ commit }) {
+  getters: {
+    size(state) {
       let size = null;
       for (const [label, width] of Sizes.entries()) {
-        if (window.innerWidth < width) {
+        if (state.width < width) {
           size = label;
           break;
         }
       }
+      return size;
+    },
+  },
 
-      commit('setSize', size);
+  actions: {
+    updateWidth({ commit }) {
+      commit('setWidth', window.innerWidth);
     },
 
-    autoUpdateSize({ dispatch }) {
-      dispatch('updateSize');
+    autoUpdateWidth({ dispatch }) {
+      dispatch('updateWidth');
       window.addEventListener('resize', () => {
-        dispatch('updateSize');
+        dispatch('updateWidth');
       });
     },
   },
 
   mutations: {
-    setSize(state, size) {
-      if (size && !Sizes.has(size)) {
-        throw new Error(`Unknown size ${size}`);
-      }
-
-      Vue.set(state, 'size', size);
+    setWidth(state, width) {
+      Vue.set(state, 'width', width);
     },
   },
 });

@@ -12,4 +12,4 @@ if (process.fido.env == 'local') {
 }
 
 const WindowSizeStore = require('@/src/web/stores/WindowSizeStore').default;
-WindowSizeStore.dispatch('autoUpdateSize');
+WindowSizeStore.dispatch('autoUpdateWidth');

@@ -9,7 +9,7 @@ export default {
       }
 
       const labels = Array.from(Sizes.keys());
-      const startIndex = labels.indexOf(WindowSizeStore.state.size);
+      const startIndex = labels.indexOf(WindowSizeStore.getters.size);
 
       if (startIndex == -1) {
         return fallback;
@@ -23,6 +23,22 @@ export default {
       }
 
       return fallback;
+    };
+
+    Vue.prototype.$sizing.gt = (width) => {
+      return WindowSizeStore.state.width > width;
+    };
+
+    Vue.prototype.$sizing.gte = (width) => {
+      return WindowSizeStore.state.width >= width;
+    };
+
+    Vue.prototype.$sizing.lt = (width) => {
+      return WindowSizeStore.state.width < width;
+    };
+
+    Vue.prototype.$sizing.lte = (width) => {
+      return WindowSizeStore.state.width <= width;
     };
   },
 };
