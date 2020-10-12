@@ -2,7 +2,23 @@
   <div :class="$style.Host">
     <div :class="$style.Sidebar">
       <div :class="$style.Bio">
-        <div :class="$style.Name">Hunter Larco</div>
+        <div>
+          <div :class="$style.Name">Hunter Larco</div>
+          <a
+            :class="$style.SocialIcon"
+            href="https://github.com/hunterlarco"
+            target="blank"
+          >
+            <img src="~@/src/web/assets/icons/Github.png" />
+          </a>
+          <a
+            :class="$style.SocialIcon"
+            href="https://linkedin.com/in/hunterlarco"
+            target="blank"
+          >
+            <img src="~@/src/web/assets/icons/LinkedIn.png" />
+          </a>
+        </div>
         <div :class="$style.Tagline">
           Currently making the internet a better place
           <a href="https://www.mozilla.org/en-US/firefox/unfck/" target="blank"
@@ -430,6 +446,20 @@ export default {
 
 .Name {
   @include fonts-name;
+
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.SocialIcon {
+  float: right;
+
+  & > img {
+    height: 24px;
+    margin-bottom: 4px;
+    margin-left: 10px;
+    vertical-align: middle;
+  }
 }
 
 .Tagline {
