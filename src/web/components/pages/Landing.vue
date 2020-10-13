@@ -396,6 +396,115 @@
         </div>
       </div>
     </div>
+
+    <div :class="$style.People">
+      <div :class="$style.Name">
+        A collection of the best and brightest from my career
+      </div>
+      <div :class="$style.Tagline">People I vouch for</div>
+
+      <div :class="$style.Person">
+        <img src="~@/src/web/assets/people/JimmyYue.jpeg" />
+        <div :class="$style.PersonText">Jimmy Yue</div>
+        <div :class="$style.Blurb">
+          Building <span v-show="$sizing.gt(510)">a better internet</span> at
+          <img
+            :class="$style.BlurbImage_Mozilla"
+            src="~@/src/web/assets/logos/Mozilla.png"
+          />
+        </div>
+        <div :class="$style.Blurb">
+          Founded
+          <img
+            :class="$style.BlurbImage_Terrace"
+            src="~@/src/web/assets/logos/Terrace.png"
+          />
+        </div>
+        <div :class="$style.Blurb">
+          Senior Engineer at
+          <img
+            :class="$style.BlurbImage_LinkedIn"
+            src="~@/src/web/assets/logos/LinkedIn.png"
+          />
+        </div>
+      </div>
+
+      <div :class="$style.Person">
+        <img src="~@/src/web/assets/people/AmolKapoor.jpeg" />
+        <div :class="$style.PersonText">Amol Kapoor</div>
+        <div :class="$style.Blurb">
+          Machine Learning at
+          <img
+            :class="$style.BlurbImage_Google"
+            src="~@/src/web/assets/logos/GoogleResearch.png"
+          />
+        </div>
+        <div :class="$style.Blurb">
+          Founded
+          <img
+            :class="$style.BlurbImage_MoLabs"
+            src="~@/src/web/assets/logos/MoLabs.png"
+          />
+        </div>
+        <div :class="$style.Blurb">
+          Researcher at
+          <img
+            :class="$style.BlurbImage_BioNet"
+            src="~@/src/web/assets/logos/BioNet.png"
+          />
+        </div>
+      </div>
+
+      <div :class="$style.Person">
+        <img src="~@/src/web/assets/people/AustinDiamond.png" />
+        <div :class="$style.PersonText">Austin Diamond</div>
+        <div :class="$style.Blurb">
+          VP at
+          <img
+            :class="$style.BlurbImage_LongevityFund"
+            src="~@/src/web/assets/logos/LongevityFund.png"
+          />
+        </div>
+        <div :class="$style.Blurb">
+          Growth at
+          <img
+            :class="$style.BlurbImage_Omni"
+            src="~@/src/web/assets/logos/Omni.png"
+          />
+        </div>
+        <div :class="$style.Blurb">
+          Business development at
+          <img
+            :class="$style.BlurbImage_Google"
+            src="~@/src/web/assets/logos/Partnered.png"
+          />
+        </div>
+      </div>
+
+      <div :class="$style.Person">
+        <img src="~@/src/web/assets/people/MikeKane.jpeg" />
+        <div :class="$style.PersonText">Mike Kane</div>
+      </div>
+
+      <div :class="$style.Person">
+        <div :class="$style.PersonImagePlaceholder" />
+        <div :class="$style.PersonText">Nate Druckerman</div>
+        <div :class="$style.Blurb">
+          Senior Engineer at
+          <img
+            :class="$style.BlurbImage_YouTube"
+            src="~@/src/web/assets/logos/YouTube.png"
+          />
+        </div>
+        <div :class="$style.Blurb">
+          Senior Engineer at
+          <img
+            :class="$style.BlurbImage_Google"
+            src="~@/src/web/assets/logos/GoogleAds.png"
+          />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -450,6 +559,7 @@ export default {
   @include fonts-name;
 
   display: inline-block;
+  margin-bottom: 20px;
   vertical-align: middle;
 }
 
@@ -467,7 +577,7 @@ export default {
 .Tagline {
   @include fonts-tagline;
 
-  margin: 20px 0;
+  margin-bottom: 20px;
 }
 
 .Blurb {
@@ -496,6 +606,47 @@ export default {
   @include _blurb-image;
 
   margin-bottom: 2px;
+}
+
+.BlurbImage_LinkedIn {
+  @include _blurb-image;
+
+  margin-bottom: 4px;
+  margin-left: 1px;
+}
+
+.BlurbImage_BioNet {
+  @include _blurb-image;
+
+  margin-bottom: 2px;
+  height: 20px;
+}
+
+.BlurbImage_LongevityFund {
+  @include _blurb-image;
+
+  margin-bottom: 4px;
+  height: 18px;
+}
+
+.BlurbImage_Omni {
+  @include _blurb-image;
+}
+
+.BlurbImage_YouTube {
+  @include _blurb-image;
+
+  height: 20px;
+  margin-bottom: 2px;
+  margin-left: 1px;
+}
+
+.BlurbImage_MoLabs {
+  @include _blurb-image;
+
+  height: 18px;
+  margin-bottom: 4px;
+  margin-left: 1px;
 }
 
 .Nav {
@@ -600,5 +751,38 @@ export default {
   display: inline-block;
   height: 1px;
   margin: 0 10px;
+}
+
+.People {
+  padding: 0 60px 60px 60px;
+
+  @include sizing-mobile {
+    padding: 0 30px 30px 30px;
+  }
+}
+
+.Person {
+  display: inline-block;
+  margin-right: 20px;
+  vertical-align: top;
+
+  & > img {
+    height: 128px;
+  }
+
+  &:last-child {
+    margin: 0;
+  }
+}
+
+.PersonImagePlaceholder {
+  background: #F0F0F0;
+  display: inline-block;
+  height: 128px;
+  width: 128px;
+}
+
+.PersonText {
+  @include fonts-body;
 }
 </style>
