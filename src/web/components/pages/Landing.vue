@@ -482,12 +482,26 @@
       </div>
 
       <div :class="$style.Person">
-        <img src="~@/src/web/assets/people/MikeKane.jpeg" />
-        <div :class="$style.PersonText">Mike Kane</div>
+        <img src="~@/src/web/assets/people/WillGowell.jpeg" />
+        <div :class="$style.PersonText">Will Gowell</div>
+        <div :class="$style.Blurb">
+          Security Engineer at
+          <img
+            :class="$style.BlurbImage_Twitch"
+            src="~@/src/web/assets/logos/Twitch.png"
+          />
+        </div>
+        <div :class="$style.Blurb">
+          SRE at
+          <img
+            :class="$style.BlurbImage_GeneralElectric"
+            src="~@/src/web/assets/logos/GeneralElectric.png"
+          />
+        </div>
       </div>
 
       <div :class="$style.Person">
-        <div :class="$style.PersonImagePlaceholder" />
+        <img src="~@/src/web/assets/people/NateDruckerman.png" />
         <div :class="$style.PersonText">Nate Druckerman</div>
         <div :class="$style.Blurb">
           Senior Engineer at
@@ -501,6 +515,44 @@
           <img
             :class="$style.BlurbImage_Google"
             src="~@/src/web/assets/logos/GoogleAds.png"
+          />
+        </div>
+      </div>
+
+      <div :class="$style.Person">
+        <img src="~@/src/web/assets/people/MikeKane.jpeg" />
+        <div :class="$style.PersonText">Mike Kane</div>
+        <div :class="$style.Blurb">
+          Machine Learning at
+          <img
+            :class="$style.BlurbImage_PerceptronConsulting"
+            src="~@/src/web/assets/logos/PerceptronConsulting.png"
+          />
+        </div>
+        <div :class="$style.Blurb">
+          Senior Data Scientist at
+          <img
+            :class="$style.BlurbImage_Flatiron"
+            src="~@/src/web/assets/logos/Flatiron.png"
+          />
+        </div>
+      </div>
+
+      <div :class="$style.Person">
+        <img src="~@/src/web/assets/people/LukeSolomon.jpeg" />
+        <div :class="$style.PersonText">Luke Solomon</div>
+        <div :class="$style.Blurb">
+          Senior iOS Engineer at
+          <img
+            :class="$style.BlurbImage_Yelp"
+            src="~@/src/web/assets/logos/Yelp.png"
+          />
+        </div>
+        <div :class="$style.Blurb">
+          iOS Engineer at
+          <img
+            :class="$style.BlurbImage_Epic"
+            src="~@/src/web/assets/logos/Epic.png"
           />
         </div>
       </div>
@@ -649,6 +701,41 @@ export default {
   margin-left: 1px;
 }
 
+.BlurbImage_Twitch {
+  @include _blurb-image;
+}
+
+.BlurbImage_GeneralElectric {
+  @include _blurb-image;
+}
+
+.BlurbImage_Yelp {
+  @include _blurb-image;
+
+  height: 30px;
+  margin-bottom: 9px;
+}
+
+.BlurbImage_Epic {
+  @include _blurb-image;
+
+  height: 22px;
+  margin-bottom: 4px;
+}
+
+.BlurbImage_Flatiron {
+  @include _blurb-image;
+
+  margin-bottom: 10px;
+}
+
+.BlurbImage_PerceptronConsulting {
+  @include _blurb-image;
+
+  height: 20px;
+  margin-left: 1px;
+}
+
 .Nav {
   flex-shrink: 0;
   padding: 0 60px 60px 60px;
@@ -773,13 +860,6 @@ export default {
   &:last-child {
     margin: 0;
   }
-}
-
-.PersonImagePlaceholder {
-  background: #F0F0F0;
-  display: inline-block;
-  height: 128px;
-  width: 128px;
 }
 
 .PersonText {
