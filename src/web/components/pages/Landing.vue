@@ -404,166 +404,38 @@
       <div :class="$style.Tagline">People I vouch for</div>
 
       <div :class="$style.PeopleGrid">
-        <div :class="$style.Person">
-          <img src="~@/src/web/assets/people/JimmyYue.jpeg" />
-          <div :class="$style.PersonText">Jimmy Yue</div>
-          <div :class="$style.Blurb">
-            Building <span v-show="$sizing.gt(510)">a better internet</span> at
-            <img
-              :class="$style.BlurbImage_Mozilla"
-              src="~@/src/web/assets/logos/Mozilla.png"
-            />
-          </div>
-          <div :class="$style.Blurb">
-            Founded
-            <img
-              :class="$style.BlurbImage_Terrace"
-              src="~@/src/web/assets/logos/Terrace.png"
-            />
-          </div>
-          <div :class="$style.Blurb">
-            Senior Engineer at
-            <img
-              :class="$style.BlurbImage_LinkedIn"
-              src="~@/src/web/assets/logos/LinkedIn.png"
-            />
-          </div>
-        </div>
-
-        <div :class="$style.Person">
-          <img src="~@/src/web/assets/people/AmolKapoor.jpeg" />
-          <div :class="$style.PersonText">Amol Kapoor</div>
-          <div :class="$style.Blurb">
-            Machine Learning at
-            <img
-              :class="$style.BlurbImage_Google"
-              src="~@/src/web/assets/logos/GoogleResearch.png"
-            />
-          </div>
-          <div :class="$style.Blurb">
-            Founded
-            <img
-              :class="$style.BlurbImage_MoLabs"
-              src="~@/src/web/assets/logos/MoLabs.png"
-            />
-          </div>
-          <div :class="$style.Blurb">
-            Researcher at
-            <img
-              :class="$style.BlurbImage_BioNet"
-              src="~@/src/web/assets/logos/BioNet.png"
-            />
-          </div>
-        </div>
-
-        <div :class="$style.Person">
-          <img src="~@/src/web/assets/people/AustinDiamond.png" />
-          <div :class="$style.PersonText">Austin Diamond</div>
-          <div :class="$style.Blurb">
-            VP at
-            <img
-              :class="$style.BlurbImage_LongevityFund"
-              src="~@/src/web/assets/logos/LongevityFund.png"
-            />
-          </div>
-          <div :class="$style.Blurb">
-            Growth at
-            <img
-              :class="$style.BlurbImage_Omni"
-              src="~@/src/web/assets/logos/Omni.png"
-            />
-          </div>
-          <div :class="$style.Blurb">
-            Business development at
-            <img
-              :class="$style.BlurbImage_Google"
-              src="~@/src/web/assets/logos/Partnered.png"
-            />
-          </div>
-        </div>
-
-        <div :class="$style.Person">
-          <img src="~@/src/web/assets/people/WillGowell.jpeg" />
-          <div :class="$style.PersonText">Will Gowell</div>
-          <div :class="$style.Blurb">
-            Security Engineer at
-            <img
-              :class="$style.BlurbImage_Twitch"
-              src="~@/src/web/assets/logos/Twitch.png"
-            />
-          </div>
-          <div :class="$style.Blurb">
-            SRE at
-            <img
-              :class="$style.BlurbImage_GeneralElectric"
-              src="~@/src/web/assets/logos/GeneralElectric.png"
-            />
-          </div>
-        </div>
-
-        <div :class="$style.Person">
-          <img src="~@/src/web/assets/people/NateDruckerman.png" />
-          <div :class="$style.PersonText">Nate Druckerman</div>
-          <div :class="$style.Blurb">
-            Senior Engineer at
-            <img
-              :class="$style.BlurbImage_YouTube"
-              src="~@/src/web/assets/logos/YouTube.png"
-            />
-          </div>
-          <div :class="$style.Blurb">
-            Senior Engineer at
-            <img
-              :class="$style.BlurbImage_Google"
-              src="~@/src/web/assets/logos/GoogleAds.png"
-            />
-          </div>
-        </div>
-
-        <div :class="$style.Person">
-          <img src="~@/src/web/assets/people/MikeKane.jpeg" />
-          <div :class="$style.PersonText">Mike Kane</div>
-          <div :class="$style.Blurb">
-            Machine Learning at
-            <img
-              :class="$style.BlurbImage_PerceptronConsulting"
-              src="~@/src/web/assets/logos/PerceptronConsulting.png"
-            />
-          </div>
-          <div :class="$style.Blurb">
-            Senior Data Scientist at
-            <img
-              :class="$style.BlurbImage_Flatiron"
-              src="~@/src/web/assets/logos/Flatiron.png"
-            />
-          </div>
-        </div>
-
-        <div :class="$style.Person">
-          <img src="~@/src/web/assets/people/LukeSolomon.jpeg" />
-          <div :class="$style.PersonText">Luke Solomon</div>
-          <div :class="$style.Blurb">
-            Senior iOS Engineer at
-            <img
-              :class="$style.BlurbImage_Yelp"
-              src="~@/src/web/assets/logos/Yelp.png"
-            />
-          </div>
-          <div :class="$style.Blurb">
-            iOS Engineer at
-            <img
-              :class="$style.BlurbImage_Epic"
-              src="~@/src/web/assets/logos/Epic.png"
-            />
-          </div>
-        </div>
+        <JimmyYue />
+        <AmolKapoor />
+        <AustinDiamond />
+        <WillGowell />
+        <NateDruckerman />
+        <MikeKane />
+        <LukeSolomon />
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import AmolKapoor from '@/src/web/components/people/AmolKapoor';
+import AustinDiamond from '@/src/web/components/people/AustinDiamond';
+import JimmyYue from '@/src/web/components/people/JimmyYue';
+import LukeSolomon from '@/src/web/components/people/LukeSolomon';
+import MikeKane from '@/src/web/components/people/MikeKane';
+import NateDruckerman from '@/src/web/components/people/NateDruckerman';
+import WillGowell from '@/src/web/components/people/WillGowell';
+
 export default {
+  components: {
+    AustinDiamond,
+    AmolKapoor,
+    JimmyYue,
+    LukeSolomon,
+    MikeKane,
+    NateDruckerman,
+    WillGowell,
+  },
+
   data() {
     return {
       expanded_: false,
@@ -660,82 +532,6 @@ export default {
   @include _blurb-image;
 
   margin-bottom: 2px;
-}
-
-.BlurbImage_LinkedIn {
-  @include _blurb-image;
-
-  margin-bottom: 4px;
-  margin-left: 1px;
-}
-
-.BlurbImage_BioNet {
-  @include _blurb-image;
-
-  margin-bottom: 2px;
-  height: 20px;
-}
-
-.BlurbImage_LongevityFund {
-  @include _blurb-image;
-
-  margin-bottom: 4px;
-  height: 18px;
-}
-
-.BlurbImage_Omni {
-  @include _blurb-image;
-}
-
-.BlurbImage_YouTube {
-  @include _blurb-image;
-
-  height: 20px;
-  margin-bottom: 2px;
-  margin-left: 1px;
-}
-
-.BlurbImage_MoLabs {
-  @include _blurb-image;
-
-  height: 18px;
-  margin-bottom: 4px;
-  margin-left: 1px;
-}
-
-.BlurbImage_Twitch {
-  @include _blurb-image;
-}
-
-.BlurbImage_GeneralElectric {
-  @include _blurb-image;
-}
-
-.BlurbImage_Yelp {
-  @include _blurb-image;
-
-  height: 30px;
-  margin-bottom: 9px;
-}
-
-.BlurbImage_Epic {
-  @include _blurb-image;
-
-  height: 22px;
-  margin-bottom: 4px;
-}
-
-.BlurbImage_Flatiron {
-  @include _blurb-image;
-
-  margin-bottom: 10px;
-}
-
-.BlurbImage_PerceptronConsulting {
-  @include _blurb-image;
-
-  height: 20px;
-  margin-left: 1px;
 }
 
 .Nav {
@@ -855,23 +651,6 @@ export default {
   grid-gap: 60px;
   grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
   margin-top: 60px;
-}
-
-.Person {
-  display: inline-block;
-  margin-right: 20px;
-  vertical-align: top;
-
-  & > img {
-    height: 128px;
-  }
-
-  &:last-child {
-    margin: 0;
-  }
-}
-
-.PersonText {
-  @include fonts-body;
+  max-width: 1220px;
 }
 </style>
