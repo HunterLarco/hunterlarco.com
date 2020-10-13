@@ -405,8 +405,8 @@
 
       <div :class="$style.PeopleGrid">
         <JimmyYue />
-        <AmolKapoor />
         <AustinDiamond />
+        <AmolKapoor />
         <WillGowell />
         <NateDruckerman />
         <MikeKane />
