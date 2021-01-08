@@ -1,9 +1,14 @@
-import Vue from 'vue';
 import VueRouter from 'vue-router';
 
 const router = new VueRouter({
   mode: 'history',
   routes: [
+    {
+      path: '/history/google-ads',
+      component: () => import('@/src/web/components/pages/GoogleAds'),
+      meta: { title: 'Hunter Larco / History / Google Ads' },
+    },
+
     {
       path: '*',
       component: () => import('@/src/web/components/pages/Landing'),

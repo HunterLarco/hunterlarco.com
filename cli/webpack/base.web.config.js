@@ -53,14 +53,19 @@ module.exports = (env, flags) =>
         },
         {
           test: /\.(png|jpe?g|gif|svg)$/,
-          loader: 'file-loader',
-          options: {
-            esModule: false,
-            name: environment.select(env, {
-              production: 'static/images/[hash:base64].[ext]',
-              local: 'static/images/[name].[hash:base64].[ext]',
-            }),
-          },
+          use: [
+            {
+              loader: 'file-loader',
+              options: {
+                esModule: false,
+                name: environment.select(env, {
+                  production: 'static/images/[hash:base64].[ext]',
+                  local: 'static/images/[name].[hash:base64].[ext]',
+                }),
+              },
+            },
+            'image-webpack-loader',
+          ],
         },
         {
           test: /\.(mp4)$/,
