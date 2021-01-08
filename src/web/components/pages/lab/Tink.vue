@@ -18,6 +18,7 @@ export default {
       canvas: this.$refs.canvas,
       engine,
       options: {
+        pixelRatio: 'auto',
         width: 800,
         height: 600,
         //      showAngleIndicator: true,
