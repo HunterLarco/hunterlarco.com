@@ -49,6 +49,7 @@
   },
   "dependencies": {
     "@babel/runtime": "7.11.0",
+    "matter-js": "0.15.0",
     "vue": "2.6.11",
     "vue-gtag": "1.9.1",
     "vue-router": "3.4.1",

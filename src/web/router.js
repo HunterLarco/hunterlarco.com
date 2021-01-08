@@ -10,6 +10,12 @@ const router = new VueRouter({
     },
 
     {
+      path: '/lab/tink',
+      component: () => import('@/src/web/components/pages/lab/Tink'),
+      meta: { title: 'Hunter Larco / Lab / Tink' },
+    },
+
+    {
       path: '*',
       component: () => import('@/src/web/components/pages/Landing'),
       meta: { title: 'Hunter Larco' },
