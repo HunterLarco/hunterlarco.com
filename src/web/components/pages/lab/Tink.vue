@@ -67,7 +67,6 @@ export default {
     Matter.Runner.run(runner, engine);
 
     const bounds = createBoundingCircle(400, 300, 200);
-    Matter.Body.setAngularVelocity(bounds, 0.01);
 
     Matter.World.add(engine.world, [
       bounds,
@@ -98,6 +97,16 @@ export default {
           visible: false,
         },
       },
+    });
+
+    Matter.Events.on(mouseConstraint, 'mousemove', (event) => {
+      const { x, y } = event.mouse.position;
+      const { width, height } = render.options;
+
+      Matter.Body.setAngularVelocity(
+        bounds,
+        ((x - width / 2) / (width / 2)) * -0.02
+      );
     });
 
     Matter.World.add(engine.world, mouseConstraint);
