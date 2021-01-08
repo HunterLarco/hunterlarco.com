@@ -396,46 +396,11 @@
         </div>
       </div>
     </div>
-
-    <div :class="$style.People">
-      <div :class="$style.Name">
-        A collection of the best and brightest from my career
-      </div>
-      <div :class="$style.Tagline">People I vouch for</div>
-
-      <div :class="$style.PeopleGrid">
-        <JimmyYue />
-        <AustinDiamond />
-        <AmolKapoor />
-        <WillGowell />
-        <NateDruckerman />
-        <MikeKane />
-        <LukeSolomon />
-      </div>
-    </div>
   </div>
 </template>
 
 <script>
-import AmolKapoor from '@/src/web/components/people/AmolKapoor';
-import AustinDiamond from '@/src/web/components/people/AustinDiamond';
-import JimmyYue from '@/src/web/components/people/JimmyYue';
-import LukeSolomon from '@/src/web/components/people/LukeSolomon';
-import MikeKane from '@/src/web/components/people/MikeKane';
-import NateDruckerman from '@/src/web/components/people/NateDruckerman';
-import WillGowell from '@/src/web/components/people/WillGowell';
-
 export default {
-  components: {
-    AustinDiamond,
-    AmolKapoor,
-    JimmyYue,
-    LukeSolomon,
-    MikeKane,
-    NateDruckerman,
-    WillGowell,
-  },
-
   data() {
     return {
       expanded_: false,
@@ -636,21 +601,5 @@ export default {
   display: inline-block;
   height: 1px;
   margin: 0 10px;
-}
-
-.People {
-  padding: 0 60px 60px 60px;
-
-  @include sizing-mobile {
-    padding: 0 30px 30px 30px;
-  }
-}
-
-.PeopleGrid {
-  display: grid;
-  grid-gap: 60px;
-  grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-  margin-top: 60px;
-  max-width: 1220px;
 }
 </style>
