@@ -67,9 +67,27 @@ export default {
     Matter.Runner.run(runner, engine);
 
     const bounds = createBoundingCircle(400, 300, 200);
-    const rectangle = Matter.Bodies.rectangle(500, 200, 20, 20);
+    Matter.Body.setAngularVelocity(bounds, 0.01);
 
-    Matter.World.add(engine.world, [bounds, rectangle]);
+    Matter.World.add(engine.world, [
+      bounds,
+      Matter.Bodies.circle(500, 280, 20),
+      Matter.Bodies.circle(460, 280, 20),
+      Matter.Bodies.circle(420, 280, 20),
+      Matter.Bodies.circle(380, 280, 20),
+      Matter.Bodies.polygon(500, 320, 5, 20),
+      Matter.Bodies.polygon(460, 320, 5, 20),
+      Matter.Bodies.polygon(420, 320, 5, 20),
+      Matter.Bodies.polygon(380, 320, 5, 20),
+      Matter.Bodies.polygon(500, 360, 4, 20),
+      Matter.Bodies.polygon(460, 360, 4, 20),
+      Matter.Bodies.polygon(420, 360, 4, 20),
+      Matter.Bodies.polygon(380, 360, 4, 20),
+      Matter.Bodies.polygon(500, 400, 3, 20),
+      Matter.Bodies.polygon(460, 400, 3, 20),
+      Matter.Bodies.polygon(420, 400, 3, 20),
+      Matter.Bodies.polygon(380, 400, 3, 20),
+    ]);
 
     const mouse = Matter.Mouse.create(render.canvas);
     const mouseConstraint = Matter.MouseConstraint.create(engine, {
