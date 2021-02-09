@@ -55,9 +55,7 @@ export default {
 
         const ctx = canvas.getContext('2d');
 
-        // ctx.clearRect(0, 0, width, height);
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.2)';
-        ctx.fillRect(0, 0, width, height);
+        ctx.clearRect(0, 0, width, height);
 
         analyser.getByteTimeDomainData(dataArray);
 
@@ -70,11 +68,10 @@ export default {
             (value / 256) * height
           );
         }
-        ctx.moveTo(width, height / 2);
         for (let i = 0; i < dataArray.length; ++i) {
-          const value = dataArray[i];
+          const value = dataArray[dataArray.length - i - 1];
           ctx.lineTo(
-            width - ((i / dataArray.length) * width) / 2,
+            width / 2 + ((i / dataArray.length) * width) / 2,
             (value / 256) * height
           );
         }
