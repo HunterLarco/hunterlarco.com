@@ -68,6 +68,17 @@ module.exports = (env, flags) =>
           ],
         },
         {
+          test: /\.(mp3)$/,
+          loader: 'file-loader',
+          options: {
+            esModule: false,
+            name: environment.select(env, {
+              production: 'static/audio/[hash:base64].[ext]',
+              local: 'static/audio/[name].[hash:base64].[ext]',
+            }),
+          },
+        },
+        {
           test: /\.(mp4)$/,
           loader: 'file-loader',
           options: {
@@ -94,7 +105,7 @@ module.exports = (env, flags) =>
 
     performance: {
       assetFilter(assetFilename) {
-        const ignore = [/^static\/video\//, /\.map$/];
+        const ignore = [/^static\/(video|audio)\//, /\.map$/];
         return !ignore.some((pattern) => assetFilename.match(pattern));
       },
     },

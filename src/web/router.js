@@ -10,6 +10,12 @@ const router = new VueRouter({
     },
 
     {
+      path: '/lab/fft',
+      component: () => import('@/src/web/components/pages/lab/FFT'),
+      meta: { title: 'Hunter Larco / Lab / FFT' },
+    },
+
+    {
       path: '*',
       component: () => import('@/src/web/components/pages/Landing'),
       meta: { title: 'Hunter Larco' },
