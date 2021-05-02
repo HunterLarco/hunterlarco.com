@@ -49,10 +49,17 @@
           />
         </div>
         <div :class="$style.Blurb">
-          Building <span v-show="$sizing.gt(510)">a better internet</span> at
+          <span v-show="$sizing.gt(685)"
+            >Bringing pixels to your eyeballs in VR</span
+          >
+          <span v-show="$sizing.lte(685)">
+            <span v-show="$sizing.gt(485)">Improving</span>
+            AR/VR
+          </span>
+          at
           <img
-            :class="$style.BlurbImage_Mozilla"
-            src="~@/src/web/assets/logos/Mozilla.png"
+            :class="$style.BlurbImage_Facebook"
+            src="~@/src/web/assets/logos/Facebook.png"
           />
         </div>
       </div>
@@ -140,6 +147,35 @@
           :class="$style.NavColumns"
           :style="expanded_ ? 'column-width: 640px' : ''"
         >
+          <a
+            href="https://tech.fb.com/ar-vr/"
+            target="blank"
+            :class="$style.NavItem"
+            :style="filter_ && filter_ != 'full-time' ? 'opacity: 0.2' : ''"
+          >
+            <img src="~@/src/web/assets/favicons/Facebook.jpeg" />
+            <label>Facebook Reality Labs</label>
+            <div :class="$style.Line" style="width: 216px;" />
+            <label>Full-time</label>
+            <div :class="$style.Line" style="width: 92px;" />
+            <label>2021</label>
+          </a>
+
+          <a
+            href="https://soot.ai"
+            target="blank"
+            :class="$style.NavItem"
+            :style="filter_ && filter_ != 'advisor' ? 'opacity: 0.2' : ''"
+            v-show="expanded_"
+          >
+            <img src="~@/src/web/assets/favicons/Soot.png" />
+            <label>Soot</label>
+            <div :class="$style.Line" style="width: 346px;" />
+            <label>Advisor</label>
+            <div :class="$style.Line" style="width: 100px;" />
+            <label>2021</label>
+          </a>
+
           <a
             href="https://drip.is"
             target="blank"
@@ -493,10 +529,12 @@ export default {
   margin-bottom: 6px;
 }
 
-.BlurbImage_Mozilla {
+.BlurbImage_Facebook {
   @include _blurb-image;
 
-  margin-bottom: 2px;
+  height: 18px;
+  margin-bottom: 4px;
+  margin-left: 2px;
 }
 
 .Nav {
