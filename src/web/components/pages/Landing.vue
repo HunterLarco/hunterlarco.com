@@ -145,7 +145,7 @@
 
         <div
           :class="$style.NavColumns"
-          :style="expanded_ ? 'column-width: 640px' : ''"
+          :style="expanded_ ? 'column-width: 642px' : ''"
         >
           <a
             href="https://tech.fb.com/ar-vr/"
