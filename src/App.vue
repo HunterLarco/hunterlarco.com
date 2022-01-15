@@ -13,8 +13,8 @@
 </style>
 
 <style lang="scss">
-@import "./styles/fonts.scss";
-@import "./styles/layout.scss";
+@import "@/styles/fonts";
+@import "@/styles/layout";
 
 #app {
   @include layout-fill;

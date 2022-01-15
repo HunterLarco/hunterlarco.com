@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Favicon256</title>
+    <g id="Favicon256" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Group">
+            <circle id="Oval" fill="#4289FF" cx="128" cy="128" r="128"></circle>
+            <text id="S" font-family="BebasNeue-Regular, Bebas Neue" font-size="200" font-weight="normal" fill="#FFFFFF">
+                <tspan x="91" y="196">S</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

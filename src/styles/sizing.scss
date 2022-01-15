@@ -1,0 +1,23 @@
+@mixin sizing-mobile {
+  @media (max-width: 450px) {
+    @content;
+  }
+}
+
+@mixin sizing-tablet {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin sizing-lowdpi {
+  @media (max-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin sizing-highdpi {
+  @media (max-width: 1440px) {
+    @content;
+  }
+}
