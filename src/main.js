@@ -11,3 +11,7 @@ createApp(App)
   .use(WindowSizeStore)
   .use(VueSizingPlugin)
   .mount("#app");
+
+if (process.env.NODE_ENV != "production") {
+  require("@/debug/console");
+}
