@@ -20,10 +20,8 @@
           </a>
         </div>
         <div :class="$style.Tagline">
-          Currently making the internet a better place
-          <a href="https://www.mozilla.org/en-US/firefox/unfck/" target="blank"
-            >#unfck</a
-          >
+          Currently building the
+          <a href="https://about.facebook.com/meta" target="blank">metaverse</a>
         </div>
 
         <div :class="$style.Blurb">
@@ -49,14 +47,7 @@
           />
         </div>
         <div :class="$style.Blurb">
-          <span v-show="$sizing.gt(685)"
-            >Bringing pixels to your eyeballs in VR</span
-          >
-          <span v-show="$sizing.lte(685)">
-            <span v-show="$sizing.gt(485)">Improving</span>
-            AR/VR
-          </span>
-          at
+          Building the metaverse at
           <img
             :class="$style.BlurbImage_Facebook"
             src="@/assets/logos/Facebook.png"
