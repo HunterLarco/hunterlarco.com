@@ -39,6 +39,6 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Lint
-        run: cli/fido.js lint
-      - name: Build Web
-        run: cli/fido.js build-web --strict --env production
+        run: npm run lint
+      - name: Build
+        run: npm run build
