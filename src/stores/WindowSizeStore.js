@@ -1,46 +1,48 @@
-import { createStore } from 'vuex';
-import { applyDefaults } from '@/stores/util';
+import { createStore } from "vuex";
+import { applyDefaults } from "@/stores/util";
 
 export const Sizes = new Map();
-Sizes.set('mobile', 450);
-Sizes.set('tablet', 1024);
-Sizes.set('lowdpi', 1280);
-Sizes.set('highdpi', 1440);
+Sizes.set("mobile", 450);
+Sizes.set("tablet", 1024);
+Sizes.set("lowdpi", 1280);
+Sizes.set("highdpi", 1440);
 
-export default createStore(applyDefaults('WindowSizeStore', {
-  state: {
-    width: window.innerWidth,
-  },
+export default createStore(
+  applyDefaults("WindowSizeStore", {
+    state: {
+      width: window.innerWidth,
+    },
 
-  getters: {
-    size(state) {
-      let size = null;
-      for (const [label, width] of Sizes.entries()) {
-        if (state.width < width) {
-          size = label;
-          break;
+    getters: {
+      size(state) {
+        let size = null;
+        for (const [label, width] of Sizes.entries()) {
+          if (state.width < width) {
+            size = label;
+            break;
+          }
         }
-      }
-      return size;
-    },
-  },
-
-  actions: {
-    updateWidth({ commit }) {
-      commit('setWidth', window.innerWidth);
+        return size;
+      },
     },
 
-    autoUpdateWidth({ dispatch }) {
-      dispatch('updateWidth');
-      window.addEventListener('resize', () => {
-        dispatch('updateWidth');
-      });
-    },
-  },
+    actions: {
+      updateWidth({ commit }) {
+        commit("setWidth", window.innerWidth);
+      },
 
-  mutations: {
-    setWidth(state, width) {
-      state.width = width;
+      autoUpdateWidth({ dispatch }) {
+        dispatch("updateWidth");
+        window.addEventListener("resize", () => {
+          dispatch("updateWidth");
+        });
+      },
     },
-  },
-}));
+
+    mutations: {
+      setWidth(state, width) {
+        state.width = width;
+      },
+    },
+  })
+);

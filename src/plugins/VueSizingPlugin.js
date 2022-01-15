@@ -1,8 +1,8 @@
-import WindowSizeStore, { Sizes } from '@/stores/WindowSizeStore';
+import WindowSizeStore, { Sizes } from "@/stores/WindowSizeStore";
 
 export default {
   install(app) {
-     app.config.globalProperties.$sizing = (fallback, sizingMap) => {
+    app.config.globalProperties.$sizing = (fallback, sizingMap) => {
       if (!sizingMap) {
         sizingMap = { [fallback]: true };
         fallback = false;
@@ -25,19 +25,19 @@ export default {
       return fallback;
     };
 
-     app.config.globalProperties.$sizing.gt = (width) => {
+    app.config.globalProperties.$sizing.gt = (width) => {
       return WindowSizeStore.state.width > width;
     };
 
-     app.config.globalProperties.$sizing.gte = (width) => {
+    app.config.globalProperties.$sizing.gte = (width) => {
       return WindowSizeStore.state.width >= width;
     };
 
-     app.config.globalProperties.$sizing.lt = (width) => {
+    app.config.globalProperties.$sizing.lt = (width) => {
       return WindowSizeStore.state.width < width;
     };
 
-     app.config.globalProperties.$sizing.lte = (width) => {
+    app.config.globalProperties.$sizing.lte = (width) => {
       return WindowSizeStore.state.width <= width;
     };
   },

@@ -155,9 +155,9 @@
           >
             <img src="@/assets/favicons/Facebook.jpeg" />
             <label>Facebook Reality Labs</label>
-            <div :class="$style.Line" style="width: 216px;" />
+            <div :class="$style.Line" style="width: 216px" />
             <label>Full-time</label>
-            <div :class="$style.Line" style="width: 92px;" />
+            <div :class="$style.Line" style="width: 92px" />
             <label>2021</label>
           </a>
 
@@ -170,9 +170,9 @@
           >
             <img src="@/assets/favicons/Soot.png" />
             <label>Soot</label>
-            <div :class="$style.Line" style="width: 346px;" />
+            <div :class="$style.Line" style="width: 346px" />
             <label>Advisor</label>
-            <div :class="$style.Line" style="width: 100px;" />
+            <div :class="$style.Line" style="width: 100px" />
             <label>2021</label>
           </a>
 
@@ -185,9 +185,9 @@
           >
             <img src="@/assets/favicons/Drip.png" />
             <label>Drip</label>
-            <div :class="$style.Line" style="width: 350px;" />
+            <div :class="$style.Line" style="width: 350px" />
             <label>Advisor</label>
-            <div :class="$style.Line" style="width: 100px;" />
+            <div :class="$style.Line" style="width: 100px" />
             <label>2020</label>
           </a>
 
@@ -197,9 +197,9 @@
           >
             <img src="@/assets/favicons/Mozilla.png" />
             <label>Mozilla Builders: Superduper</label>
-            <div :class="$style.Line" style="width: 174px;" />
+            <div :class="$style.Line" style="width: 174px" />
             <label>Fellow</label>
-            <div :class="$style.Line" style="width: 108px;" />
+            <div :class="$style.Line" style="width: 108px" />
             <label>2020</label>
           </div>
 
@@ -209,9 +209,9 @@
           >
             <img src="@/assets/favicons/Mozilla.png" />
             <label>Mozilla Builders: Fido</label>
-            <div :class="$style.Line" style="width: 227px;" />
+            <div :class="$style.Line" style="width: 227px" />
             <label>Fellow</label>
-            <div :class="$style.Line" style="width: 108px;" />
+            <div :class="$style.Line" style="width: 108px" />
             <label>2020</label>
           </div>
 
@@ -224,9 +224,9 @@
           >
             <img src="@/assets/favicons/Sutra.svg" />
             <label>Sutra</label>
-            <div :class="$style.Line" style="width: 341px;" />
+            <div :class="$style.Line" style="width: 341px" />
             <label>Advisor</label>
-            <div :class="$style.Line" style="width: 100px;" />
+            <div :class="$style.Line" style="width: 100px" />
             <label>2020</label>
           </a>
 
@@ -236,9 +236,9 @@
           >
             <img src="@/assets/favicons/Notion.png" />
             <label>Notion</label>
-            <div :class="$style.Line" style="width: 333px;" />
+            <div :class="$style.Line" style="width: 333px" />
             <label>Full-time</label>
-            <div :class="$style.Line" style="width: 92px;" />
+            <div :class="$style.Line" style="width: 92px" />
             <label>2020</label>
           </div>
 
@@ -248,9 +248,9 @@
           >
             <img src="@/assets/favicons/FireChat.png" />
             <label>FireChat</label>
-            <div :class="$style.Line" style="width: 318px;" />
+            <div :class="$style.Line" style="width: 318px" />
             <label>Advisor</label>
-            <div :class="$style.Line" style="width: 100px;" />
+            <div :class="$style.Line" style="width: 100px" />
             <label>2020</label>
           </div>
 
@@ -260,9 +260,9 @@
           >
             <img src="@/assets/favicons/Sadboi.png" />
             <label>Terrace: sadboi.tv</label>
-            <div :class="$style.Line" style="width: 253px;" />
+            <div :class="$style.Line" style="width: 253px" />
             <label>Founder</label>
-            <div :class="$style.Line" style="width: 94px;" />
+            <div :class="$style.Line" style="width: 94px" />
             <label>2019</label>
           </div>
 
@@ -275,9 +275,9 @@
           >
             <img src="@/assets/favicons/OnDeck.png" />
             <label>On Deck: 2nd Cohort NYC</label>
-            <div :class="$style.Line" style="width: 190px;" />
+            <div :class="$style.Line" style="width: 190px" />
             <label>Fellow</label>
-            <div :class="$style.Line" style="width: 108px;" />
+            <div :class="$style.Line" style="width: 108px" />
             <label>2019</label>
           </a>
 
@@ -289,9 +289,9 @@
           >
             <img src="@/assets/favicons/OnDeck.png" />
             <label>On Deck: 1st Cohort SF</label>
-            <div :class="$style.Line" style="width: 209px;" />
+            <div :class="$style.Line" style="width: 209px" />
             <label>Fellow</label>
-            <div :class="$style.Line" style="width: 108px;" />
+            <div :class="$style.Line" style="width: 108px" />
             <label>2019</label>
           </a>
 
@@ -304,9 +304,9 @@
           >
             <img src="@/assets/favicons/Triplebyte.jpg" />
             <label>Triplebyte: Generalist</label>
-            <div :class="$style.Line" style="width: 228px;" />
+            <div :class="$style.Line" style="width: 228px" />
             <label>Certificate</label>
-            <div :class="$style.Line" style="width: 80px;" />
+            <div :class="$style.Line" style="width: 80px" />
             <label>2019</label>
           </a>
 
@@ -319,9 +319,9 @@
           >
             <img src="@/assets/favicons/KDD.png" />
             <label>SIGKDD: Nostalgin</label>
-            <div :class="$style.Line" style="width: 242px;" />
+            <div :class="$style.Line" style="width: 242px" />
             <label>Speaker</label>
-            <div :class="$style.Line" style="width: 93px;" />
+            <div :class="$style.Line" style="width: 93px" />
             <label>2019</label>
           </a>
 
@@ -331,9 +331,9 @@
           >
             <img src="@/assets/favicons/Google.svg" />
             <label>Google Research: Waybak</label>
-            <div :class="$style.Line" style="width: 189px;" />
+            <div :class="$style.Line" style="width: 189px" />
             <label>Full-time</label>
-            <div :class="$style.Line" style="width: 92px;" />
+            <div :class="$style.Line" style="width: 92px" />
             <label>2017</label>
           </div>
 
@@ -343,9 +343,9 @@
           >
             <img src="@/assets/favicons/Google.svg" />
             <label>Google Ads: Express</label>
-            <div :class="$style.Line" style="width: 230px;" />
+            <div :class="$style.Line" style="width: 230px" />
             <label>Full-time</label>
-            <div :class="$style.Line" style="width: 92px;" />
+            <div :class="$style.Line" style="width: 92px" />
             <label>2016</label>
           </div>
 
@@ -357,9 +357,9 @@
           >
             <img src="@/assets/favicons/Triplebyte.jpg" />
             <label>Triplebyte: Generalist</label>
-            <div :class="$style.Line" style="width: 228px;" />
+            <div :class="$style.Line" style="width: 228px" />
             <label>Certificate</label>
-            <div :class="$style.Line" style="width: 80px;" />
+            <div :class="$style.Line" style="width: 80px" />
             <label>2016</label>
           </a>
 
@@ -372,9 +372,9 @@
           >
             <img src="@/assets/favicons/ChromeExperiments.png" />
             <label>Chrome Experiments: voxel.css</label>
-            <div :class="$style.Line" style="width: 154px;" />
+            <div :class="$style.Line" style="width: 154px" />
             <label>Award</label>
-            <div :class="$style.Line" style="width: 108px;" />
+            <div :class="$style.Line" style="width: 108px" />
             <label>2016</label>
           </a>
 
@@ -387,9 +387,9 @@
           >
             <img src="@/assets/favicons/MakeSchool.png" />
             <label>Make School: Inaugural Class</label>
-            <div :class="$style.Line" style="width: 166px;" />
+            <div :class="$style.Line" style="width: 166px" />
             <label>Education</label>
-            <div :class="$style.Line" style="width: 82px;" />
+            <div :class="$style.Line" style="width: 82px" />
             <label>2015</label>
           </a>
 
@@ -402,9 +402,9 @@
           >
             <img src="@/assets/favicons/ChromeExperiments.png" />
             <label>Chrome Experiments: Wireframe Ripple</label>
-            <div :class="$style.Line" style="width: 96px;" />
+            <div :class="$style.Line" style="width: 96px" />
             <label>Award</label>
-            <div :class="$style.Line" style="width: 108px;" />
+            <div :class="$style.Line" style="width: 108px" />
             <label>2012</label>
           </a>
 
@@ -424,7 +424,7 @@
           >
             <img
               src="@/assets/icons/Chevron.svg"
-              style="transform: scale(-1, 1);"
+              style="transform: scale(-1, 1)"
             />
             <label>Show less</label>
           </div>
@@ -446,9 +446,9 @@ export default {
 </script>
 
 <style module lang="scss">
-@import '@/styles/fonts';
-@import '@/styles/layout';
-@import '@/styles/sizing';
+@import "@/styles/fonts";
+@import "@/styles/layout";
+@import "@/styles/sizing";
 
 .Host {
   @include layout-fill;
@@ -472,7 +472,7 @@ export default {
   }
 
   & a {
-    color: #E71A8B;
+    color: #e71a8b;
     text-decoration: none;
 
     &:hover {
@@ -583,7 +583,7 @@ export default {
   @extend .Filter;
 
   background: #000;
-  color: #FFF;
+  color: #fff;
 }
 
 .Expand {
@@ -621,7 +621,6 @@ export default {
     text-decoration: underline;
   }
 
-
   @media (max-width: 760px) {
     & > * ~ * ~ * {
       display: none !important;
@@ -634,7 +633,7 @@ export default {
 }
 
 .Line {
-  background: #D9D9D9;
+  background: #d9d9d9;
   display: inline-block;
   height: 1px;
   margin: 0 10px;
