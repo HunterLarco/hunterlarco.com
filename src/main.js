@@ -12,7 +12,7 @@ createApp(App)
   .use(VueSizingPlugin)
   .mount("#app");
 
-WindowSizeStore.dispatch('autoUpdateWidth');
+WindowSizeStore.dispatch("autoUpdateWidth");
 
 if (process.env.NODE_ENV != "production") {
   require("@/debug/console");
