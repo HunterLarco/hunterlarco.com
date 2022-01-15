@@ -27,10 +27,5 @@
     "prettier": "~2.5.1",
     "sass": "^1.48.0",
     "sass-loader": "~10.0.0"
-  },
-  "browserslist": [
-    "> 1%",
-    "last 2 versions",
-    "not dead"
-  ]
+  }
 }
