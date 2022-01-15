@@ -19,7 +19,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_FRONTEND_DEPLOYMENT_RUNNER_ACCESS_KEY }}
           aws-secret-access-key: ${{ secrets.AWS_FRONTEND_DEPLOYMENT_RUNNER_SECRET_KEY }}
-          aws-region: us-east-2
+          aws-region: us-east-1
 
       - name: Mount npm cache
         uses: actions/cache@v1
