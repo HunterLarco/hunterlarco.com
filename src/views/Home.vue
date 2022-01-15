@@ -337,8 +337,7 @@
             <label>2017</label>
           </div>
 
-          <router-link
-            to="/history/google-ads"
+          <div
             :class="$style.NavItem"
             :style="filter_ && filter_ != 'full-time' ? 'opacity: 0.2' : ''"
           >
@@ -348,7 +347,7 @@
             <label>Full-time</label>
             <div :class="$style.Line" style="width: 92px;" />
             <label>2016</label>
-          </router-link>
+          </div>
 
           <a
             href="https://triplebyte.com/tb/hunter-j-larco-oca2jcx/certificate/track/generalist"
