@@ -1,0 +1,44 @@
+name: release
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          lfs: true
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_FRONTEND_DEPLOYMENT_RUNNER_ACCESS_KEY }}
+          aws-secret-access-key: ${{ secrets.AWS_FRONTEND_DEPLOYMENT_RUNNER_SECRET_KEY }}
+          aws-region: us-east-2
+
+      - name: Mount npm cache
+        uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: npm|${{ runner.os }}|node:14.x|package:${{ hashFiles('package.json') }}
+          restore-keys: |
+            npm|${{ runner.os }}|node:14.x|package:
+            npm|${{ runner.os }}|node:
+            npm|${{ runner.os }}|
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+
+      - name: Install dependencies
+        run: npm install
+      - name: Build
+        run: npm run build
+      - name: Deploy
+        run: npm run deploy
