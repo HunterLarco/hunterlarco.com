@@ -47,10 +47,10 @@
           />
         </div>
         <div :class="$style.Blurb">
-          Building the metaverse at
+          Exploring AR at
           <img
             :class="$style.BlurbImage_Facebook"
-            src="@/assets/logos/Facebook.png"
+            src="@/assets/logos/Meta.svg"
           />
         </div>
       </div>
@@ -222,6 +222,8 @@
           </a>
 
           <div
+            href="https://www.notion.so/about"
+            target="blank"
             :class="$style.NavItem"
             :style="filter_ && filter_ != 'full-time' ? 'opacity: 0.2' : ''"
           >
@@ -302,7 +304,7 @@
           </a>
 
           <a
-            href="https://www.kdd.org/kdd2019/accepted-papers/view/nostalgin-extracting-3d-city-models-from-historical-image-data"
+            href="https://arxiv.org/abs/1905.01772"
             target="blank"
             :class="$style.NavItem"
             :style="filter_ && filter_ != 'speaker' ? 'opacity: 0.2' : ''"
@@ -316,7 +318,9 @@
             <label>2019</label>
           </a>
 
-          <div
+          <a
+            href="https://ai.googleblog.com/2020/10/recreating-historical-streetscapes.html"
+            target="blank"
             :class="$style.NavItem"
             :style="filter_ && filter_ != 'full-time' ? 'opacity: 0.2' : ''"
           >
@@ -326,9 +330,11 @@
             <label>Full-time</label>
             <div :class="$style.Line" style="width: 92px" />
             <label>2017</label>
-          </div>
+          </a>
 
-          <div
+          <a
+            href="https://shopping.google.com/"
+            target="blank"
             :class="$style.NavItem"
             :style="filter_ && filter_ != 'full-time' ? 'opacity: 0.2' : ''"
           >
@@ -338,7 +344,7 @@
             <label>Full-time</label>
             <div :class="$style.Line" style="width: 92px" />
             <label>2016</label>
-          </div>
+          </a>
 
           <a
             href="https://triplebyte.com/tb/hunter-j-larco-oca2jcx/certificate/track/generalist"
