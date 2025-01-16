@@ -1,5 +1,4 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div :class="$style.Host">
@@ -8,5 +7,6 @@
 </template>
 
 <style module>
-.Host {}
+.Host {
+}
 </style>

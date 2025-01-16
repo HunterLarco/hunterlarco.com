@@ -1,6 +1,9 @@
 <script setup lang="ts">
 import { computed, useCssModule } from 'vue';
-import {InlineTextProps, InlineTextType} from '@/components/InlineText/InlineTextProps';
+import {
+  InlineTextProps,
+  InlineTextType,
+} from '@/components/InlineText/InlineTextProps';
 
 const style = useCssModule();
 

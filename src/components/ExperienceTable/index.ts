@@ -1,7 +1,7 @@
 import _ExperienceItem from '@/components/ExperienceTable/ExperienceItem.vue';
 import _ExperienceTable from '@/components/ExperienceTable/ExperienceTable.vue';
 
-export { 
+export {
   _ExperienceItem as ExperienceItem,
   _ExperienceTable as ExperienceTable,
 };

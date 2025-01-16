@@ -34,7 +34,9 @@ body {
   font-size: 0;
   line-height: 0;
   min-height: 100vh;
-  transition: color 0.5s, background-color 0.5s;
+  transition:
+    color 0.5s,
+    background-color 0.5s;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
