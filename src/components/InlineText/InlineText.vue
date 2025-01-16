@@ -1,20 +1,17 @@
 <script setup lang="ts">
 import { computed, useCssModule } from 'vue';
-import {
-  InlineTextProps,
-  InlineTextType,
-} from '@/components/InlineText/InlineTextProps';
+import { InlineTextType } from '@/components/InlineText/InlineTextProps';
+import type { InlineTextProps } from '@/components/InlineText/InlineTextProps';
 
 const style = useCssModule();
 
 const props = defineProps<InlineTextProps>();
 
-const hostClass = computed((): string => {
-  switch (props.type) {
-    case InlineTextType.BODY:
-      return style.Body;
-  }
-});
+const hostClass = computed((): string => TEXT_TYPE_TO_CLASS[props.type]);
+
+const TEXT_TYPE_TO_CLASS: Record<InlineTextType, string> = {
+  [InlineTextType.BODY]: style.Body,
+};
 </script>
 
 <template>

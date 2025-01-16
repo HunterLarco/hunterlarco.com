@@ -11,7 +11,7 @@
     "type-check": "vue-tsc --build",
     "lint": "concurrently npm:lint:*",
     "lint:eslint": "eslint . --max-warnings=0",
-    "lint:prettier": "eslint . --check",
+    "lint:prettier": "prettier . --check",
     "format": "npm run format:prettier && npm run format:eslint",
     "format:prettier": "prettier . --write",
     "format:eslint": "eslint . --fix"

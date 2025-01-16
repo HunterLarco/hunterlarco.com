@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import * as inlineText from '@/components/InlineText';
 
-import { ExperienceItemProps } from '@/components/ExperienceTable/ExperienceItemProps';
+import type { ExperienceItemProps } from '@/components/ExperienceTable/ExperienceItemProps';
 
 defineProps<ExperienceItemProps>();
 </script>

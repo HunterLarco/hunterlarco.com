@@ -1,1 +1,1 @@
-export type ExperienceTableProps = record<never, never>;
+export type ExperienceTableProps = Record<never, never>;
