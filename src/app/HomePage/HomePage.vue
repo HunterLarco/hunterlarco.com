@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import * as components from '@/components';
 import * as experiences from '@/app/HomePage/experiences';
 
@@ -16,10 +16,21 @@ const matchesExperienceFilter = (
 
   return experience.category === experienceFilter.value;
 };
+
+const categories = computed(
+  () =>
+    new Set(experiences.EXPERIENCES.map((experience) => experience.category)),
+);
 </script>
 
 <template>
   <div>
+    <components.textChip.TextChip
+      v-for="category in categories"
+      :key="category"
+      >{{ category }}</components.textChip.TextChip
+    >
+
     <components.experienceTable.ExperienceTable>
       <components.experienceTable.ExperienceItem
         v-for="experience in experiences.EXPERIENCES"
