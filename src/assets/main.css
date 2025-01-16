@@ -1,35 +1,41 @@
-@import './base.css';
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+/* color palette */
+:root {
+  --colors-white: #ffffff;
+  --colors-black: #181818;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+/* semantic color variables for this project */
+:root {
+  --color-background: var(--colors-white);
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
+/*
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: var(--colors-black);
   }
 }
+*/
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  color: inherit;
+  font: inherit;
+  margin: 0;
+  padding: 0;
+}
 
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+body {
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0;
+  line-height: 0;
+  min-height: 100vh;
+  transition: color 0.5s, background-color 0.5s;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
