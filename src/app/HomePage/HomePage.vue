@@ -21,6 +21,15 @@ const categories = computed(
   () =>
     new Set(experiences.EXPERIENCES.map((experience) => experience.category)),
 );
+
+const toggleCategory = (category: string): void => {
+  if (experienceFilter.value === category) {
+    experienceFilter.value = null;
+    return;
+  }
+
+  experienceFilter.value = category;
+};
 </script>
 
 <template>
@@ -28,6 +37,8 @@ const categories = computed(
     <components.textChip.TextChip
       v-for="category in categories"
       :key="category"
+      :selected="experienceFilter === category"
+      @click="toggleCategory(category)"
       >{{ category }}</components.textChip.TextChip
     >
 

@@ -1,13 +1,14 @@
 <script setup lang="ts">
-import { ref, computed, useCssModule } from 'vue';
+import { computed, useCssModule } from 'vue';
 import * as inlineText from '@/components/InlineText';
+import type { TextChipProps } from '@/components/TextChip/TextChipProps';
 
-const selected = ref(false);
+const props = defineProps<TextChipProps>();
 
 const style = useCssModule();
 
 const hostClassModifiers = computed(() =>
-  selected.value ? [style.Host_Selected] : [],
+  props.selected ? [style.Host_Selected] : [],
 );
 </script>
 
