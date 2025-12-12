@@ -20,8 +20,7 @@
           </a>
         </div>
         <div :class="$style.Tagline">
-          Currently building the
-          <a href="https://about.facebook.com/meta" target="blank">metaverse</a>
+          Currently on <span>sabbatical</span>
         </div>
 
         <div :class="$style.Blurb">
@@ -47,7 +46,7 @@
           />
         </div>
         <div :class="$style.Blurb">
-          Exploring AR at
+          Explored AR at
           <img
             :class="$style.BlurbImage_Facebook"
             src="@/assets/logos/Meta.svg"
@@ -138,6 +137,34 @@
           :class="$style.NavColumns"
           :style="expanded_ ? 'column-width: 642px' : ''"
         >
+          <a
+            href="https://tech.fb.com/ar-vr/"
+            target="blank"
+            :class="$style.NavItem"
+            :style="filter_ && filter_ != 'full-time' ? 'opacity: 0.2' : ''"
+          >
+            <img src="@/assets/favicons/Facebook.jpeg" />
+            <label>Facebook Reality Labs</label>
+            <div :class="$style.Line" style="width: 216px" />
+            <label>Full-time</label>
+            <div :class="$style.Line" style="width: 92px" />
+            <label>2025</label>
+          </a>
+
+          <a
+            href="https://soot.com"
+            target="blank"
+            :class="$style.NavItem"
+            :style="filter_ && filter_ != 'full-time' ? 'opacity: 0.2' : ''"
+          >
+            <img src="@/assets/favicons/SOOT.jpeg" />
+            <label>SOOT</label>
+            <div :class="$style.Line" style="width: 333px" />
+            <label>Full-time</label>
+            <div :class="$style.Line" style="width: 92px" />
+            <label>2023</label>
+          </a>
+
           <a
             href="https://tech.fb.com/ar-vr/"
             target="blank"
